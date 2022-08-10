@@ -77,7 +77,9 @@ namespace Advocacia_Dias_Pereira
 
         private void btnPesquisarCliente_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormPesquisa());
+            FormPesquisa formPesquisa = new FormPesquisa();
+            formPesquisa.Show();
+            //OpenChildForm(new FormPesquisa());
             //..
             //Codigos
             //..
