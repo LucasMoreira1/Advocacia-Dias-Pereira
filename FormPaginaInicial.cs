@@ -210,14 +210,14 @@ namespace Advocacia_Dias_Pereira
             {
                 formCadastro.Show();
                 //formCadastro.cboxDocumento.SelectedIndex = 0;
-                formCadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                formCadastro.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 formCadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
                 //formCadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
                 formCadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
                 //formCadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
                 formCadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
                 formCadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-                formCadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+                formCadastro.txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
                 formCadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
                 formCadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
                 //formCadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);

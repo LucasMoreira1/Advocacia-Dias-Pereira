@@ -33,11 +33,11 @@ namespace Advocacia_Dias_Pereira
             
 
             //Limpar campos identificação cliente
-            txtNome.Text = "";
+            txtAutor.Text = "";
             txtRG.Text = "";
             
             txtDataNascimento.Text = "";
-            txtTelefone.Text = "";
+            txtTelefone1.Text = "";
             txtEmail.Text = "";
             txtNacionalidade.Text = "";
             
@@ -73,54 +73,53 @@ namespace Advocacia_Dias_Pereira
         {
             CRUD.cmd.Parameters.Clear();
 
+            //Identificação Autor
+            CRUD.cmd.Parameters.AddWithValue("autor", txtAutor.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("nacionalidade", txtNacionalidade.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("estadocivil", cboxEstadoCivil.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("profissao", txtProfissao.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("rg", txtRG.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cpf", txtCPF.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("datanascimento", txtDataNascimento.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("telefone1", txtTelefone1.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("telefone2", txtTelefone2.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("email", txtEmail.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cepAutor", txtCEP.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("logradouroAutor", txtLogradouro.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("numeroAutor", txtNumero.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("complementoAutor", txtComplemento.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("bairroAutor", txtBairro.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cidadeAutor", txtCidade.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("estadoAutor", txtEstado.Text.Trim());
 
-            //MemoryStream ms = new MemoryStream();
-            //if (imgCamera.Image == null)
-            //{
-            //    imgCamera.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //}
-            //else
-            //{
-            //    imgCamera.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //}
+            //Identificação Réu
+            CRUD.cmd.Parameters.AddWithValue("Reu", txtReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cnpj", txtCNPJ.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("telefoneReu", txtTelefoneReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cepReu", txtCEPReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("logradouroReu", txtLogradouroReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("numeroReu", txtNumeroReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("complementoReu", txtComplementoReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("bairroReu", txtBairroReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("cidadeReu", txtCidadeReu.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("estadoReu", txtEstadoReu.Text.Trim());
 
-
-            //byte[] img = ms.GetBuffer();
-
-
-            CRUD.cmd.Parameters.AddWithValue("Autor", txtNome.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("rg", txtRG.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("orgemissor", txtOrgEmissor.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("cpf", txtCPF.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("passaporte", txtPassaporte.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("estadocivil", cboxEstadoCivil.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("datanascimento", txtDataNascimento.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("telefone", txtTelefone.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("email", txtEmail.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("nacionalidade", txtNacionalidade.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("datacasamento", txtDataCasamento.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("pet", cboxPet.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("cep", txtCEP.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("logradouro", txtLogradouro.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("numero", txtNumero.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("complemento", txtComplemento.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("bairro", txtBairro.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("cidade", txtCidade.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("estado", txtEstado.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("foto", img);
-            //CRUD.cmd.Parameters.AddWithValue("data_cadastro", txtDataCadastro.Text.Trim());
+            //Dados Processo
+            CRUD.cmd.Parameters.AddWithValue("processo", txtProcesso.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("tipoprocesso", cboxTipoProcesso.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("idprocesso", txtIdProcesso.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("statusprocesso", cboxStatusProcesso.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("natprocesso", txtNatProcesso.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("datapericia", txtDataPericia.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("assunto1", txtAssunto1.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("tipoaudiencia", txtTipoAudiencia.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("assunto2", txtAssunto2.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("dataaudiencia", txtDataAudiencia.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("assunto3", txtAssunto3.Text.Trim());
+            
+            //Outros
+            CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
             //CRUD.cmd.Parameters.AddWithValue("Cad_numero", txtCadNumero.Text.Trim());
-
-            //CRUD.cmd.Parameters.AddWithValue("nomeDependente", txtNomeDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("RGDependente", txtRGDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("orgemissordependente", txtOrgEmissorDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("CPFDependente", txtCPFDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("PassaporteDependente", txtPassaporteDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("certidaonascimento", txtCertidaoNascimentoDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("GrauParentesco", cboxGrauParentesco.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("DataNascimentoDependente", txtDataNascimentoDependente.Text.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("autorizacao", cboxAutorizacaoDependente.Text.Trim());
 
 
         }
@@ -132,7 +131,7 @@ namespace Advocacia_Dias_Pereira
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            if (string.IsNullOrEmpty(txtAutor.Text.Trim()))
             {
                 MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -140,8 +139,16 @@ namespace Advocacia_Dias_Pereira
             }
 
 
-            CRUD.sql = "INSERT INTO CADASTRO(autor)" +
-                "Values(@autor);";
+            CRUD.sql = "INSERT INTO CADASTRO(autor, nacionalidade, estadocivil, profissao, rg, cpf, datanascimento, email, " +
+                "telefone1, telefone2, cep, logradouro, numero, complemento, bairro, cidade, estado, reu, cnpjcpf, " +
+                "telefoneReu, cepReu, logradouroReu, numeroReu, complementoReu, bairroReu, cidadeReu, estadoReu, " +
+                "processo, tipoprocesso, idprocesso, statusprocesso, natprocesso, assunto1, assunto2, assunto3, " +
+                "datapericia, tipoaudiencia, dataaudiencia, observacao)" +
+                "Values(@autor, @nacionalidade, @estadocivil, @profissao, @rg, @cpf, @datanascimento, @email, " +
+                "@telefone1, @telefone2, @cepautor, @logradouroautor, @numeroautor, @complementoautor, @bairroautor, @cidadeautor, @estadoautor, @reu, @cnpj, " +
+                "@telefoneReu, @cepReu, @logradouroReu, @numeroReu, @complementoReu, @bairroReu, @cidadeReu, @estadoReu, " +
+                "@processo, @tipoprocesso, @idprocesso, @statusprocesso, @natprocesso, @assunto1, @assunto2, @assunto3, " +
+                "@datapericia, @tipoaudiencia, @dataaudiencia, @observacao);";
 
 
             Executar(CRUD.sql, "Insert");
@@ -206,7 +213,7 @@ namespace Advocacia_Dias_Pereira
         {
 
 
-            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            if (string.IsNullOrEmpty(txtAutor.Text.Trim()))
             {
                 MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -270,7 +277,7 @@ namespace Advocacia_Dias_Pereira
         {
             btnSalvar.PerformClick();
 
-            if (string.IsNullOrEmpty(txtNome.Text.Trim()) ||
+            if (string.IsNullOrEmpty(txtAutor.Text.Trim()) ||
                     (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
             {
                 MessageBox.Show("Por favor finalize o cadastro do cliente e volte após para cadastrar os dependentes.", "Dados Obrigatórios",
@@ -323,7 +330,7 @@ namespace Advocacia_Dias_Pereira
             txtRG.SelectionStart = 0;
             txtCPF.SelectionStart = 0;
             
-            txtTelefone.SelectionStart = 0;
+            txtTelefone1.SelectionStart = 0;
             
             txtCEP.SelectionStart = 0;
 
@@ -382,14 +389,14 @@ namespace Advocacia_Dias_Pereira
             }
             else
             {
-                txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
                 //txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
                 txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
                 //txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
                 cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
                 txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-                txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+                txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
                 txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
                 txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
                 //txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
@@ -449,14 +456,14 @@ namespace Advocacia_Dias_Pereira
             else
             {
 
-                txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
                 //txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
                 txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
                 //txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
                 cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
                 txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-                txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+                txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
                 txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
                 txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
                 //txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
@@ -486,6 +493,26 @@ namespace Advocacia_Dias_Pereira
             if (e.KeyCode == Keys.Enter)
             {
                 pesquisaCPF();
+            }
+        }
+
+        private void btnBuscarCEPReu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                string xml = "http://cep.republicavirtual.com.br/web_cep.php?cep=@cep&formato=xml".Replace("@cep", txtCEPReu.Text);
+
+                ds.ReadXml(xml);
+
+                txtLogradouroReu.Text = ds.Tables[0].Rows[0]["logradouro"].ToString();
+                txtBairroReu.Text = ds.Tables[0].Rows[0]["bairro"].ToString();
+                txtCidadeReu.Text = ds.Tables[0].Rows[0]["cidade"].ToString();
+                txtEstadoReu.Text = ds.Tables[0].Rows[0]["uf"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao buscar CEP");
             }
         }
     }
