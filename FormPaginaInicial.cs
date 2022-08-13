@@ -202,26 +202,26 @@ namespace Advocacia_Dias_Pereira
                 formCadastro.Show();
                 formCadastro.btnSalvar.Visible = true;
                 formCadastro.btnAtualizar.Visible = false;
-                formCadastro.cboxDocumento.SelectedIndex = 0;
+                //formCadastro.cboxDocumento.SelectedIndex = 0;
                 formCadastro.txtCPF.Text = txtConsultaCPF.Text;
                 txtConsultaCPF.Text = "";
             }
             else
             {
                 formCadastro.Show();
-                formCadastro.cboxDocumento.SelectedIndex = 0;
+                //formCadastro.cboxDocumento.SelectedIndex = 0;
                 formCadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 formCadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-                formCadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+                //formCadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
                 formCadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-                formCadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+                //formCadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
                 formCadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
                 formCadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
                 formCadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
                 formCadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
                 formCadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-                formCadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-                formCadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+                //formCadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+                //formCadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
                 formCadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
                 formCadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
                 formCadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
@@ -230,8 +230,8 @@ namespace Advocacia_Dias_Pereira
                 formCadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
                 formCadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
                 formCadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-                MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
-                formCadastro.imgCamera.Image = Image.FromStream(ms);
+                //MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
+                //formCadastro.imgCamera.Image = Image.FromStream(ms);
                 formCadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
                 formCadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 

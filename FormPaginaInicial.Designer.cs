@@ -34,19 +34,19 @@
             this.panelFormTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelEsquerdo = new System.Windows.Forms.Panel();
-            this.panelFormCentral = new System.Windows.Forms.Panel();
-            this.btnPaginaInicial = new System.Windows.Forms.Button();
-            this.btnCadastroCliente = new System.Windows.Forms.Button();
-            this.btnPesquisarCliente = new System.Windows.Forms.Button();
-            this.btnDocumentos = new System.Windows.Forms.Button();
-            this.btnAjuda = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelEsquerdo = new System.Windows.Forms.Panel();
+            this.btnAjuda = new System.Windows.Forms.Button();
+            this.btnDocumentos = new System.Windows.Forms.Button();
+            this.btnPesquisarCliente = new System.Windows.Forms.Button();
+            this.btnCadastroCliente = new System.Windows.Forms.Button();
+            this.btnPaginaInicial = new System.Windows.Forms.Button();
+            this.panelFormCentral = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelEsquerdo.SuspendLayout();
             this.panelFormCentral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,7 +62,7 @@
             // 
             this.btnPesquisarCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisarCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarCPF.Location = new System.Drawing.Point(1168, 5);
+            this.btnPesquisarCPF.Location = new System.Drawing.Point(1176, 35);
             this.btnPesquisarCPF.Name = "btnPesquisarCPF";
             this.btnPesquisarCPF.Size = new System.Drawing.Size(83, 33);
             this.btnPesquisarCPF.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.txtConsultaCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsultaCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsultaCPF.Location = new System.Drawing.Point(1039, 10);
+            this.txtConsultaCPF.Location = new System.Drawing.Point(1047, 40);
             this.txtConsultaCPF.Mask = "000,000,000-00";
             this.txtConsultaCPF.Name = "txtConsultaCPF";
             this.txtConsultaCPF.Size = new System.Drawing.Size(123, 22);
@@ -94,7 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(945, 13);
+            this.label1.Location = new System.Drawing.Point(945, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 3;
@@ -109,6 +109,17 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 220);
             this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Advocacia_Dias_Pereira.Properties.Resources.logo_advocacia;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 220);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelEsquerdo
             // 
@@ -125,89 +136,6 @@
             this.panelEsquerdo.Name = "panelEsquerdo";
             this.panelEsquerdo.Size = new System.Drawing.Size(200, 681);
             this.panelEsquerdo.TabIndex = 3;
-            // 
-            // panelFormCentral
-            // 
-            this.panelFormCentral.BackColor = System.Drawing.Color.White;
-            this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelFormCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFormCentral.Controls.Add(this.txtConsultaCPF);
-            this.panelFormCentral.Controls.Add(this.dataGridView1);
-            this.panelFormCentral.Controls.Add(this.label1);
-            this.panelFormCentral.Controls.Add(this.btnPesquisarCPF);
-            this.panelFormCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormCentral.Location = new System.Drawing.Point(0, 0);
-            this.panelFormCentral.Name = "panelFormCentral";
-            this.panelFormCentral.Size = new System.Drawing.Size(1264, 681);
-            this.panelFormCentral.TabIndex = 5;
-            // 
-            // btnPaginaInicial
-            // 
-            this.btnPaginaInicial.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPaginaInicial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPaginaInicial.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnPaginaInicial.FlatAppearance.BorderSize = 0;
-            this.btnPaginaInicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPaginaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaginaInicial.ForeColor = System.Drawing.Color.Black;
-            this.btnPaginaInicial.Location = new System.Drawing.Point(0, 220);
-            this.btnPaginaInicial.Name = "btnPaginaInicial";
-            this.btnPaginaInicial.Size = new System.Drawing.Size(200, 45);
-            this.btnPaginaInicial.TabIndex = 6;
-            this.btnPaginaInicial.Text = "Pagina Inicial";
-            this.btnPaginaInicial.UseVisualStyleBackColor = false;
-            this.btnPaginaInicial.Click += new System.EventHandler(this.btnPaginaInicial_Click);
-            // 
-            // btnCadastroCliente
-            // 
-            this.btnCadastroCliente.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastroCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCadastroCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCadastroCliente.FlatAppearance.BorderSize = 0;
-            this.btnCadastroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastroCliente.Location = new System.Drawing.Point(0, 265);
-            this.btnCadastroCliente.Name = "btnCadastroCliente";
-            this.btnCadastroCliente.Size = new System.Drawing.Size(200, 45);
-            this.btnCadastroCliente.TabIndex = 7;
-            this.btnCadastroCliente.Text = "Cadastro";
-            this.btnCadastroCliente.UseVisualStyleBackColor = false;
-            this.btnCadastroCliente.Click += new System.EventHandler(this.btnCadastroCliente_Click);
-            // 
-            // btnPesquisarCliente
-            // 
-            this.btnPesquisarCliente.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPesquisarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPesquisarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnPesquisarCliente.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnPesquisarCliente.Location = new System.Drawing.Point(0, 310);
-            this.btnPesquisarCliente.Name = "btnPesquisarCliente";
-            this.btnPesquisarCliente.Size = new System.Drawing.Size(200, 45);
-            this.btnPesquisarCliente.TabIndex = 8;
-            this.btnPesquisarCliente.Text = "Pesquisa";
-            this.btnPesquisarCliente.UseVisualStyleBackColor = false;
-            this.btnPesquisarCliente.Click += new System.EventHandler(this.btnPesquisarCliente_Click);
-            // 
-            // btnDocumentos
-            // 
-            this.btnDocumentos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDocumentos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDocumentos.FlatAppearance.BorderSize = 0;
-            this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocumentos.ForeColor = System.Drawing.Color.Black;
-            this.btnDocumentos.Location = new System.Drawing.Point(0, 355);
-            this.btnDocumentos.Name = "btnDocumentos";
-            this.btnDocumentos.Size = new System.Drawing.Size(200, 45);
-            this.btnDocumentos.TabIndex = 9;
-            this.btnDocumentos.Text = "Documentos";
-            this.btnDocumentos.UseVisualStyleBackColor = false;
-            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
             // 
             // btnAjuda
             // 
@@ -226,16 +154,88 @@
             this.btnAjuda.UseVisualStyleBackColor = false;
             this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
             // 
-            // pictureBox1
+            // btnDocumentos
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Advocacia_Dias_Pereira.Properties.Resources.logo_advocacia;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 220);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnDocumentos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDocumentos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDocumentos.FlatAppearance.BorderSize = 0;
+            this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocumentos.ForeColor = System.Drawing.Color.Black;
+            this.btnDocumentos.Location = new System.Drawing.Point(0, 355);
+            this.btnDocumentos.Name = "btnDocumentos";
+            this.btnDocumentos.Size = new System.Drawing.Size(200, 45);
+            this.btnDocumentos.TabIndex = 9;
+            this.btnDocumentos.Text = "Documentos";
+            this.btnDocumentos.UseVisualStyleBackColor = false;
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
+            // 
+            // btnPesquisarCliente
+            // 
+            this.btnPesquisarCliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPesquisarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPesquisarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPesquisarCliente.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnPesquisarCliente.Location = new System.Drawing.Point(0, 310);
+            this.btnPesquisarCliente.Name = "btnPesquisarCliente";
+            this.btnPesquisarCliente.Size = new System.Drawing.Size(200, 45);
+            this.btnPesquisarCliente.TabIndex = 8;
+            this.btnPesquisarCliente.Text = "Pesquisa";
+            this.btnPesquisarCliente.UseVisualStyleBackColor = false;
+            this.btnPesquisarCliente.Click += new System.EventHandler(this.btnPesquisarCliente_Click);
+            // 
+            // btnCadastroCliente
+            // 
+            this.btnCadastroCliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCadastroCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCadastroCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCadastroCliente.FlatAppearance.BorderSize = 0;
+            this.btnCadastroCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnCadastroCliente.Location = new System.Drawing.Point(0, 265);
+            this.btnCadastroCliente.Name = "btnCadastroCliente";
+            this.btnCadastroCliente.Size = new System.Drawing.Size(200, 45);
+            this.btnCadastroCliente.TabIndex = 7;
+            this.btnCadastroCliente.Text = "Cadastro";
+            this.btnCadastroCliente.UseVisualStyleBackColor = false;
+            this.btnCadastroCliente.Click += new System.EventHandler(this.btnCadastroCliente_Click);
+            // 
+            // btnPaginaInicial
+            // 
+            this.btnPaginaInicial.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPaginaInicial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPaginaInicial.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPaginaInicial.FlatAppearance.BorderSize = 0;
+            this.btnPaginaInicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaginaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaginaInicial.ForeColor = System.Drawing.Color.Black;
+            this.btnPaginaInicial.Location = new System.Drawing.Point(0, 220);
+            this.btnPaginaInicial.Name = "btnPaginaInicial";
+            this.btnPaginaInicial.Size = new System.Drawing.Size(200, 45);
+            this.btnPaginaInicial.TabIndex = 6;
+            this.btnPaginaInicial.Text = "Pagina Inicial";
+            this.btnPaginaInicial.UseVisualStyleBackColor = false;
+            this.btnPaginaInicial.Click += new System.EventHandler(this.btnPaginaInicial_Click);
+            // 
+            // panelFormCentral
+            // 
+            this.panelFormCentral.BackColor = System.Drawing.Color.White;
+            this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelFormCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFormCentral.Controls.Add(this.txtConsultaCPF);
+            this.panelFormCentral.Controls.Add(this.dataGridView1);
+            this.panelFormCentral.Controls.Add(this.label1);
+            this.panelFormCentral.Controls.Add(this.btnPesquisarCPF);
+            this.panelFormCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormCentral.Location = new System.Drawing.Point(0, 0);
+            this.panelFormCentral.Name = "panelFormCentral";
+            this.panelFormCentral.Size = new System.Drawing.Size(1264, 681);
+            this.panelFormCentral.TabIndex = 5;
             // 
             // FormPaginaInicial
             // 
@@ -251,10 +251,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelEsquerdo.ResumeLayout(false);
             this.panelFormCentral.ResumeLayout(false);
             this.panelFormCentral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

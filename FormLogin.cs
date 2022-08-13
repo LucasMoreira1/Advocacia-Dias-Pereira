@@ -52,5 +52,11 @@ namespace Advocacia_Dias_Pereira
                 formPaginaInicial.Show();
             }
         }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnLogin_Click(sender, e);
+        }
     }
 }

@@ -102,16 +102,16 @@ namespace Advocacia_Dias_Pereira
 
             formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formcadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            //formcadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
             formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formcadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            //formcadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
             formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
             formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
             formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
             formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            //formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            //formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
             formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
             formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
             formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
@@ -150,16 +150,16 @@ namespace Advocacia_Dias_Pereira
 
             formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formcadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            //formcadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
             formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formcadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            //formcadastro.txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
             formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
             formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
             formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
             formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            //formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            //formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
             formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
             formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
             formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
@@ -168,8 +168,8 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
             formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
-            formcadastro.imgCamera.Image = Image.FromStream(ms);
+            //MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
+            //formcadastro.imgCamera.Image = Image.FromStream(ms);
             formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
             formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
