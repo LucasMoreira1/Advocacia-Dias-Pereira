@@ -968,11 +968,10 @@
             this.cboxStatusProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxStatusProcesso.FormattingEnabled = true;
             this.cboxStatusProcesso.Items.AddRange(new object[] {
-            "1-SOLTEIRO",
-            "2-CASADO",
-            "3-SEPARADO",
-            "4-DIVORCIADO",
-            "5-VIÚVO"});
+            "1-EM ANDAMENTO",
+            "2-ARQUIVADO",
+            "3-SUSPENSO",
+            "4-OUTROS"});
             this.cboxStatusProcesso.Location = new System.Drawing.Point(513, 54);
             this.cboxStatusProcesso.Name = "cboxStatusProcesso";
             this.cboxStatusProcesso.Size = new System.Drawing.Size(150, 24);
@@ -986,11 +985,9 @@
             this.cboxTipoProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProcesso.FormattingEnabled = true;
             this.cboxTipoProcesso.Items.AddRange(new object[] {
-            "1-SOLTEIRO",
-            "2-CASADO",
-            "3-SEPARADO",
-            "4-DIVORCIADO",
-            "5-VIÚVO"});
+            "1-ADMINISTRATIVO",
+            "2-JUDICIAL",
+            "3-OUTROS"});
             this.cboxTipoProcesso.Location = new System.Drawing.Point(513, 22);
             this.cboxTipoProcesso.Name = "cboxTipoProcesso";
             this.cboxTipoProcesso.Size = new System.Drawing.Size(150, 24);
