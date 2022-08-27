@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPaginaInicial));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPesquisarCPF = new System.Windows.Forms.Button();
             this.txtConsultaCPF = new System.Windows.Forms.MaskedTextBox();
@@ -245,6 +246,7 @@
             this.Controls.Add(this.panelFormTitulo);
             this.Controls.Add(this.panelEsquerdo);
             this.Controls.Add(this.panelFormCentral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPaginaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advocacia Dias Pereira";

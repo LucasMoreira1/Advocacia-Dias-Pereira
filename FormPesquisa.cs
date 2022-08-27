@@ -104,6 +104,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
             formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formcadastro.txtProfissao.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
             formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
             formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
             formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
@@ -117,12 +118,31 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
             formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
             formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            
-            
-            //formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            
+            formcadastro.txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formcadastro.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            formcadastro.txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+            formcadastro.txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            formcadastro.txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
+            formcadastro.txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
+            formcadastro.txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+            formcadastro.txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[25].Value);
+            formcadastro.txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+            formcadastro.txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[27].Value);
+            formcadastro.txtProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[28].Value);
+            formcadastro.cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
+            formcadastro.txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
+            formcadastro.cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
+            formcadastro.txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
+            formcadastro.txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
+            formcadastro.txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
+            formcadastro.txtAssunto3.Text = Convert.ToString(dgv.CurrentRow.Cells[35].Value);
+            formcadastro.txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
+            formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
+            formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
 
-            
+
+
 
         }
 
@@ -151,6 +171,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
             formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formcadastro.txtProfissao.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
             formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
             formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
             formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
@@ -164,6 +185,28 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
             formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
             formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            formcadastro.txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formcadastro.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            formcadastro.txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+            formcadastro.txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            formcadastro.txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
+            formcadastro.txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
+            formcadastro.txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+            formcadastro.txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[25].Value);
+            formcadastro.txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+            formcadastro.txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[27].Value);
+            formcadastro.txtProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[28].Value);
+            formcadastro.cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
+            formcadastro.txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
+            formcadastro.cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
+            formcadastro.txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
+            formcadastro.txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
+            formcadastro.txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
+            formcadastro.txtAssunto3.Text = Convert.ToString(dgv.CurrentRow.Cells[35].Value);
+            formcadastro.txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
+            formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
+            formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
 
         }
 
