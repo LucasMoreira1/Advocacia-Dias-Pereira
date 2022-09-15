@@ -14,6 +14,7 @@ namespace Advocacia_Dias_Pereira
         public FormPesquisa()
         {
             InitializeComponent();
+
         }
         private void iconButton3_Click(object sender, EventArgs e)
         {
@@ -24,6 +25,8 @@ namespace Advocacia_Dias_Pereira
         {
             loadData("");
         }
+
+
 
         public void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -54,9 +57,23 @@ namespace Advocacia_Dias_Pereira
             dgv.MultiSelect = false;
             dgv.AutoGenerateColumns = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             dgv.DataSource = dt;
             //dgv.Columns["Foto"].Visible = false;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        void dgv_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+            if (e.RowIndex >= dt.Rows.Count)
+                return;
+
+            if (e.ColumnIndex >= dt.Columns.Count)
+                return;
+
+            e.Value = dt.Rows[e.RowIndex][e.ColumnIndex];
         }
 
         private void loadData(string keyword)
@@ -84,6 +101,7 @@ namespace Advocacia_Dias_Pereira
             dgv.MultiSelect = false;
             dgv.AutoGenerateColumns = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             dgv.DataSource = dt;
             //dgv.Columns["Foto"].Visible = false;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -139,7 +157,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
 
 
 
@@ -206,7 +224,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
 
         }
 
@@ -274,6 +292,7 @@ namespace Advocacia_Dias_Pereira
             dgv.MultiSelect = false;
             dgv.AutoGenerateColumns = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             dgv.DataSource = dt;
             //dgv.Columns["Foto"].Visible = false;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
