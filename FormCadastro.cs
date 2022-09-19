@@ -549,7 +549,8 @@ namespace Advocacia_Dias_Pereira
             txtCadNumero.Text = "";
             MessageBox.Show("Dados duplicados, favor finalizar o cadastro.", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            btnSalvar.Visible = true;
+            btnAtualizar.Visible = false;
         }
     }
 }

@@ -169,8 +169,8 @@ namespace Advocacia_Dias_Pereira
             if (e.RowIndex != -1)
             {
                 DataGridView dgv = dataGridView1;
-                this.id = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
-                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
+                this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 btnAtualizar.Text = "Atualizar (" + this.id + ")";
                 btnDeletar.Text = "Deletar (" + this.id + ")";
 
@@ -252,10 +252,10 @@ namespace Advocacia_Dias_Pereira
                 CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
                 CRUD.PerformCRUD(CRUD.cmd);
 
-                MessageBox.Show("Dados deletados com sucesso.", "Deletar dados",
+                MessageBox.Show("Dados deletados com sucesso, favor atualize a pesquisa.", "Deletar dados",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                loadData("");
+                //loadData("");
             }
         }
         private void FormPesquisa_Load(object sender, EventArgs e)
