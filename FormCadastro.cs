@@ -176,12 +176,10 @@ namespace Advocacia_Dias_Pereira
             MessageBox.Show("Cliente registrado. ID número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-            //loadData("");
-            //ResetMe();
             pesquisaCPF();
-            //formPaginaInicial formPaginaInicial = new formPaginaInicial();
-            //formPaginaInicial.btnPaginaInicial.PerformClick();
+
+            btnSalvar.Visible = true;
+            btnAtualizar.Visible = false;
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)
@@ -544,6 +542,14 @@ namespace Advocacia_Dias_Pereira
             {
                 MessageBox.Show(ex.Message, "Erro ao buscar CEP");
             }
+        }
+
+        private void btnDuplicar_Click(object sender, EventArgs e)
+        {
+            txtCadNumero.Text = "";
+            MessageBox.Show("Dados duplicados, favor finalizar o cadastro.", "Cadastro",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

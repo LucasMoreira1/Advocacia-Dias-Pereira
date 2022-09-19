@@ -125,6 +125,7 @@
             this.txtAssunto2 = new System.Windows.Forms.TextBox();
             this.txtNatProcesso = new System.Windows.Forms.TextBox();
             this.txtIdProcesso = new System.Windows.Forms.TextBox();
+            this.btnDuplicar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -328,6 +329,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnLimpar);
+            this.groupBox4.Controls.Add(this.btnDuplicar);
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.txtObservacao);
@@ -1160,6 +1162,17 @@
             this.txtIdProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtIdProcesso.TabIndex = 2;
             // 
+            // btnDuplicar
+            // 
+            this.btnDuplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuplicar.Location = new System.Drawing.Point(645, 68);
+            this.btnDuplicar.Name = "btnDuplicar";
+            this.btnDuplicar.Size = new System.Drawing.Size(81, 35);
+            this.btnDuplicar.TabIndex = 1;
+            this.btnDuplicar.Text = "Duplicar";
+            this.btnDuplicar.UseVisualStyleBackColor = true;
+            this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1292,5 +1305,6 @@
         public System.Windows.Forms.TextBox txtIdProcesso;
         private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.TextBox txtCNPJ;
+        public System.Windows.Forms.Button btnDuplicar;
     }
 }

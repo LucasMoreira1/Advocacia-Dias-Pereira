@@ -25,10 +25,12 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/LucasMoreira1/Advocacia-Dias-Pereira/master/published/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/LucasMoreira1/Advocacia-Dias-Pereira/master/published/</UpdateUrl>
+    <SupportUrl>https://solucoesagility.com.br</SupportUrl>
+    <PublisherName>Agility</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
