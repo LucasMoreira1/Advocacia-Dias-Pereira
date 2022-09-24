@@ -63,6 +63,36 @@ namespace Advocacia_Dias_Pereira.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_chave_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chave-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_grupo_de_usuário_homem_mulher_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-grupo-de-usuário-homem-mulher-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ok_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ok-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_advocacia {
             get {
                 object obj = ResourceManager.GetObject("logo_advocacia", resourceCulture);
