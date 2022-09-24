@@ -59,11 +59,11 @@
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.Gray;
-            this.txtSenha.Location = new System.Drawing.Point(68, 306);
+            this.txtSenha.Location = new System.Drawing.Point(115, 306);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(219, 25);
+            this.txtSenha.Size = new System.Drawing.Size(125, 25);
             this.txtSenha.TabIndex = 6;
             this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
@@ -72,10 +72,10 @@
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.Gray;
-            this.txtLogin.Location = new System.Drawing.Point(68, 249);
+            this.txtLogin.Location = new System.Drawing.Point(115, 249);
             this.txtLogin.Multiline = true;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(219, 25);
+            this.txtLogin.Size = new System.Drawing.Size(125, 25);
             this.txtLogin.TabIndex = 5;
             // 
             // label3
@@ -92,7 +92,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Advocacia_Dias_Pereira.Properties.Resources.icons8_chave_40;
-            this.pictureBox3.Location = new System.Drawing.Point(37, 306);
+            this.pictureBox3.Location = new System.Drawing.Point(84, 306);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,7 +102,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Advocacia_Dias_Pereira.Properties.Resources.icons8_grupo_de_usuário_homem_mulher_40;
-            this.pictureBox2.Location = new System.Drawing.Point(37, 249);
+            this.pictureBox2.Location = new System.Drawing.Point(84, 249);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,17 +140,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Khaki;
-            this.panel1.Location = new System.Drawing.Point(37, 280);
+            this.panel1.Location = new System.Drawing.Point(84, 280);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 2);
+            this.panel1.Size = new System.Drawing.Size(156, 2);
             this.panel1.TabIndex = 13;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Khaki;
-            this.panel2.Location = new System.Drawing.Point(37, 337);
+            this.panel2.Location = new System.Drawing.Point(84, 337);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 2);
+            this.panel2.Size = new System.Drawing.Size(156, 2);
             this.panel2.TabIndex = 13;
             // 
             // FormLogin

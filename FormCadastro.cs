@@ -7,6 +7,7 @@ using AForge.Imaging.Filters;
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -14,6 +15,8 @@ namespace Advocacia_Dias_Pereira
     {
         public Boolean CameraOn = false;
         public string localizacaoFoto;
+        public string filename;
+        
         public FormCadastro()
         {
             InitializeComponent();
@@ -72,6 +75,19 @@ namespace Advocacia_Dias_Pereira
         private void AddParametros(string str)
         {
             CRUD.cmd.Parameters.Clear();
+
+            FileStream fileStream = File.OpenRead(filename);
+            byte[] contents = new byte[fileStream.Length];
+            fileStream.Read(contents, 0, (int)contents.Length);
+            fileStream.Close();
+
+            string nomedocumento = Path.GetFileName(filename);
+
+            CRUD.cmd.Parameters.AddWithValue("Documento", contents);
+            CRUD.cmd.Parameters.AddWithValue("Nome_Documento", nomedocumento.Trim());
+            
+            //Informações Gerais
+            CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(DateTime.Now));
 
             //Identificação Autor
             CRUD.cmd.Parameters.AddWithValue("CadNumero", txtCadNumero.Text.Trim());
@@ -551,6 +567,67 @@ namespace Advocacia_Dias_Pereira
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnSalvar.Visible = true;
             btnAtualizar.Visible = false;
+        }
+
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            //btnSalvar.PerformClick();
+
+            using (OpenFileDialog dlg = new OpenFileDialog() { Filter = "Todos arquivos (*) | *.*", ValidateNames = true })
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult dialog = MessageBox.Show("Tem certeza que deseja subir esse(s) documento(s)?", "Envio para núvem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        filename = dlg.FileName.ToString();
+
+                        //nomedocumento = Interaction.InputBox("Qual o nome do documento?", "Nome documento");
+                        //Interaction.MsgBox("Oi " + nomedocumento.ToString());
+                        //FileStream fileStream = File.OpenRead(filename);
+                        //byte[] contents = new byte[fileStream.Length];
+                        //fileStream.Read(contents, 0, (int)contents.Length);
+                        //fileStream.Close();
+
+                        //CRUD.cmd.Parameters.AddWithValue("Documento", contents);
+
+                        if (string.IsNullOrEmpty(txtAutor.Text.Trim()) ||
+                            (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
+                        {
+                            MessageBox.Show("Por favor finalize o cadastro do cliente e volte após para enviar documentos.", "Dados Obrigatórios",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+
+                        CRUD.sql = "INSERT INTO DOCUMENTOS(Nome_Cliente,Cad_Cliente,Data_Documento,Documento,Nome_Documento)" +
+                            "Values(@autor, @CadNumero, @DataCadastro, @Documento, @Nome_Documento);";
+
+
+                        Executar(CRUD.sql, "Insert");
+
+                        MessageBox.Show("Documento salvo.", "Envio Documento",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    }
+                }
+            }
+
+            
+        }
+
+        private void btnVisualizarDocumentos_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCadNumero.Text.Trim()))
+            {
+                MessageBox.Show("Por favor insira a Matrícula", "Dados Obrigatórios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            FormDocumentos formDocumentos = new FormDocumentos();
+            formDocumentos.txtCadCliente.Text = txtCadNumero.Text;
+            formDocumentos.txtNomeCliente.Text = txtAutor.Text;
+            formDocumentos.Show();
         }
     }
 }

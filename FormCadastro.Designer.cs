@@ -50,6 +50,7 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnDuplicar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -125,7 +126,8 @@
             this.txtAssunto2 = new System.Windows.Forms.TextBox();
             this.txtNatProcesso = new System.Windows.Forms.TextBox();
             this.txtIdProcesso = new System.Windows.Forms.TextBox();
-            this.btnDuplicar = new System.Windows.Forms.Button();
+            this.btnDocumentos = new System.Windows.Forms.Button();
+            this.btnVisualizarDocumentos = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -329,6 +331,8 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnLimpar);
+            this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
+            this.groupBox4.Controls.Add(this.btnDocumentos);
             this.groupBox4.Controls.Add(this.btnDuplicar);
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
@@ -350,6 +354,17 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnDuplicar
+            // 
+            this.btnDuplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuplicar.Location = new System.Drawing.Point(645, 68);
+            this.btnDuplicar.Name = "btnDuplicar";
+            this.btnDuplicar.Size = new System.Drawing.Size(81, 35);
+            this.btnDuplicar.TabIndex = 1;
+            this.btnDuplicar.Text = "Duplicar";
+            this.btnDuplicar.UseVisualStyleBackColor = true;
+            this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
             // 
             // btnSalvar
             // 
@@ -1162,16 +1177,27 @@
             this.txtIdProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtIdProcesso.TabIndex = 2;
             // 
-            // btnDuplicar
+            // btnDocumentos
             // 
-            this.btnDuplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDuplicar.Location = new System.Drawing.Point(645, 68);
-            this.btnDuplicar.Name = "btnDuplicar";
-            this.btnDuplicar.Size = new System.Drawing.Size(81, 35);
-            this.btnDuplicar.TabIndex = 1;
-            this.btnDuplicar.Text = "Duplicar";
-            this.btnDuplicar.UseVisualStyleBackColor = true;
-            this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
+            this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocumentos.Location = new System.Drawing.Point(442, 68);
+            this.btnDocumentos.Name = "btnDocumentos";
+            this.btnDocumentos.Size = new System.Drawing.Size(197, 35);
+            this.btnDocumentos.TabIndex = 1;
+            this.btnDocumentos.Text = "Anexar Documentos";
+            this.btnDocumentos.UseVisualStyleBackColor = true;
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
+            // 
+            // btnVisualizarDocumentos
+            // 
+            this.btnVisualizarDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarDocumentos.Location = new System.Drawing.Point(442, 27);
+            this.btnVisualizarDocumentos.Name = "btnVisualizarDocumentos";
+            this.btnVisualizarDocumentos.Size = new System.Drawing.Size(197, 35);
+            this.btnVisualizarDocumentos.TabIndex = 1;
+            this.btnVisualizarDocumentos.Text = "Visualizar Documentos";
+            this.btnVisualizarDocumentos.UseVisualStyleBackColor = true;
+            this.btnVisualizarDocumentos.Click += new System.EventHandler(this.btnVisualizarDocumentos_Click);
             // 
             // FormCadastro
             // 
@@ -1306,5 +1332,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.TextBox txtCNPJ;
         public System.Windows.Forms.Button btnDuplicar;
+        public System.Windows.Forms.Button btnDocumentos;
+        public System.Windows.Forms.Button btnVisualizarDocumentos;
     }
 }
