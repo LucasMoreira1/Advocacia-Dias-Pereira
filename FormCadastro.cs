@@ -629,5 +629,10 @@ namespace Advocacia_Dias_Pereira
             formDocumentos.txtNomeCliente.Text = txtAutor.Text;
             formDocumentos.Show();
         }
+
+        private void btnGerarDocumentos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
