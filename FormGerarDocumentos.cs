@@ -16,5 +16,11 @@ namespace Advocacia_Dias_Pereira
         {
             InitializeComponent();
         }
+
+        private void FormGerarDocumentos_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

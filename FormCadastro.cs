@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.DirectShow;
-using AForge.Imaging.Filters;
-using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.IO;
 using Microsoft.VisualBasic;
@@ -22,9 +18,7 @@ namespace Advocacia_Dias_Pereira
             InitializeComponent();
             ResetMe();
         }
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice videoCaptureDevice;
-        Bitmap bitmap;
+        
 
         private void ResetMe()
         {
@@ -632,6 +626,8 @@ namespace Advocacia_Dias_Pereira
 
         private void btnGerarDocumentos_Click(object sender, EventArgs e)
         {
+            FormGerarDocumentos formGerarDocumentos = new FormGerarDocumentos();
+            formGerarDocumentos.Show();
 
         }
     }
