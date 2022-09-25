@@ -11,7 +11,7 @@ namespace Advocacia_Dias_Pereira
     {
         public Boolean CameraOn = false;
         public string localizacaoFoto;
-        public string filename;
+        public string filename = "";
         
         public FormCadastro()
         {
@@ -70,16 +70,20 @@ namespace Advocacia_Dias_Pereira
         {
             CRUD.cmd.Parameters.Clear();
 
+            if (filename == "")
+            {
+                goto SEMDOCUMENTO;
+            }
+            
             FileStream fileStream = File.OpenRead(filename);
             byte[] contents = new byte[fileStream.Length];
             fileStream.Read(contents, 0, (int)contents.Length);
             fileStream.Close();
-
             string nomedocumento = Path.GetFileName(filename);
-
+            
             CRUD.cmd.Parameters.AddWithValue("Documento", contents);
             CRUD.cmd.Parameters.AddWithValue("Nome_Documento", nomedocumento.Trim());
-            
+            SEMDOCUMENTO:
             //Informações Gerais
             CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(DateTime.Now));
 
@@ -627,6 +631,7 @@ namespace Advocacia_Dias_Pereira
         private void btnGerarDocumentos_Click(object sender, EventArgs e)
         {
             FormGerarDocumentos formGerarDocumentos = new FormGerarDocumentos();
+            formGerarDocumentos.txtIDCliente.Text = txtCadNumero.Text;
             formGerarDocumentos.Show();
 
         }
