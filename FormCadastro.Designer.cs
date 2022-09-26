@@ -51,6 +51,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVisualizarDocumentos = new System.Windows.Forms.Button();
+            this.btnGerarDocumentos = new System.Windows.Forms.Button();
             this.btnDocumentos = new System.Windows.Forms.Button();
             this.btnDuplicar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -128,7 +129,6 @@
             this.txtAssunto2 = new System.Windows.Forms.TextBox();
             this.txtNatProcesso = new System.Windows.Forms.TextBox();
             this.txtIdProcesso = new System.Windows.Forms.TextBox();
-            this.btnGerarDocumentos = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -367,6 +367,17 @@
             this.btnVisualizarDocumentos.Text = "Visualizar Documentos";
             this.btnVisualizarDocumentos.UseVisualStyleBackColor = true;
             this.btnVisualizarDocumentos.Click += new System.EventHandler(this.btnVisualizarDocumentos_Click);
+            // 
+            // btnGerarDocumentos
+            // 
+            this.btnGerarDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarDocumentos.Location = new System.Drawing.Point(645, 28);
+            this.btnGerarDocumentos.Name = "btnGerarDocumentos";
+            this.btnGerarDocumentos.Size = new System.Drawing.Size(255, 35);
+            this.btnGerarDocumentos.TabIndex = 1;
+            this.btnGerarDocumentos.Text = "Gerar Documentos";
+            this.btnGerarDocumentos.UseVisualStyleBackColor = true;
+            this.btnGerarDocumentos.Click += new System.EventHandler(this.btnGerarDocumentos_Click);
             // 
             // btnDocumentos
             // 
@@ -1201,17 +1212,6 @@
             this.txtIdProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtIdProcesso.TabIndex = 2;
             // 
-            // btnGerarDocumentos
-            // 
-            this.btnGerarDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarDocumentos.Location = new System.Drawing.Point(645, 28);
-            this.btnGerarDocumentos.Name = "btnGerarDocumentos";
-            this.btnGerarDocumentos.Size = new System.Drawing.Size(255, 35);
-            this.btnGerarDocumentos.TabIndex = 1;
-            this.btnGerarDocumentos.Text = "Gerar Documentos";
-            this.btnGerarDocumentos.UseVisualStyleBackColor = true;
-            this.btnGerarDocumentos.Click += new System.EventHandler(this.btnGerarDocumentos_Click);
-            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1229,6 +1229,7 @@
             this.Name = "FormCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
