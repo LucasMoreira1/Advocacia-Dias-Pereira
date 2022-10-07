@@ -58,7 +58,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Autor.Value</Value>
+                <Value>=UCase(Fields!Autor.Value)</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -91,7 +91,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value> SSP-SP, inscrita no CPF sob o nº </Value>
+                <Value> SSP-SP, inscrito(a) no CPF sob o nº </Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -124,7 +124,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Logradouro.Value</Value>
+                <Value>=UCase(Fields!Logradouro.Value)</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -168,7 +168,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Bairro.Value</Value>
+                <Value>=UCase(Fields!Bairro.Value)</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -212,7 +212,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Cidade.Value</Value>
+                <Value>=UCase(Fields!Cidade.Value)</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -234,7 +234,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Estado.Value</Value>
+                <Value>=UCase(Fields!Estado.Value)</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -335,7 +335,7 @@
         </Style>
       </Line>
       <Line Name="Line5">
-        <Top>6.16543in</Top>
+        <Top>7.59251in</Top>
         <Left>1.17646in</Left>
         <Height>0in</Height>
         <Width>5.9148in</Width>
@@ -348,7 +348,7 @@
         </Style>
       </Line>
     </ReportItems>
-    <Height>15.83658cm</Height>
+    <Height>19.46137cm</Height>
     <Style />
   </Body>
   <Width>21cm</Width>
