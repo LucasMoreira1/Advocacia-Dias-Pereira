@@ -271,31 +271,34 @@ namespace Advocacia_Dias_Pereira
 
         private void txtFiltro1_KeyDown(object sender, KeyEventArgs e)
         {
-            CRUD.sql = "SELECT * FROM CADASTRO WHERE Id = '" + txtFiltro1.Text.Trim() + "' ORDER BY Id;";
-
-            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
-
-            if (dt.Rows.Count > 0)
+            if (e.KeyCode == Keys.Enter)
             {
-                row = Convert.ToInt32(dt.Rows.Count.ToString());
+                CRUD.sql = "SELECT * FROM CADASTRO WHERE Id = '" + txtFiltro1.Text.Trim() + "' ORDER BY Id;";
+
+                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+                if (dt.Rows.Count > 0)
+                {
+                    row = Convert.ToInt32(dt.Rows.Count.ToString());
+                }
+                else
+                {
+                    row = 0;
+                }
+
+                toolStripStatusLabel1.Text = "Número de linha(s): " + row.ToString();
+
+                DataGridView dgv = dataGridView1;
+
+                dgv.MultiSelect = false;
+                dgv.AutoGenerateColumns = true;
+                dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                dgv.DataSource = dt;
+                //dgv.Columns["Foto"].Visible = false;
+                dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-            else
-            {
-                row = 0;
-            }
-
-            toolStripStatusLabel1.Text = "Número de linha(s): " + row.ToString();
-
-            DataGridView dgv = dataGridView1;
-
-            dgv.MultiSelect = false;
-            dgv.AutoGenerateColumns = true;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
-            dgv.DataSource = dt;
-            //dgv.Columns["Foto"].Visible = false;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }
