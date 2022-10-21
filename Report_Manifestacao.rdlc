@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DECLARAÇÃO DE HIPOSSUFICIÊNCIA</Value>
+                <Value>EXCELENTÍSSIMO(A) SENHOR(A) DOUTOR(A) JUIZ(A) DE DIREITO DA 2ª VARA DE FAMÍLIA E SUCESSÕES DA COMARCA DE JACAREÍ-SP.</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Verdana</FontFamily>
@@ -28,7 +28,7 @@
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>0.44444in</Top>
         <Left>1.17646in</Left>
-        <Height>0.34375in</Height>
+        <Height>0.72917in</Height>
         <Width>5.9148in</Width>
         <Style>
           <Border>
@@ -279,7 +279,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.97917in</Top>
+        <Top>1.36806in</Top>
         <Left>1.17646in</Left>
         <Height>1.40625in</Height>
         <Width>5.9148in</Width>
@@ -313,7 +313,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>3.69792in</Top>
+        <Top>4.08681in</Top>
         <Left>4.20157in</Left>
         <Height>0.25in</Height>
         <Width>1.86458in</Width>
@@ -329,7 +329,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>4.75in</Top>
+        <Top>5.99306in</Top>
         <Left>2.20157in</Left>
         <Height>0in</Height>
         <Width>3.86458in</Width>
@@ -384,7 +384,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.45486in</Top>
+        <Top>2.84375in</Top>
         <Left>1.17646in</Left>
         <Height>1.03819in</Height>
         <Width>5.9148in</Width>

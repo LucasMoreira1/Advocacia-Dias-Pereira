@@ -1,6 +1,6 @@
 ﻿namespace Advocacia_Dias_Pereira
 {
-    partial class FormGerarDocumentos
+    partial class FormManifestacao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManifestacao));
             this.txtMatriculaDependente = new System.Windows.Forms.TextBox();
             this.txtIDCliente = new System.Windows.Forms.TextBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -52,14 +53,14 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Advocacia_Dias_Pereira.Report_Declaracao_Hipo.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Advocacia_Dias_Pereira.Report_Manifestacao.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 665);
             this.reportViewer1.TabIndex = 3;
             // 
-            // FormGerarDocumentos
+            // FormManifestacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,9 +68,10 @@
             this.Controls.Add(this.txtMatriculaDependente);
             this.Controls.Add(this.txtIDCliente);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FormGerarDocumentos";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormManifestacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormGerarDocumentos";
+            this.Text = "Manifestação";
             this.Load += new System.EventHandler(this.FormGerarDocumentos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

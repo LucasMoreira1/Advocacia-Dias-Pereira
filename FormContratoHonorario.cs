@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Advocacia_Dias_Pereira
 {
-    public partial class FormGerarDocumentos : Form
+    public partial class FormContratoHonorario : Form
     {
-        public FormGerarDocumentos()
+        public FormContratoHonorario()
         {
             InitializeComponent();
         }
