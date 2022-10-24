@@ -226,7 +226,8 @@
             // panelFormCentral
             // 
             this.panelFormCentral.BackColor = System.Drawing.Color.White;
-            this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelFormCentral.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com__1_;
+            this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelFormCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFormCentral.Controls.Add(this.txtConsultaCPF);
             this.panelFormCentral.Controls.Add(this.dataGridView1);
