@@ -35,15 +35,16 @@
             this.btnBaixar = new System.Windows.Forms.Button();
             this.btnExluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.txtCadCliente = new System.Windows.Forms.TextBox();
             this.DOC_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAD_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_DOCUMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATA_DOCUMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.txtCadCliente = new System.Windows.Forms.TextBox();
+            this.btnAbrir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // btnBaixar
             // 
             this.btnBaixar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaixar.Location = new System.Drawing.Point(796, 17);
+            this.btnBaixar.Location = new System.Drawing.Point(905, 17);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(103, 26);
             this.btnBaixar.TabIndex = 3;
@@ -80,7 +81,7 @@
             // btnExluir
             // 
             this.btnExluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExluir.Location = new System.Drawing.Point(905, 17);
+            this.btnExluir.Location = new System.Drawing.Point(1014, 17);
             this.btnExluir.Name = "btnExluir";
             this.btnExluir.Size = new System.Drawing.Size(103, 26);
             this.btnExluir.TabIndex = 4;
@@ -116,14 +117,49 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 50);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 70;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(1101, 240);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // DOC_ID
+            // 
+            this.DOC_ID.DataPropertyName = "DOC_ID";
+            this.DOC_ID.HeaderText = "DOC_ID";
+            this.DOC_ID.Name = "DOC_ID";
+            this.DOC_ID.ReadOnly = true;
+            // 
+            // CAD_CLIENTE
+            // 
+            this.CAD_CLIENTE.DataPropertyName = "CAD_CLIENTE";
+            this.CAD_CLIENTE.HeaderText = "NÚMERO CLIENTE";
+            this.CAD_CLIENTE.Name = "CAD_CLIENTE";
+            this.CAD_CLIENTE.ReadOnly = true;
+            // 
+            // NOME_CLIENTE
+            // 
+            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
+            this.NOME_CLIENTE.HeaderText = "CLIENTE";
+            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
+            this.NOME_CLIENTE.ReadOnly = true;
+            // 
+            // NOME_DOCUMENTO
+            // 
+            this.NOME_DOCUMENTO.DataPropertyName = "NOME_DOCUMENTO";
+            this.NOME_DOCUMENTO.HeaderText = "NOME DOCUMENTO";
+            this.NOME_DOCUMENTO.Name = "NOME_DOCUMENTO";
+            this.NOME_DOCUMENTO.ReadOnly = true;
+            // 
+            // DATA_DOCUMENTO
+            // 
+            this.DATA_DOCUMENTO.DataPropertyName = "DATA_DOCUMENTO";
+            this.DATA_DOCUMENTO.HeaderText = "DATA DOCUMENTO";
+            this.DATA_DOCUMENTO.Name = "DATA_DOCUMENTO";
+            this.DATA_DOCUMENTO.ReadOnly = true;
             // 
             // label2
             // 
@@ -162,48 +198,25 @@
             this.txtCadCliente.Size = new System.Drawing.Size(100, 26);
             this.txtCadCliente.TabIndex = 9;
             // 
-            // DOC_ID
+            // btnAbrir
             // 
-            this.DOC_ID.DataPropertyName = "DOC_ID";
-            this.DOC_ID.HeaderText = "DOC_ID";
-            this.DOC_ID.Name = "DOC_ID";
-            this.DOC_ID.ReadOnly = true;
-            // 
-            // CAD_CLIENTE
-            // 
-            this.CAD_CLIENTE.DataPropertyName = "CAD_CLIENTE";
-            this.CAD_CLIENTE.HeaderText = "NÚMERO CLIENTE";
-            this.CAD_CLIENTE.Name = "CAD_CLIENTE";
-            this.CAD_CLIENTE.ReadOnly = true;
-            // 
-            // NOME_CLIENTE
-            // 
-            this.NOME_CLIENTE.DataPropertyName = "NOME_CLIENTE";
-            this.NOME_CLIENTE.HeaderText = "CLIENTE";
-            this.NOME_CLIENTE.Name = "NOME_CLIENTE";
-            this.NOME_CLIENTE.ReadOnly = true;
-            // 
-            // NOME_DOCUMENTO
-            // 
-            this.NOME_DOCUMENTO.DataPropertyName = "NOME_DOCUMENTO";
-            this.NOME_DOCUMENTO.HeaderText = "NOME DOCUMENTO";
-            this.NOME_DOCUMENTO.Name = "NOME_DOCUMENTO";
-            this.NOME_DOCUMENTO.ReadOnly = true;
-            // 
-            // DATA_DOCUMENTO
-            // 
-            this.DATA_DOCUMENTO.DataPropertyName = "DATA_DOCUMENTO";
-            this.DATA_DOCUMENTO.HeaderText = "DATA DOCUMENTO";
-            this.DATA_DOCUMENTO.Name = "DATA_DOCUMENTO";
-            this.DATA_DOCUMENTO.ReadOnly = true;
+            this.btnAbrir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrir.Location = new System.Drawing.Point(796, 18);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(103, 26);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // FormDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 297);
+            this.ClientSize = new System.Drawing.Size(1127, 297);
             this.Controls.Add(this.txtSelecionado);
             this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.btnExluir);
             this.Controls.Add(this.dataGridView1);
@@ -237,5 +250,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME_DOCUMENTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_DOCUMENTO;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAbrir;
     }
 }

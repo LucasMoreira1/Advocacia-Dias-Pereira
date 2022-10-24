@@ -142,5 +142,47 @@ namespace Advocacia_Dias_Pereira
                 
             }
         }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            string dir = Path.GetTempPath();
+
+            sfd.FileName = dir + dataGridView1.SelectedCells[3].Value.ToString();
+
+            
+            filename = sfd.FileName;
+            
+            bool em = false;
+
+            CRUD.sql = "SELECT DOCUMENTO FROM DOCUMENTOS WHERE DOC_ID = " + txtSelecionado.Text + ";";
+            CRUD.con.Open();
+            using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+            {
+                using (reader = CRUD.cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        em = true;
+                        byte[] fileData = (byte[])reader.GetValue(0);
+
+                        using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                        {
+                            using (BinaryWriter bw = new BinaryWriter(fs))
+                            {
+                                bw.Write(fileData);
+                                bw.Close();
+
+                            }
+                        }
+                        System.Diagnostics.Process.Start(filename);
+
+                        //MessageBox.Show("Download concluído.", "Download Documento",
+                        //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            CRUD.con.Close();
+        }
     }
 }

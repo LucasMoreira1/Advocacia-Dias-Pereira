@@ -50,6 +50,8 @@
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnPesquisaID = new System.Windows.Forms.Button();
+            this.btnPesquisaFiltro = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +128,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 112);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 151);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -138,7 +140,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 476);
+            this.dataGridView1.Size = new System.Drawing.Size(1011, 437);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -313,6 +315,7 @@
             this.btnPesquisar.TabIndex = 25;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Visible = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnMostrarTodos
@@ -325,6 +328,7 @@
             this.btnMostrarTodos.TabIndex = 25;
             this.btnMostrarTodos.Text = "Mostrar Todos";
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Visible = false;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // btnAtualizar
@@ -351,11 +355,35 @@
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
+            // btnPesquisaID
+            // 
+            this.btnPesquisaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisaID.Location = new System.Drawing.Point(10, 109);
+            this.btnPesquisaID.Name = "btnPesquisaID";
+            this.btnPesquisaID.Size = new System.Drawing.Size(120, 36);
+            this.btnPesquisaID.TabIndex = 26;
+            this.btnPesquisaID.Text = "Pesquisar ID";
+            this.btnPesquisaID.UseVisualStyleBackColor = true;
+            this.btnPesquisaID.Click += new System.EventHandler(this.btnPesquisaID_Click);
+            // 
+            // btnPesquisaFiltro
+            // 
+            this.btnPesquisaFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisaFiltro.Location = new System.Drawing.Point(137, 109);
+            this.btnPesquisaFiltro.Name = "btnPesquisaFiltro";
+            this.btnPesquisaFiltro.Size = new System.Drawing.Size(248, 36);
+            this.btnPesquisaFiltro.TabIndex = 26;
+            this.btnPesquisaFiltro.Text = "Pesquisar Filtro";
+            this.btnPesquisaFiltro.UseVisualStyleBackColor = true;
+            this.btnPesquisaFiltro.Click += new System.EventHandler(this.btnPesquisaFiltro_Click);
+            // 
             // FormPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 612);
+            this.Controls.Add(this.btnPesquisaFiltro);
+            this.Controls.Add(this.btnPesquisaID);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnAtualizar);
@@ -407,5 +435,7 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnPesquisaID;
+        private System.Windows.Forms.Button btnPesquisaFiltro;
     }
 }

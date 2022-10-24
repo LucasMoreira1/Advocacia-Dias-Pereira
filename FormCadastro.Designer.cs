@@ -140,6 +140,7 @@
             // 
             // txtNacionalidade
             // 
+            this.txtNacionalidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNacionalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNacionalidade.Location = new System.Drawing.Point(146, 98);
             this.txtNacionalidade.Name = "txtNacionalidade";
@@ -158,6 +159,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnBuscarCEP);
             this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label17);
@@ -173,7 +175,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(14, 350);
+            this.groupBox2.Location = new System.Drawing.Point(71, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 177);
             this.groupBox2.TabIndex = 1;
@@ -273,6 +275,7 @@
             // 
             // txtComplemento
             // 
+            this.txtComplemento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplemento.Location = new System.Drawing.Point(755, 51);
             this.txtComplemento.Name = "txtComplemento";
@@ -281,6 +284,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Location = new System.Drawing.Point(102, 115);
             this.txtEstado.Name = "txtEstado";
@@ -289,6 +293,7 @@
             // 
             // txtCidade
             // 
+            this.txtCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(522, 83);
             this.txtCidade.Name = "txtCidade";
@@ -297,6 +302,7 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.Location = new System.Drawing.Point(102, 83);
             this.txtBairro.Name = "txtBairro";
@@ -305,6 +311,7 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.Location = new System.Drawing.Point(522, 51);
             this.txtNumero.Name = "txtNumero";
@@ -313,6 +320,7 @@
             // 
             // txtLogradouro
             // 
+            this.txtLogradouro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(102, 51);
             this.txtLogradouro.Name = "txtLogradouro";
@@ -321,6 +329,7 @@
             // 
             // txtObservacao
             // 
+            this.txtObservacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacao.Location = new System.Drawing.Point(6, 22);
             this.txtObservacao.Multiline = true;
@@ -331,6 +340,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
             this.groupBox4.Controls.Add(this.btnGerarDocumentos);
@@ -339,7 +349,7 @@
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.txtObservacao);
-            this.groupBox4.Location = new System.Drawing.Point(14, 1041);
+            this.groupBox4.Location = new System.Drawing.Point(71, 1041);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(906, 115);
             this.groupBox4.TabIndex = 5;
@@ -426,6 +436,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(146, 284);
             this.txtEmail.Name = "txtEmail";
@@ -493,6 +504,7 @@
             // 
             // txtAutor
             // 
+            this.txtAutor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutor.Location = new System.Drawing.Point(146, 61);
             this.txtAutor.Name = "txtAutor";
@@ -511,6 +523,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCPF);
@@ -537,7 +550,7 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(14, 11);
+            this.groupBox1.Location = new System.Drawing.Point(71, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(906, 333);
             this.groupBox1.TabIndex = 0;
@@ -697,6 +710,7 @@
             // 
             // txtProfissao
             // 
+            this.txtProfissao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtProfissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProfissao.Location = new System.Drawing.Point(146, 135);
             this.txtProfissao.Name = "txtProfissao";
@@ -705,6 +719,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.txtTelefoneReu);
             this.groupBox3.Controls.Add(this.label1);
@@ -712,7 +727,7 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(14, 533);
+            this.groupBox3.Location = new System.Drawing.Point(71, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(906, 82);
             this.groupBox3.TabIndex = 2;
@@ -752,6 +767,7 @@
             // 
             // txtReu
             // 
+            this.txtReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReu.Location = new System.Drawing.Point(145, 19);
             this.txtReu.Name = "txtReu";
@@ -788,6 +804,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox5.Controls.Add(this.btnBuscarCEPReu);
             this.groupBox5.Controls.Add(this.txtCEPReu);
             this.groupBox5.Controls.Add(this.label32);
@@ -803,7 +820,7 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(14, 621);
+            this.groupBox5.Location = new System.Drawing.Point(71, 621);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(906, 177);
             this.groupBox5.TabIndex = 3;
@@ -903,6 +920,7 @@
             // 
             // txtComplementoReu
             // 
+            this.txtComplementoReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtComplementoReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplementoReu.Location = new System.Drawing.Point(755, 51);
             this.txtComplementoReu.Name = "txtComplementoReu";
@@ -911,6 +929,7 @@
             // 
             // txtEstadoReu
             // 
+            this.txtEstadoReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstadoReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoReu.Location = new System.Drawing.Point(102, 115);
             this.txtEstadoReu.Name = "txtEstadoReu";
@@ -919,6 +938,7 @@
             // 
             // txtCidadeReu
             // 
+            this.txtCidadeReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCidadeReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidadeReu.Location = new System.Drawing.Point(522, 83);
             this.txtCidadeReu.Name = "txtCidadeReu";
@@ -927,6 +947,7 @@
             // 
             // txtBairroReu
             // 
+            this.txtBairroReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairroReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairroReu.Location = new System.Drawing.Point(102, 83);
             this.txtBairroReu.Name = "txtBairroReu";
@@ -935,6 +956,7 @@
             // 
             // txtNumeroReu
             // 
+            this.txtNumeroReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumeroReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroReu.Location = new System.Drawing.Point(522, 51);
             this.txtNumeroReu.Name = "txtNumeroReu";
@@ -943,6 +965,7 @@
             // 
             // txtLogradouroReu
             // 
+            this.txtLogradouroReu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLogradouroReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouroReu.Location = new System.Drawing.Point(102, 51);
             this.txtLogradouroReu.Name = "txtLogradouroReu";
@@ -951,6 +974,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.txtDataAudiencia);
             this.groupBox6.Controls.Add(this.txtDataPericia);
@@ -974,7 +998,7 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(14, 804);
+            this.groupBox6.Location = new System.Drawing.Point(71, 804);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(906, 231);
             this.groupBox6.TabIndex = 4;
@@ -1078,6 +1102,7 @@
             // 
             // txtTipoAudiencia
             // 
+            this.txtTipoAudiencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTipoAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoAudiencia.Location = new System.Drawing.Point(513, 124);
             this.txtTipoAudiencia.Name = "txtTipoAudiencia";
@@ -1086,6 +1111,7 @@
             // 
             // txtAssunto1
             // 
+            this.txtAssunto1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAssunto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssunto1.Location = new System.Drawing.Point(146, 124);
             this.txtAssunto1.Name = "txtAssunto1";
@@ -1094,6 +1120,7 @@
             // 
             // txtProcesso
             // 
+            this.txtProcesso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcesso.Location = new System.Drawing.Point(146, 19);
             this.txtProcesso.Name = "txtProcesso";
@@ -1182,6 +1209,7 @@
             // 
             // txtAssunto3
             // 
+            this.txtAssunto3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAssunto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssunto3.Location = new System.Drawing.Point(146, 193);
             this.txtAssunto3.Name = "txtAssunto3";
@@ -1190,6 +1218,7 @@
             // 
             // txtAssunto2
             // 
+            this.txtAssunto2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAssunto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssunto2.Location = new System.Drawing.Point(146, 159);
             this.txtAssunto2.Name = "txtAssunto2";
@@ -1198,6 +1227,7 @@
             // 
             // txtNatProcesso
             // 
+            this.txtNatProcesso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNatProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNatProcesso.Location = new System.Drawing.Point(146, 88);
             this.txtNatProcesso.Name = "txtNatProcesso";
@@ -1206,6 +1236,7 @@
             // 
             // txtIdProcesso
             // 
+            this.txtIdProcesso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdProcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdProcesso.Location = new System.Drawing.Point(146, 54);
             this.txtIdProcesso.Name = "txtIdProcesso";
@@ -1217,13 +1248,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(945, 817);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1095, 817);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(16, 39);
             this.Name = "FormCadastro";
