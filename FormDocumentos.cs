@@ -65,7 +65,7 @@ namespace Advocacia_Dias_Pereira
 
         private void btnBaixar_Click(object sender, EventArgs e)
         {
-
+            CRUD.con.Close();
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = dataGridView1.SelectedCells[3].Value.ToString();
 
@@ -145,6 +145,7 @@ namespace Advocacia_Dias_Pereira
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
+            CRUD.con.Close();
             SaveFileDialog sfd = new SaveFileDialog();
             string dir = Path.GetTempPath();
 
