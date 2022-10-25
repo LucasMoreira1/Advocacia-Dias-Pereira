@@ -121,7 +121,7 @@ namespace Advocacia_Dias_Pereira
                 mySaveFileDialog.ShowDialog();
 
                 //Executar comando para converter os dados do arquivo modelo e salvar no destino.
-                CreateWordDocument("C:\\Agility\\Modelo_Declaracao_Hipo.docx",
+                CreateWordDocument(localFileName,
                     mySaveFileDialog.FileName.ToString());
                               
 
