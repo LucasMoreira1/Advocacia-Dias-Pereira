@@ -633,6 +633,47 @@ namespace Advocacia_Dias_Pereira
             FormSelecionarDocumento formSelecionarDocumento = new FormSelecionarDocumento();
             formSelecionarDocumento.txtIDAutor.Text = txtCadNumero.Text;
             formSelecionarDocumento.txtAutor.Text = txtAutor.Text;
+            formSelecionarDocumento.txtNacionalidade.Text = txtNacionalidade.Text;
+            formSelecionarDocumento.cboxEstadoCivil.Text = cboxEstadoCivil.Text;
+            formSelecionarDocumento.txtRG.Text = txtRG.Text;
+            formSelecionarDocumento.txtCPF.Text = txtCPF.Text;
+            formSelecionarDocumento.txtDataNascimento.Text = txtDataNascimento.Text;
+            formSelecionarDocumento.txtEmail.Text = txtEmail.Text;
+            formSelecionarDocumento.txtTelefone1.Text = txtTelefone1.Text;
+            formSelecionarDocumento.txtTelefone2.Text = txtTelefone2.Text;
+            formSelecionarDocumento.txtCEP.Text = txtCEP.Text;
+            formSelecionarDocumento.txtLogradouro.Text = txtLogradouro.Text;
+            formSelecionarDocumento.txtNumero.Text = txtNumero.Text;
+            formSelecionarDocumento.txtComplemento.Text = txtComplemento.Text;
+            formSelecionarDocumento.txtBairro.Text = txtBairro.Text;
+            formSelecionarDocumento.txtCidade.Text = txtCidade.Text;
+            formSelecionarDocumento.txtEstado.Text = txtEstado.Text;
+            formSelecionarDocumento.txtReu.Text = txtReu.Text;
+            formSelecionarDocumento.txtCNPJ.Text = txtCNPJ.Text;
+            formSelecionarDocumento.txtTelefoneReu.Text = txtTelefoneReu.Text;
+            formSelecionarDocumento.txtCEPReu.Text = txtCEPReu.Text;
+            formSelecionarDocumento.txtLogradouroReu.Text = txtLogradouroReu.Text;
+            formSelecionarDocumento.txtNumeroReu.Text = txtNumeroReu.Text;
+            formSelecionarDocumento.txtComplementoReu.Text = txtComplementoReu.Text;
+            formSelecionarDocumento.txtBairroReu.Text = txtBairroReu.Text;
+            formSelecionarDocumento.txtCidadeReu.Text = txtCidadeReu.Text;
+            formSelecionarDocumento.txtEstadoReu.Text = txtEstadoReu.Text;
+            formSelecionarDocumento.txtProcesso.Text = txtProcesso.Text;
+            formSelecionarDocumento.cboxTipoProcesso.Text = cboxTipoProcesso.Text;
+            formSelecionarDocumento.txtIdProcesso.Text = txtIdProcesso.Text;
+            formSelecionarDocumento.cboxStatusProcesso.Text = cboxStatusProcesso.Text;
+            formSelecionarDocumento.txtNatProcesso.Text = txtNatProcesso.Text;
+            formSelecionarDocumento.txtAssunto1.Text = txtAssunto1.Text;
+            formSelecionarDocumento.txtAssunto2.Text = txtAssunto2.Text;
+            formSelecionarDocumento.txtAssunto3.Text = txtAssunto3.Text;
+            formSelecionarDocumento.txtDataPericia.Text = txtDataPericia.Text;
+            formSelecionarDocumento.txtTipoAudiencia.Text = txtTipoAudiencia.Text;
+            formSelecionarDocumento.txtDataAudiencia.Text = txtDataAudiencia.Text;
+            formSelecionarDocumento.txtObservacao.Text = txtObservacao.Text;
+
+
+
+
             formSelecionarDocumento.Show();
 
             //FormGerarDocumentos formGerarDocumentos = new FormGerarDocumentos();

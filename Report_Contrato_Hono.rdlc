@@ -47,7 +47,31 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Eu, </Value>
+                <Value>Pelo presente instrumento particular de Contrato de Honorários, que fazem </Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>VANESSA APARECIDA DIAS PEREIRA</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, advogada, regularmente inscrita na Ordem dos Advogados do Brasil, Seção São Paulo, sob o nº. OAB/SP 391.187, com endereço eletrônico vanessadiaspereira.adv@gmail.com, com escritório na Rua Dr. Pompilio Mercadante, nº. 398, Ed. Boulevard, sala 1317, centrom CEP 12.308-510, Jacareí - SP, doravante denominada contrada, e de outro lado </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -71,7 +95,31 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value> , portador(a) da Cédula de Identidade RG nº </Value>
+                <Value>, </Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=UCase(Fields!Nacionalidade.Value)</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, portadora da Cédula de Identidade RG nº </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -95,7 +143,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value> SSP-SP, inscrito(a) no CPF sob o nº </Value>
+                <Value> SSP-SP, inscrita no CPF sob o nº </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -119,7 +167,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>, residente e domiciliado(a) na </Value>
+                <Value>, residente e domiciliada na </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -167,7 +215,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>, bairro </Value>
+                <Value>, no bairro </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -191,7 +239,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>, CEP </Value>
+                <Value>, CEP: </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -239,7 +287,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>-</Value>
+                <Value> - </Value>
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -263,7 +311,138 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>. Declaro para os devidos fins, que não tenho como arcar com as custas processuais, e nem quaisquer outras despesas processuais, sem o prejuízo de meu sustento e de minha família.</Value>
+                <Value>, doravante denominado(a) "contratante", tem si, justo e contratado o seguinte:</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          1. A advogada contratada prestará serviços de propor </Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>RECLAMAÇÃO TRABALHISTA.</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          2. O(A) contratante pagará à contratada 30% sobre o valor que vier a receber.</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          3. Não se compreende nas quantias acima estipuladas quaiquer despesas judiciais ou extras, tais como custas processuais, honrários de terceiros (peritos, cálculos, etc.) e despesas de viagem, reconhecimento de firma, quando necessárias.</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          4. O(A) contratante será obrigado(a) a fornecer numerário necessário para a satisfação das referidas despesas, e informações de modo a não interromper o andamento do processo, quando for o caso, ou dos trabalhos extrajudiciai, e, não o fazendo, fica a contratada isenta de qualquer responsabilidade pela demorada ou interrupção que dela resulte.</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          5. A contratada terá direito aos honorários estabelecidos na cláusula segunda se o contratante retirar o mandato antes de terminada a causa ou transigir de qualquer forma com a parte contraria impedindo o seguimento do feito, quando se trata de prestação de serviço contencioso judicial.</Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>          6. </Value>
+                <MarkupType>HTML</MarkupType>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
                 <MarkupType>HTML</MarkupType>
                 <Style>
                   <FontStyle>Normal</FontStyle>
@@ -366,39 +545,6 @@
           </Border>
         </Style>
       </Line>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Code.TextOnlyJustify(Variables!GiantText.Value + vbcrlf+"Blah de blah de blahblahblah! I hope this formats well here!",new System.Drawing.Font("Calibri",10.5), true, 1200)</Value>
-                <Style>
-                  <FontFamily>Verdana</FontFamily>
-                  <FontSize>12pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.45486in</Top>
-        <Left>1.17646in</Left>
-        <Height>1.03819in</Height>
-        <Width>5.9148in</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
     <Height>19.46137cm</Height>
     <Style />
