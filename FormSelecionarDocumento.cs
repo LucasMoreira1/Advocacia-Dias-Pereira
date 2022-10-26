@@ -64,21 +64,63 @@ namespace Advocacia_Dias_Pereira
 
                 myWordDoc.Activate();
 
-                this.FindAndReplace(wordApp, "[NOME]", txtAutor.Text);
+                //this.FindAndReplace(wordApp, "[AUTOR]", txtAutor.Text);
+                //this.FindAndReplace(wordApp, "[NOME]", txtAutor.Text);
+                //this.FindAndReplace(wordApp, "[RG]", txtRG.Text);
+                //this.FindAndReplace(wordApp, "[CPF]", txtCPF.Text);
+                //this.FindAndReplace(wordApp, "[NUMERO]", txtNumero.Text);
+                //this.FindAndReplace(wordApp, "[LOGRADOURO]", txtLogradouro.Text);
+                //this.FindAndReplace(wordApp, "[BAIRRO]", txtBairro.Text);
+                //this.FindAndReplace(wordApp, "[CIDADE]", txtCidade.Text);
+                //this.FindAndReplace(wordApp, "[ESTADO]", txtEstado.Text);
+                //this.FindAndReplace(wordApp, "[CEP]", txtCEP.Text);
+                //this.FindAndReplace(wordApp, "[DATA]", DateTime.Now.ToShortDateString()) ;
+
+                //this.FindAndReplace(wordApp, "[CAD_NUMERO]", txtCadNumero.Text;
+                this.FindAndReplace(wordApp, "[AUTOR]", txtAutor.Text);
+                this.FindAndReplace(wordApp, "[NACIONALIDADE]", txtNacionalidade.Text);
+                this.FindAndReplace(wordApp, "[ESTADO_CIVIL]", cboxEstadoCivil.Text);
                 this.FindAndReplace(wordApp, "[RG]", txtRG.Text);
                 this.FindAndReplace(wordApp, "[CPF]", txtCPF.Text);
-                this.FindAndReplace(wordApp, "[NUMERO]", txtNumero.Text);
+                this.FindAndReplace(wordApp, "[DATA_NASCIMENTO]", txtDataNascimento.Text);
+                this.FindAndReplace(wordApp, "[EMAIL]", txtEmail.Text);
+                this.FindAndReplace(wordApp, "[TELEFONE1]", txtTelefone1.Text);
+                this.FindAndReplace(wordApp, "[TELEFONE2]", txtTelefone2.Text);
+                this.FindAndReplace(wordApp, "[CEP]", txtCEP.Text);
                 this.FindAndReplace(wordApp, "[LOGRADOURO]", txtLogradouro.Text);
+                this.FindAndReplace(wordApp, "[NUMERO]", txtNumero.Text);
+                this.FindAndReplace(wordApp, "[COMPLEMENTO]", txtComplemento.Text);
                 this.FindAndReplace(wordApp, "[BAIRRO]", txtBairro.Text);
                 this.FindAndReplace(wordApp, "[CIDADE]", txtCidade.Text);
                 this.FindAndReplace(wordApp, "[ESTADO]", txtEstado.Text);
-                this.FindAndReplace(wordApp, "[CEP]", txtCEP.Text);
-                this.FindAndReplace(wordApp, "[DATA]", DateTime.Now.ToShortDateString()) ;
-
+                this.FindAndReplace(wordApp, "[REU]", txtReu.Text);
+                this.FindAndReplace(wordApp, "[CNPJ_REU]", txtCNPJ.Text);
+                this.FindAndReplace(wordApp, "[TELEFONER_REU]", txtTelefoneReu.Text);
+                this.FindAndReplace(wordApp, "[CEP_REU]", txtCEPReu.Text);
+                this.FindAndReplace(wordApp, "[LAGRADOURO_REU]", txtLogradouroReu.Text);
+                this.FindAndReplace(wordApp, "[NUMERO_REU]", txtNumeroReu.Text);
+                this.FindAndReplace(wordApp, "[COMPLEMENTO_REU]", txtComplementoReu.Text);
+                this.FindAndReplace(wordApp, "[BAIRRO_REU]", txtBairroReu.Text);
+                this.FindAndReplace(wordApp, "[CIDADE_REU]", txtCidadeReu.Text);
+                this.FindAndReplace(wordApp, "[ESTADO_REU]", txtEstadoReu.Text);
+                this.FindAndReplace(wordApp, "[PROCESSO]", txtProcesso.Text);
+                this.FindAndReplace(wordApp, "[TIPO_PROCESSO]", cboxTipoProcesso.Text);
+                this.FindAndReplace(wordApp, "[ID_PROCESSO]", txtIdProcesso.Text);
+                this.FindAndReplace(wordApp, "[STATUS_PROCESSO]", cboxStatusProcesso.Text);
+                this.FindAndReplace(wordApp, "[NAT_PROCESSO]", txtNatProcesso.Text);
+                this.FindAndReplace(wordApp, "[ASSUNTO1]", txtAssunto1.Text);
+                this.FindAndReplace(wordApp, "[ASSUNTO2]", txtAssunto2.Text);
+                this.FindAndReplace(wordApp, "[ASSUNTO3]", txtAssunto3.Text);
+                this.FindAndReplace(wordApp, "[DATA_PERICIA]", txtDataPericia.Text);
+                this.FindAndReplace(wordApp, "[TIPO_AUDIENCIA]", txtTipoAudiencia.Text);
+                this.FindAndReplace(wordApp, "[DATA_AUDIENCIA]", txtDataAudiencia.Text);
+                this.FindAndReplace(wordApp, "[OBSERVACAO]", txtObservacao.Text);
+                this.FindAndReplace(wordApp, "[DATA]", DateTime.Now.ToShortDateString());
             }
             else
             {
-                MessageBox.Show("Arquivo modelo não encontrado");
+                MessageBox.Show("Arquivo modelo não encontrado","Documento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
 
             myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
@@ -89,7 +131,7 @@ namespace Advocacia_Dias_Pereira
 
             myWordDoc.Close();
             wordApp.Quit();
-            MessageBox.Show("Arquivo criado!");
+            MessageBox.Show("Arquivo criado!","Documento.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -98,9 +140,25 @@ namespace Advocacia_Dias_Pereira
             
             if (cboxDocumento.Text == "1 - CONTRATO DE HONORARIOS ADVOCATÍCIOS")
             {
-                FormContratoHonorario formContratoHonorario = new FormContratoHonorario();
-                formContratoHonorario.txtIDCliente.Text = txtIDAutor.Text;
-                formContratoHonorario.Show();
+                //Baixar arquivo modelo da Web//
+                //Converter para string a pasta %temp%
+                string dir = Path.GetTempPath();
+                //Fazer download do arquivo modelo
+                System.Net.WebClient client = new System.Net.WebClient();
+                //Diretorio Web onde está o documento
+                string url = "https://sistema.solucoesagility.com.br/Modelo_Contrato_Hono.docx";
+                //Salvar documento na pasta %temp%
+                string localFileName = dir + "Modelo_Contrato_Hono.docx";
+                client.DownloadFile(url, localFileName);
+
+                //Abir dialog para salvar o arquivo atualizado
+                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                mySaveFileDialog.FileName = "Contrato_Honorarios_"+txtAutor.Text+".docx";
+                mySaveFileDialog.ShowDialog();
+
+                //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                CreateWordDocument(localFileName,
+                    mySaveFileDialog.FileName.ToString());
             }
             else if (cboxDocumento.Text == "2 - DECLARAÇÃO DE HIPOSSUFICIÊNCIA")
             {
@@ -117,7 +175,7 @@ namespace Advocacia_Dias_Pereira
 
                 //Abir dialog para salvar o arquivo atualizado
                 SaveFileDialog mySaveFileDialog = new SaveFileDialog();
-                mySaveFileDialog.FileName = "Declaracao_Hipo_"+txtAutor.Text+".docx";
+                mySaveFileDialog.FileName = "Declaracao_Hipossuficiencia_"+txtAutor.Text+".docx";
                 mySaveFileDialog.ShowDialog();
 
                 //Executar comando para converter os dados do arquivo modelo e salvar no destino.
@@ -128,15 +186,47 @@ namespace Advocacia_Dias_Pereira
             }
             else if (cboxDocumento.Text == "3 - MANIFESTAÇÃO")
             {
-                FormManifestacao formManifestacao = new FormManifestacao();
-                formManifestacao.txtIDCliente.Text = txtIDAutor.Text;
-                formManifestacao.Show();
+                //Baixar arquivo modelo da Web//
+                //Converter para string a pasta %temp%
+                string dir = Path.GetTempPath();
+                //Fazer download do arquivo modelo
+                System.Net.WebClient client = new System.Net.WebClient();
+                //Diretorio Web onde está o documento
+                string url = "https://sistema.solucoesagility.com.br/Modelo_Manifesto.docx";
+                //Salvar documento na pasta %temp%
+                string localFileName = dir + "Modelo_Manifesto.docx";
+                client.DownloadFile(url, localFileName);
+
+                //Abir dialog para salvar o arquivo atualizado
+                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                mySaveFileDialog.FileName = "Manifesto_" + txtAutor.Text + ".docx";
+                mySaveFileDialog.ShowDialog();
+
+                //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                CreateWordDocument(localFileName,
+                    mySaveFileDialog.FileName.ToString());
             }
             else if (cboxDocumento.Text == "4 - PROCURAÇÃO")
             {
-                FormProcuracao formProcuracao = new FormProcuracao();
-                formProcuracao.txtIDCliente.Text = txtIDAutor.Text;
-                formProcuracao.Show();
+                //Baixar arquivo modelo da Web//
+                //Converter para string a pasta %temp%
+                string dir = Path.GetTempPath();
+                //Fazer download do arquivo modelo
+                System.Net.WebClient client = new System.Net.WebClient();
+                //Diretorio Web onde está o documento
+                string url = "https://sistema.solucoesagility.com.br/Modelo_Procuracao.docx";
+                //Salvar documento na pasta %temp%
+                string localFileName = dir + "Modelo_Procuracao.docx";
+                client.DownloadFile(url, localFileName);
+
+                //Abir dialog para salvar o arquivo atualizado
+                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                mySaveFileDialog.FileName = "Procuracao_" + txtAutor.Text + ".docx";
+                mySaveFileDialog.ShowDialog();
+
+                //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                CreateWordDocument(localFileName,
+                    mySaveFileDialog.FileName.ToString());
             }
             
         }
