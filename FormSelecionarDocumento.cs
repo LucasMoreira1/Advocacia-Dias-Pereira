@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -53,8 +54,8 @@ namespace Advocacia_Dias_Pereira
             if (File.Exists((string)filename))
             {
                 object readOnly = false;
-                object isVisible = false;
-                wordApp.Visible = false;
+                object isVisible = true;
+                wordApp.Visible = true;
 
                 myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
                     ref missing, ref missing, ref missing,
@@ -129,9 +130,9 @@ namespace Advocacia_Dias_Pereira
                 ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing);
 
-            myWordDoc.Close();
-            wordApp.Quit();
-            MessageBox.Show("Arquivo criado!","Documento.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //myWordDoc.Close();
+            //wordApp.Quit();
+            //MessageBox.Show("Arquivo criado!","Documento.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -152,13 +153,15 @@ namespace Advocacia_Dias_Pereira
                 client.DownloadFile(url, localFileName);
 
                 //Abir dialog para salvar o arquivo atualizado
-                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
-                mySaveFileDialog.FileName = "Contrato_Honorarios_"+txtAutor.Text+".docx";
-                mySaveFileDialog.ShowDialog();
+                //SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                //mySaveFileDialog.FileName = "Contrato_Honorarios_"+txtAutor.Text+".docx";
+                //mySaveFileDialog.ShowDialog();
 
                 //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                //CreateWordDocument(localFileName,
+                //    mySaveFileDialog.FileName.ToString());
                 CreateWordDocument(localFileName,
-                    mySaveFileDialog.FileName.ToString());
+                    "Honorarios_" + txtAutor.Text);
             }
             else if (cboxDocumento.Text == "2 - DECLARAÇÃO DE HIPOSSUFICIÊNCIA")
             {
@@ -174,14 +177,16 @@ namespace Advocacia_Dias_Pereira
                 client.DownloadFile(url, localFileName);
 
                 //Abir dialog para salvar o arquivo atualizado
-                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
-                mySaveFileDialog.FileName = "Declaracao_Hipossuficiencia_"+txtAutor.Text+".docx";
-                mySaveFileDialog.ShowDialog();
+                //SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                //mySaveFileDialog.FileName = "Declaracao_Hipossuficiencia_"+txtAutor.Text+".docx";
+                //mySaveFileDialog.ShowDialog();
 
                 //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                //CreateWordDocument(localFileName,
+                //    mySaveFileDialog.FileName.ToString());
                 CreateWordDocument(localFileName,
-                    mySaveFileDialog.FileName.ToString());
-                              
+                    "Hipossuficiencia_" + txtAutor.Text);
+
 
             }
             else if (cboxDocumento.Text == "3 - MANIFESTAÇÃO")
@@ -198,13 +203,14 @@ namespace Advocacia_Dias_Pereira
                 client.DownloadFile(url, localFileName);
 
                 //Abir dialog para salvar o arquivo atualizado
-                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
-                mySaveFileDialog.FileName = "Manifesto_" + txtAutor.Text + ".docx";
-                mySaveFileDialog.ShowDialog();
+                //SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                //mySaveFileDialog.FileName = "Manifesto_" + txtAutor.Text + ".docx";
+                //mySaveFileDialog.ShowDialog();
 
-                //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                //CreateWordDocument(localFileName,
+                //    mySaveFileDialog.FileName.ToString());
                 CreateWordDocument(localFileName,
-                    mySaveFileDialog.FileName.ToString());
+                    "Manifesto_" + txtAutor.Text);
             }
             else if (cboxDocumento.Text == "4 - PROCURAÇÃO")
             {
@@ -220,13 +226,14 @@ namespace Advocacia_Dias_Pereira
                 client.DownloadFile(url, localFileName);
 
                 //Abir dialog para salvar o arquivo atualizado
-                SaveFileDialog mySaveFileDialog = new SaveFileDialog();
-                mySaveFileDialog.FileName = "Procuracao_" + txtAutor.Text + ".docx";
-                mySaveFileDialog.ShowDialog();
+                //SaveFileDialog mySaveFileDialog = new SaveFileDialog();
+                //mySaveFileDialog.FileName = "Procuracao_" + txtAutor.Text + ".docx";
+                //mySaveFileDialog.ShowDialog();
 
-                //Executar comando para converter os dados do arquivo modelo e salvar no destino.
+                //CreateWordDocument(localFileName,
+                //    mySaveFileDialog.FileName.ToString());
                 CreateWordDocument(localFileName,
-                    mySaveFileDialog.FileName.ToString());
+                    "Procuracao_" + txtAutor.Text);
             }
             
         }
