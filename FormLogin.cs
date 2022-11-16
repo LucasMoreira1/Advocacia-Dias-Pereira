@@ -8,6 +8,7 @@ namespace Advocacia_Dias_Pereira
     public partial class FormLogin : Form
     {
         int i;
+        
         public FormLogin()
         {
             InitializeComponent();
@@ -38,6 +39,11 @@ namespace Advocacia_Dias_Pereira
             {
                 this.Hide();
                 FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
+                formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
+              
+                // Logger.LoginName(txtLogin.Text);
+                //Logger.WriteLog("Login no sistema",txtLogin.Text);
+                
                 formPaginaInicial.Show();
 
             }
@@ -45,9 +51,7 @@ namespace Advocacia_Dias_Pereira
             {
                 this.Hide();
                 FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
-                //formPaginaInicial.btnPesquisar.Visible = false;
-                formPaginaInicial.btnDocumentos.Visible = false;
-                //formPaginaInicial.btnRelatorios.Visible = false;
+                formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
 
                 formPaginaInicial.Show();
             }

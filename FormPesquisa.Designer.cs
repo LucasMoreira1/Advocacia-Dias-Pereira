@@ -52,6 +52,7 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnPesquisaID = new System.Windows.Forms.Button();
             this.btnPesquisaFiltro = new System.Windows.Forms.Button();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -377,11 +378,19 @@
             this.btnPesquisaFiltro.UseVisualStyleBackColor = true;
             this.btnPesquisaFiltro.Click += new System.EventHandler(this.btnPesquisaFiltro_Click);
             // 
+            // txtNomeLogin
+            // 
+            this.txtNomeLogin.Location = new System.Drawing.Point(420, 24);
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLogin.TabIndex = 27;
+            // 
             // FormPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 612);
+            this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.btnPesquisaFiltro);
             this.Controls.Add(this.btnPesquisaID);
             this.Controls.Add(this.btnDeletar);
@@ -437,5 +446,6 @@
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnPesquisaID;
         private System.Windows.Forms.Button btnPesquisaFiltro;
+        public System.Windows.Forms.TextBox txtNomeLogin;
     }
 }

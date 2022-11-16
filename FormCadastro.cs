@@ -80,6 +80,7 @@ namespace Advocacia_Dias_Pereira
             fileStream.Read(contents, 0, (int)contents.Length);
             fileStream.Close();
             string nomedocumento = Path.GetFileName(filename);
+            txtNomeDocumento.Text = nomedocumento;
             
             CRUD.cmd.Parameters.AddWithValue("Documento", contents);
             CRUD.cmd.Parameters.AddWithValue("Nome_Documento", nomedocumento.Trim());
@@ -187,6 +188,8 @@ namespace Advocacia_Dias_Pereira
             // .CurrentRow.Cells[0].Value
             dgv.Visible = false;
 
+            //Logger.WriteLog("Cliente registrado: " + NumeroRegistro, txtNomeLogin.Text);
+
             MessageBox.Show("Cliente registrado. ID número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -253,6 +256,8 @@ namespace Advocacia_Dias_Pereira
                 "dataaudiencia = @dataaudiencia, observacao = @observacao WHERE ID = @CadNumero";
 
             Executar(CRUD.sql, "Update");
+
+            //Logger.WriteLog("Dados do registro: " + txtCadNumero + " atualizados", txtNomeLogin.Text);
 
             MessageBox.Show("Dados atualizados.", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -603,6 +608,7 @@ namespace Advocacia_Dias_Pereira
 
                         Executar(CRUD.sql, "Insert");
 
+                        //Logger.WriteLog("Anexou o documento: " + txtNomeDocumento.Text, txtNomeLogin.Text);
                         MessageBox.Show("Documento salvo.", "Envio Documento",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -623,6 +629,7 @@ namespace Advocacia_Dias_Pereira
                 return;
             }
             FormDocumentos formDocumentos = new FormDocumentos();
+            formDocumentos.txtNomeLogin.Text = txtNomeLogin.Text;
             formDocumentos.txtCadCliente.Text = txtCadNumero.Text;
             formDocumentos.txtNomeCliente.Text = txtAutor.Text;
             formDocumentos.Show();
@@ -631,6 +638,7 @@ namespace Advocacia_Dias_Pereira
         private void btnGerarDocumentos_Click(object sender, EventArgs e)
         {
             FormSelecionarDocumento formSelecionarDocumento = new FormSelecionarDocumento();
+            formSelecionarDocumento.txtNomeLogin.Text = txtNomeLogin.Text;
             formSelecionarDocumento.txtIDAutor.Text = txtCadNumero.Text;
             formSelecionarDocumento.txtAutor.Text = txtAutor.Text;
             formSelecionarDocumento.txtNacionalidade.Text = txtNacionalidade.Text;
@@ -679,6 +687,15 @@ namespace Advocacia_Dias_Pereira
             //FormGerarDocumentos formGerarDocumentos = new FormGerarDocumentos();
             //formGerarDocumentos.txtIDCliente.Text = txtCadNumero.Text;
             //formGerarDocumentos.Show();
+
+        }
+
+        private void btnVisualizarLog_Click(object sender, EventArgs e)
+        {
+            FormVisualizarLog formVisualizarLog = new FormVisualizarLog();
+            formVisualizarLog.txtIDCadastro.Text = txtCadNumero.Text;
+            formVisualizarLog.txtNomeAutor.Text = txtAutor.Text;
+            formVisualizarLog.Show();
 
         }
     }

@@ -74,6 +74,7 @@
             this.txtReu = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.txtCNPJ = new System.Windows.Forms.TextBox();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cboxDocumento
@@ -557,11 +558,19 @@
             this.txtCNPJ.TabIndex = 17;
             this.txtCNPJ.Visible = false;
             // 
+            // txtNomeLogin
+            // 
+            this.txtNomeLogin.Location = new System.Drawing.Point(439, 250);
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLogin.TabIndex = 49;
+            // 
             // FormSelecionarDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 292);
+            this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.txtCEPReu);
             this.Controls.Add(this.txtDataPericia);
             this.Controls.Add(this.cboxStatusProcesso);
@@ -662,5 +671,6 @@
         public System.Windows.Forms.TextBox txtReu;
         public System.Windows.Forms.MaskedTextBox txtCEP;
         public System.Windows.Forms.TextBox txtCNPJ;
+        public System.Windows.Forms.TextBox txtNomeLogin;
     }
 }

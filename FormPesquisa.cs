@@ -11,10 +11,37 @@ namespace Advocacia_Dias_Pereira
     {
         private int row = 0;
         private string id = "";
+        string filename = "";
+        MySqlDataReader reader;
+        public static MySqlCommand cmd = default(MySqlCommand);
         public FormPesquisa()
         {
             InitializeComponent();
 
+        }
+        private void Executar(string mySQL, string param)
+        {
+            CRUD.cmd = new MySqlCommand(mySQL, CRUD.con);
+            AddParametros(param);
+            CRUD.PerformCRUD(CRUD.cmd);
+        }
+
+        private void AddParametros(string str)
+        {
+            CRUD.cmd.Parameters.Clear();
+
+            FileStream fileStream = File.OpenRead(filename);
+            byte[] contents = new byte[fileStream.Length];
+            fileStream.Read(contents, 0, (int)contents.Length);
+            fileStream.Close();
+
+            CRUD.cmd.Parameters.AddWithValue("LOG_FILE", contents);
+
+            //Identificação Autor
+            //CRUD.cmd.Parameters.AddWithValue("ID_CADASTRO", txtIDAutor.Text.Trim());
+            //CRUD.cmd.Parameters.AddWithValue("NOME_CADASTRO", txtAutor.Text.Trim());
+            //Informações Gerais
+            CRUD.cmd.Parameters.AddWithValue("DATA_ATUALIZACAO", Convert.ToDateTime(DateTime.Now));
         }
         private void iconButton3_Click(object sender, EventArgs e)
         {
@@ -158,23 +185,64 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
+            formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
 
+            //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);
+            //CRIAÇÃO DE LOG
+            string dir = Path.GetTempPath();
+            filename = dir + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + ".txt";
+            //Validar se já existe aquivo LOG
+            CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";";
 
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
 
-
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
+            if (dt.Rows.Count > 0)
             {
-                DataGridView dgv = dataGridView1;
-                this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-                btnAtualizar.Text = "Atualizar (" + this.id + ")";
-                btnDeletar.Text = "Deletar (" + this.id + ")";
+                //Baixar Documento de LOG
+                bool em = false;
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";";
+                CRUD.con.Open();
+                using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                {
+                    using (reader = CRUD.cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            em = true;
+                            byte[] fileData = (byte[])reader.GetValue(0);
+                            using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                            {
+                                using (BinaryWriter bw = new BinaryWriter(fs))
+                                {
+                                    bw.Write(fileData);
+                                    bw.Close();
 
+                                }
+                            }
+
+                        }
+                    }
+                }
+                CRUD.con.Close();
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Visualizando o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value)+";", txtNomeLogin.Text);
+                //Atualiza Log existente
+                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '"+ Convert.ToString(dgv.CurrentRow.Cells[0].Value)+"'";
+                Executar(CRUD.sql, "Update");
             }
+            else
+            {
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Visualizando o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + ";", txtNomeLogin.Text);
+                //Salvar Documento de LOG
+                CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                            "Values('"+ Convert.ToString(dgv.CurrentRow.Cells[0].Value)+ "', '"+Convert.ToString(dgv.CurrentRow.Cells[1].Value)+"', @LOG_FILE, @DATA_ATUALIZACAO)";
+                Executar(CRUD.sql, "Insert");
+            }
+
+
+
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -225,7 +293,9 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
+            formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
 
+            //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -251,6 +321,7 @@ namespace Advocacia_Dias_Pereira
                 CRUD.sql = "DELETE FROM CADASTRO WHERE Id = " + registroSelecionado + "";
                 CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
                 CRUD.PerformCRUD(CRUD.cmd);
+                //Logger.WriteLog("Deletou o cadastro" + registroSelecionado, txtNomeLogin.Text);
 
                 MessageBox.Show("Dados deletados com sucesso, favor atualize a pesquisa.", "Deletar dados",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -333,6 +404,11 @@ namespace Advocacia_Dias_Pereira
         private void btnPesquisaFiltro_Click(object sender, EventArgs e)
         {
             btnPesquisar_Click(sender, e);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

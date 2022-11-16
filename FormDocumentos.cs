@@ -124,7 +124,7 @@ namespace Advocacia_Dias_Pereira
                 CRUD.sql = "DELETE FROM DOCUMENTOS WHERE DOC_ID = " + txtSelecionado.Text + "";
                 CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
                 CRUD.PerformCRUD(CRUD.cmd);
-
+                //Logger.WriteLog("Deletou o documento " + (Convert.ToString(dgv.CurrentRow.Cells[3].Value)), txtNomeLogin.Text);
                 MessageBox.Show("Documento deletados com sucesso.", "Deletar Documento",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 

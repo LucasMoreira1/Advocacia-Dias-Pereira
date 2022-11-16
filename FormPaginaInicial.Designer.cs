@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPaginaInicial));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPesquisarCPF = new System.Windows.Forms.Button();
-            this.txtConsultaCPF = new System.Windows.Forms.MaskedTextBox();
             this.panelFormTitulo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
@@ -43,6 +40,7 @@
             this.btnCadastroCliente = new System.Windows.Forms.Button();
             this.btnPaginaInicial = new System.Windows.Forms.Button();
             this.panelFormCentral = new System.Windows.Forms.Panel();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,27 +57,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.Visible = false;
             // 
-            // btnPesquisarCPF
-            // 
-            this.btnPesquisarCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisarCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarCPF.Location = new System.Drawing.Point(1176, 35);
-            this.btnPesquisarCPF.Name = "btnPesquisarCPF";
-            this.btnPesquisarCPF.Size = new System.Drawing.Size(83, 33);
-            this.btnPesquisarCPF.TabIndex = 2;
-            this.btnPesquisarCPF.Text = "Pesquisar";
-            this.btnPesquisarCPF.UseVisualStyleBackColor = true;
-            // 
-            // txtConsultaCPF
-            // 
-            this.txtConsultaCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsultaCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsultaCPF.Location = new System.Drawing.Point(1047, 40);
-            this.txtConsultaCPF.Mask = "000,000,000-00";
-            this.txtConsultaCPF.Name = "txtConsultaCPF";
-            this.txtConsultaCPF.Size = new System.Drawing.Size(123, 22);
-            this.txtConsultaCPF.TabIndex = 5;
-            // 
             // panelFormTitulo
             // 
             this.panelFormTitulo.BackColor = System.Drawing.Color.Khaki;
@@ -88,18 +65,6 @@
             this.panelFormTitulo.Name = "panelFormTitulo";
             this.panelFormTitulo.Size = new System.Drawing.Size(1064, 30);
             this.panelFormTitulo.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(945, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Consulta CPF";
             // 
             // panelLogo
             // 
@@ -221,7 +186,6 @@
             this.btnPaginaInicial.TabIndex = 6;
             this.btnPaginaInicial.Text = "Pagina Inicial";
             this.btnPaginaInicial.UseVisualStyleBackColor = false;
-            this.btnPaginaInicial.Click += new System.EventHandler(this.btnPaginaInicial_Click);
             // 
             // panelFormCentral
             // 
@@ -229,15 +193,20 @@
             this.panelFormCentral.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com__1_;
             this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelFormCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFormCentral.Controls.Add(this.txtConsultaCPF);
+            this.panelFormCentral.Controls.Add(this.txtNomeLogin);
             this.panelFormCentral.Controls.Add(this.dataGridView1);
-            this.panelFormCentral.Controls.Add(this.label1);
-            this.panelFormCentral.Controls.Add(this.btnPesquisarCPF);
             this.panelFormCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormCentral.Location = new System.Drawing.Point(0, 0);
             this.panelFormCentral.Name = "panelFormCentral";
             this.panelFormCentral.Size = new System.Drawing.Size(1264, 681);
             this.panelFormCentral.TabIndex = 5;
+            // 
+            // txtNomeLogin
+            // 
+            this.txtNomeLogin.Location = new System.Drawing.Point(1108, 44);
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLogin.TabIndex = 5;
             // 
             // FormPaginaInicial
             // 
@@ -265,11 +234,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnPesquisarCPF;
-        private System.Windows.Forms.MaskedTextBox txtConsultaCPF;
         private System.Windows.Forms.Panel panelFormTitulo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelEsquerdo;
         public System.Windows.Forms.Panel panelFormCentral;
@@ -278,5 +244,6 @@
         public System.Windows.Forms.Button btnPesquisarCliente;
         public System.Windows.Forms.Button btnCadastroCliente;
         public System.Windows.Forms.Button btnPaginaInicial;
+        public System.Windows.Forms.TextBox txtNomeLogin;
     }
 }

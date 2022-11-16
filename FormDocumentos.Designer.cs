@@ -45,6 +45,7 @@
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.txtCadCliente = new System.Windows.Forms.TextBox();
             this.btnAbrir = new System.Windows.Forms.Button();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,11 +210,20 @@
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
+            // txtNomeLogin
+            // 
+            this.txtNomeLogin.Location = new System.Drawing.Point(363, 7);
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLogin.TabIndex = 10;
+            this.txtNomeLogin.Visible = false;
+            // 
             // FormDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 297);
+            this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.txtSelecionado);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnAbrir);
@@ -251,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_DOCUMENTO;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAbrir;
+        public System.Windows.Forms.TextBox txtNomeLogin;
     }
 }

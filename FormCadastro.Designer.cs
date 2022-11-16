@@ -52,10 +52,11 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVisualizarDocumentos = new System.Windows.Forms.Button();
             this.btnGerarDocumentos = new System.Windows.Forms.Button();
+            this.btnVisualizarLog = new System.Windows.Forms.Button();
             this.btnDocumentos = new System.Windows.Forms.Button();
             this.btnDuplicar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -129,6 +130,8 @@
             this.txtAssunto2 = new System.Windows.Forms.TextBox();
             this.txtNatProcesso = new System.Windows.Forms.TextBox();
             this.txtIdProcesso = new System.Windows.Forms.TextBox();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
+            this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -175,7 +178,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(31, 350);
+            this.groupBox2.Location = new System.Drawing.Point(-49, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 177);
             this.groupBox2.TabIndex = 1;
@@ -335,7 +338,7 @@
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtObservacao.Size = new System.Drawing.Size(427, 87);
+            this.txtObservacao.Size = new System.Drawing.Size(427, 122);
             this.txtObservacao.TabIndex = 0;
             // 
             // groupBox4
@@ -344,14 +347,15 @@
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
             this.groupBox4.Controls.Add(this.btnGerarDocumentos);
+            this.groupBox4.Controls.Add(this.btnVisualizarLog);
             this.groupBox4.Controls.Add(this.btnDocumentos);
             this.groupBox4.Controls.Add(this.btnDuplicar);
-            this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.txtObservacao);
-            this.groupBox4.Location = new System.Drawing.Point(31, 1041);
+            this.groupBox4.Controls.Add(this.btnSalvar);
+            this.groupBox4.Location = new System.Drawing.Point(-49, 1041);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(906, 115);
+            this.groupBox4.Size = new System.Drawing.Size(906, 152);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Observação";
@@ -389,6 +393,17 @@
             this.btnGerarDocumentos.UseVisualStyleBackColor = true;
             this.btnGerarDocumentos.Click += new System.EventHandler(this.btnGerarDocumentos_Click);
             // 
+            // btnVisualizarLog
+            // 
+            this.btnVisualizarLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarLog.Location = new System.Drawing.Point(442, 109);
+            this.btnVisualizarLog.Name = "btnVisualizarLog";
+            this.btnVisualizarLog.Size = new System.Drawing.Size(458, 35);
+            this.btnVisualizarLog.TabIndex = 1;
+            this.btnVisualizarLog.Text = "Visualizar arquivo de Log";
+            this.btnVisualizarLog.UseVisualStyleBackColor = true;
+            this.btnVisualizarLog.Click += new System.EventHandler(this.btnVisualizarLog_Click);
+            // 
             // btnDocumentos
             // 
             this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -411,17 +426,6 @@
             this.btnDuplicar.UseVisualStyleBackColor = true;
             this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(732, 68);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(81, 35);
-            this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -433,6 +437,17 @@
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Visible = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(732, 68);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(81, 35);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtEmail
             // 
@@ -550,7 +565,7 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(31, 11);
+            this.groupBox1.Location = new System.Drawing.Point(-49, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(906, 333);
             this.groupBox1.TabIndex = 0;
@@ -727,7 +742,7 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(31, 533);
+            this.groupBox3.Location = new System.Drawing.Point(-49, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(906, 82);
             this.groupBox3.TabIndex = 2;
@@ -820,7 +835,7 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(31, 621);
+            this.groupBox5.Location = new System.Drawing.Point(-49, 621);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(906, 177);
             this.groupBox5.TabIndex = 3;
@@ -998,7 +1013,7 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(31, 804);
+            this.groupBox6.Location = new System.Drawing.Point(-49, 804);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(906, 231);
             this.groupBox6.TabIndex = 4;
@@ -1243,6 +1258,21 @@
             this.txtIdProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtIdProcesso.TabIndex = 2;
             // 
+            // txtNomeLogin
+            // 
+            this.txtNomeLogin.Location = new System.Drawing.Point(940, 400);
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeLogin.TabIndex = 6;
+            // 
+            // txtNomeDocumento
+            // 
+            this.txtNomeDocumento.Location = new System.Drawing.Point(940, 365);
+            this.txtNomeDocumento.Name = "txtNomeDocumento";
+            this.txtNomeDocumento.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeDocumento.TabIndex = 7;
+            this.txtNomeDocumento.Visible = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1251,7 +1281,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1095, 817);
+            this.ClientSize = new System.Drawing.Size(1095, 909);
+            this.Controls.Add(this.txtNomeDocumento);
+            this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
@@ -1279,6 +1311,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1384,5 +1417,8 @@
         public System.Windows.Forms.Button btnDocumentos;
         public System.Windows.Forms.Button btnVisualizarDocumentos;
         public System.Windows.Forms.Button btnGerarDocumentos;
+        public System.Windows.Forms.TextBox txtNomeLogin;
+        public System.Windows.Forms.TextBox txtNomeDocumento;
+        public System.Windows.Forms.Button btnVisualizarLog;
     }
 }

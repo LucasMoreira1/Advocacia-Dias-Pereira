@@ -234,6 +234,13 @@
     <Compile Include="FormSelecionarDocumento.Designer.cs">
       <DependentUpon>FormSelecionarDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVisualizarLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualizarLog.Designer.cs">
+      <DependentUpon>FormVisualizarLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -266,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelecionarDocumento.resx">
       <DependentUpon>FormSelecionarDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualizarLog.resx">
+      <DependentUpon>FormVisualizarLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
