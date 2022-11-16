@@ -34,7 +34,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
-            this.btnAjuda = new System.Windows.Forms.Button();
+            this.btnVisualizarLogs = new System.Windows.Forms.Button();
             this.btnDocumentos = new System.Windows.Forms.Button();
             this.btnPesquisarCliente = new System.Windows.Forms.Button();
             this.btnCadastroCliente = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             // 
             this.panelEsquerdo.AutoScroll = true;
             this.panelEsquerdo.BackColor = System.Drawing.Color.White;
-            this.panelEsquerdo.Controls.Add(this.btnAjuda);
+            this.panelEsquerdo.Controls.Add(this.btnVisualizarLogs);
             this.panelEsquerdo.Controls.Add(this.btnDocumentos);
             this.panelEsquerdo.Controls.Add(this.btnPesquisarCliente);
             this.panelEsquerdo.Controls.Add(this.btnCadastroCliente);
@@ -103,22 +103,22 @@
             this.panelEsquerdo.Size = new System.Drawing.Size(200, 681);
             this.panelEsquerdo.TabIndex = 3;
             // 
-            // btnAjuda
+            // btnVisualizarLogs
             // 
-            this.btnAjuda.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAjuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAjuda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAjuda.FlatAppearance.BorderSize = 0;
-            this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjuda.ForeColor = System.Drawing.Color.Black;
-            this.btnAjuda.Location = new System.Drawing.Point(0, 400);
-            this.btnAjuda.Name = "btnAjuda";
-            this.btnAjuda.Size = new System.Drawing.Size(200, 45);
-            this.btnAjuda.TabIndex = 10;
-            this.btnAjuda.Text = "Ajuda";
-            this.btnAjuda.UseVisualStyleBackColor = false;
-            this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
+            this.btnVisualizarLogs.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVisualizarLogs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVisualizarLogs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVisualizarLogs.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarLogs.ForeColor = System.Drawing.Color.Black;
+            this.btnVisualizarLogs.Location = new System.Drawing.Point(0, 400);
+            this.btnVisualizarLogs.Name = "btnVisualizarLogs";
+            this.btnVisualizarLogs.Size = new System.Drawing.Size(200, 45);
+            this.btnVisualizarLogs.TabIndex = 10;
+            this.btnVisualizarLogs.Text = "Visualizar Logs";
+            this.btnVisualizarLogs.UseVisualStyleBackColor = false;
+            this.btnVisualizarLogs.Click += new System.EventHandler(this.btnAjuda_Click);
             // 
             // btnDocumentos
             // 
@@ -221,6 +221,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advocacia Dias Pereira";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPaginaInicial_FormClosing_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -239,7 +240,7 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelEsquerdo;
         public System.Windows.Forms.Panel panelFormCentral;
-        public System.Windows.Forms.Button btnAjuda;
+        public System.Windows.Forms.Button btnVisualizarLogs;
         public System.Windows.Forms.Button btnDocumentos;
         public System.Windows.Forms.Button btnPesquisarCliente;
         public System.Windows.Forms.Button btnCadastroCliente;
