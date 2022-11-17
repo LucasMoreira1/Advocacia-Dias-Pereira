@@ -251,7 +251,7 @@ namespace Advocacia_Dias_Pereira
                             "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
                 Executar(CRUD.sql, "Insert");
             }
-            Application.Exit();
+            //Application.Exit();
         }
     }
 }
