@@ -286,6 +286,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
             formcadastro.txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
             formcadastro.cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
+
             formcadastro.txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
             formcadastro.txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
             formcadastro.txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
