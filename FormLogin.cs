@@ -45,7 +45,7 @@ namespace Advocacia_Dias_Pereira
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-                    i = 0;
+            i = 0;
 
             CRUD.sql = "SELECT * FROM LOGIN WHERE Usuario = '" + txtLogin.Text.Trim() + "' AND Senha = '" + txtSenha.Text.Trim() + "'";
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
@@ -56,86 +56,146 @@ namespace Advocacia_Dias_Pereira
             dgv.Visible = true;
             dgv.AutoGenerateColumns = true;
             dgv.DataSource = dt;
-            string permissao = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            //string permissao = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
 
 
 
             if (i == 0)
             {
+                dgv.Visible = false;
                 MessageBox.Show("Usuário ou senha incorretos");
-            }
-            else if (permissao == "1")
-            {
-                this.Hide();
-                FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
-                formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
-
-                //CRIAÇÃO DE LOG
-                //Converter para string a pasta %temp%
-                string dir = Path.GetTempPath();
-                filename = dir + "9999_LOG_LOGIN.txt";
-                //Validar se já existe aquivo LOG
-                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
-
-                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-                DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
-
-                if (dt2.Rows.Count > 0)
-                {
-                    //Baixar Documento de LOG
-                    bool em = false;
-                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
-                    CRUD.con.Open();
-                    using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
-                    {
-                        using (reader = CRUD.cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                em = true;
-                                byte[] fileData = (byte[])reader.GetValue(0);
-                                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
-                                {
-                                    using (BinaryWriter bw = new BinaryWriter(fs))
-                                    {
-                                        bw.Write(fileData);
-                                        bw.Close();
-
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-                    CRUD.con.Close();
-                    //Escrever no Documento de LOG
-                    Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
-                    //Atualiza Log existente
-                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = @ID_CADASTRO";
-                    Executar(CRUD.sql, "Update");
-                }
-                else
-                {
-                    //Escrever no Documento de LOG
-                    Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
-                    //Salvar Documento de LOG
-                    CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
-                                "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
-                    Executar(CRUD.sql, "Insert");
-                }
-                // Logger.LoginName(txtLogin.Text);
-                //Logger.WriteLog("Login no sistema",txtLogin.Text);
-
-                formPaginaInicial.Show();
-
             }
             else
             {
-                this.Hide();
-                FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
-                formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
+                string permissao = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
 
-                formPaginaInicial.Show();
+                if (permissao == "1")
+                {
+                    this.Hide();
+                    FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
+                    formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
+
+                    //CRIAÇÃO DE LOG
+                    //Converter para string a pasta %temp%
+                    string dir = Path.GetTempPath();
+                    filename = dir + "9999_LOG_LOGIN.txt";
+                    //Validar se já existe aquivo LOG
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                    CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                    DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        //Baixar Documento de LOG
+                        bool em = false;
+                        CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                        CRUD.con.Open();
+                        using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                        {
+                            using (reader = CRUD.cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    em = true;
+                                    byte[] fileData = (byte[])reader.GetValue(0);
+                                    using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                    {
+                                        using (BinaryWriter bw = new BinaryWriter(fs))
+                                        {
+                                            bw.Write(fileData);
+                                            bw.Close();
+
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                        CRUD.con.Close();
+                        //Escrever no Documento de LOG
+                        Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
+                        //Atualiza Log existente
+                        CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = @ID_CADASTRO";
+                        Executar(CRUD.sql, "Update");
+                    }
+                    else
+                    {
+                        //Escrever no Documento de LOG
+                        Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
+                        //Salvar Documento de LOG
+                        CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                    "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                        Executar(CRUD.sql, "Insert");
+                    }
+                    // Logger.LoginName(txtLogin.Text);
+                    //Logger.WriteLog("Login no sistema",txtLogin.Text);
+
+                    formPaginaInicial.Show();
+
+                }
+                else
+                {
+                    this.Hide();
+                    FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
+                    formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
+
+                    //CRIAÇÃO DE LOG
+                    //Converter para string a pasta %temp%
+                    string dir = Path.GetTempPath();
+                    filename = dir + "9999_LOG_LOGIN.txt";
+                    //Validar se já existe aquivo LOG
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                    CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                    DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        //Baixar Documento de LOG
+                        bool em = false;
+                        CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                        CRUD.con.Open();
+                        using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                        {
+                            using (reader = CRUD.cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    em = true;
+                                    byte[] fileData = (byte[])reader.GetValue(0);
+                                    using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                    {
+                                        using (BinaryWriter bw = new BinaryWriter(fs))
+                                        {
+                                            bw.Write(fileData);
+                                            bw.Close();
+
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                        CRUD.con.Close();
+                        //Escrever no Documento de LOG
+                        Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
+                        //Atualiza Log existente
+                        CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = @ID_CADASTRO";
+                        Executar(CRUD.sql, "Update");
+                    }
+                    else
+                    {
+                        //Escrever no Documento de LOG
+                        Logger.WriteLog(filename, "Logou no sistema;", txtLogin.Text);
+                        //Salvar Documento de LOG
+                        CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                    "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                        Executar(CRUD.sql, "Insert");
+                    }
+
+                    formPaginaInicial.Show();
+                }
             }
         }
 

@@ -12,6 +12,8 @@ namespace Advocacia_Dias_Pereira
         public Boolean CameraOn = false;
         public string localizacaoFoto;
         string filename = "";
+        string filename2 = "";
+        string NumeroRegistro = "";
         MySqlDataReader reader;
         public static MySqlCommand cmd = default(MySqlCommand);
 
@@ -84,15 +86,13 @@ namespace Advocacia_Dias_Pereira
             string nomedocumento = Path.GetFileName(filename);
             txtNomeDocumento.Text = nomedocumento;
             
-            CRUD.cmd.Parameters.AddWithValue("Documento, LOG_FILE", contents);
+            CRUD.cmd.Parameters.AddWithValue("Documento", contents);
+
             CRUD.cmd.Parameters.AddWithValue("Nome_Documento", nomedocumento.Trim());
             SEMDOCUMENTO:
 
-            //informações para o Log
-            //CRUD.cmd.Parameters.AddWithValue("LOG_FILE", contents);
-
             //Identificação Autor
-            CRUD.cmd.Parameters.AddWithValue("ID_CADASTRO", txtCadNumero.Text.Trim());
+            //CRUD.cmd.Parameters.AddWithValue("ID_CADASTRO", txtCadNumero.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("NOME_CADASTRO", txtAutor.Text.Trim());
             //Informações Gerais
             CRUD.cmd.Parameters.AddWithValue("DATA_ATUALIZACAO", Convert.ToDateTime(DateTime.Now));
@@ -200,14 +200,76 @@ namespace Advocacia_Dias_Pereira
             dgv.Visible = false;
 
             //Logger.WriteLog("Cliente registrado: " + NumeroRegistro, txtNomeLogin.Text);
+            //CRIAÇÃO DE LOG
 
+            string dir = Path.GetTempPath();
+            filename = dir + NumeroRegistro + "_" + txtAutor.Text + ".txt";
+            //Logger.WriteLog(filename, "Cadastro: " + NumeroRegistro + "_" + txtAutor.Text + " criado;", txtNomeLogin.Text);
+            //FileStream fileStream2 = File.OpenRead(filename);
+            //byte[] contents2 = new byte[fileStream2.Length];
+            //fileStream2.Read(contents2, 0, (int)contents2.Length);
+            //fileStream2.Close();
+
+            //informações para o Log
+            //CRUD.cmd.Parameters.AddWithValue("LOG_FILE", contents2);
+            //CRUD.cmd.Parameters.AddWithValue("ID_CADASTRO", NumeroRegistro);
+
+            //Validar se já existe aquivo LOG
+            CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + NumeroRegistro  + ";";
+            
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            dt = CRUD.PerformCRUD(CRUD.cmd);
+
+            if (dt.Rows.Count > 0)
+            {
+                //Baixar Documento de LOG
+                bool em = false;
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + NumeroRegistro+ ";";
+                CRUD.con.Open();
+                using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                {
+                    using (reader = CRUD.cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            em = true;
+                            byte[] fileData = (byte[])reader.GetValue(0);
+                            using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                            {
+                                using (BinaryWriter bw = new BinaryWriter(fs))
+                                {
+                                    bw.Write(fileData);
+                                    bw.Close();
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+                CRUD.con.Close();
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Cadastro: " + NumeroRegistro + "_"+ txtAutor.Text + " criado;", txtNomeLogin.Text);
+                //Atualiza Log existente
+                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = "+NumeroRegistro+"";
+                Executar(CRUD.sql, "Update");
+            }
+            else
+            {
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Cadastro: " + NumeroRegistro  + "_" + txtAutor.Text + " criado;", txtNomeLogin.Text);
+                //Salvar Documento de LOG
+                CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                            "Values("+NumeroRegistro+ ", @NOME_CADASTRO, @Documento, @DATA_ATUALIZACAO)";
+                Executar(CRUD.sql, "Insert");
+            }
+            txtCadNumero.Text = NumeroRegistro;
             MessageBox.Show("Cliente registrado. ID número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            pesquisaCPF();
-
-            btnSalvar.Visible = true;
-            btnAtualizar.Visible = false;
+            
+            btnSalvar.Visible = false;
+            btnAtualizar.Visible = true;
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)
@@ -306,18 +368,18 @@ namespace Advocacia_Dias_Pereira
                 }
                 CRUD.con.Close();
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Cadastro_" + txtCadNumero.Text + txtAutor.Text + " Atualizado;", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + "_" + txtAutor.Text + " atualizado;", txtNomeLogin.Text);
                 //Atualiza Log existente
-                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = @ID_CADASTRO";
+                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = "+txtCadNumero.Text+"";
                 Executar(CRUD.sql, "Update");
             }
             else
             {
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Cadastro_" + txtCadNumero.Text + txtAutor.Text + " Atualizado;", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text +"_"+ txtAutor.Text + " atualizado;", txtNomeLogin.Text);
                 //Salvar Documento de LOG
                 CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
-                            "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                            "Values("+txtCadNumero.Text+", @NOME_CADASTRO, @Documento, @DATA_ATUALIZACAO)";
                 Executar(CRUD.sql, "Insert");
             }
 
@@ -708,18 +770,18 @@ namespace Advocacia_Dias_Pereira
                             }
                             CRUD.con.Close();
                             //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + " no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
+                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
                             //Atualiza Log existente
-                            CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = @ID_CADASTRO";
+                            CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = "+txtCadNumero.Text+"";
                             Executar(CRUD.sql, "Update");
                         }
                         else
                         {
                             //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + " no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
+                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
                             //Salvar Documento de LOG
                             CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
-                                        "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                                        "Values("+txtCadNumero+", @NOME_CADASTRO, @Documento, @DATA_ATUALIZACAO)";
                             Executar(CRUD.sql, "Insert");
                         }
 
