@@ -132,6 +132,7 @@
             this.txtIdProcesso = new System.Windows.Forms.TextBox();
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
+            this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -162,7 +163,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnBuscarCEP);
             this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label17);
@@ -178,7 +178,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(-97, 350);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 177);
             this.groupBox2.TabIndex = 1;
@@ -343,7 +343,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
             this.groupBox4.Controls.Add(this.btnGerarDocumentos);
@@ -353,7 +352,7 @@
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.txtObservacao);
             this.groupBox4.Controls.Add(this.btnSalvar);
-            this.groupBox4.Location = new System.Drawing.Point(-97, 1041);
+            this.groupBox4.Location = new System.Drawing.Point(-1, 1041);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(906, 152);
             this.groupBox4.TabIndex = 5;
@@ -538,7 +537,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCPF);
@@ -565,7 +563,7 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(-97, 11);
+            this.groupBox1.Location = new System.Drawing.Point(-1, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(906, 333);
             this.groupBox1.TabIndex = 0;
@@ -734,7 +732,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.txtTelefoneReu);
             this.groupBox3.Controls.Add(this.label1);
@@ -742,7 +739,7 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(-97, 533);
+            this.groupBox3.Location = new System.Drawing.Point(-1, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(906, 82);
             this.groupBox3.TabIndex = 2;
@@ -819,7 +816,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox5.Controls.Add(this.btnBuscarCEPReu);
             this.groupBox5.Controls.Add(this.txtCEPReu);
             this.groupBox5.Controls.Add(this.label32);
@@ -835,7 +831,7 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(-97, 621);
+            this.groupBox5.Location = new System.Drawing.Point(-1, 621);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(906, 177);
             this.groupBox5.TabIndex = 3;
@@ -989,7 +985,6 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.txtDataAudiencia);
             this.groupBox6.Controls.Add(this.txtDataPericia);
@@ -1013,7 +1008,7 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(-97, 804);
+            this.groupBox6.Location = new System.Drawing.Point(-1, 804);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(906, 231);
             this.groupBox6.TabIndex = 4;
@@ -1274,6 +1269,14 @@
             this.txtNomeDocumento.TabIndex = 7;
             this.txtNomeDocumento.Visible = false;
             // 
+            // txtPermissaoLogin
+            // 
+            this.txtPermissaoLogin.Location = new System.Drawing.Point(940, 426);
+            this.txtPermissaoLogin.Name = "txtPermissaoLogin";
+            this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtPermissaoLogin.TabIndex = 6;
+            this.txtPermissaoLogin.Visible = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1282,8 +1285,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1095, 909);
+            this.ClientSize = new System.Drawing.Size(1028, 909);
             this.Controls.Add(this.txtNomeDocumento);
+            this.Controls.Add(this.txtPermissaoLogin);
             this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
@@ -1298,6 +1302,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormCadastro_Load_1);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1421,5 +1426,6 @@
         public System.Windows.Forms.TextBox txtNomeLogin;
         public System.Windows.Forms.TextBox txtNomeDocumento;
         public System.Windows.Forms.Button btnVisualizarLog;
+        public System.Windows.Forms.TextBox txtPermissaoLogin;
     }
 }

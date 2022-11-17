@@ -74,7 +74,7 @@ namespace Advocacia_Dias_Pereira
                     this.Hide();
                     FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
                     formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
-
+                    formPaginaInicial.txtPermissaoLogin.Text = permissao;
                     //CRIAÇÃO DE LOG
                     //Converter para string a pasta %temp%
                     string dir = Path.GetTempPath();
@@ -138,7 +138,9 @@ namespace Advocacia_Dias_Pereira
                 {
                     this.Hide();
                     FormPaginaInicial formPaginaInicial = new FormPaginaInicial();
+                    formPaginaInicial.btnVisualizarLogs.Visible = false;
                     formPaginaInicial.txtNomeLogin.Text = txtLogin.Text;
+                    formPaginaInicial.txtPermissaoLogin.Text = permissao;
 
                     //CRIAÇÃO DE LOG
                     //Converter para string a pasta %temp%

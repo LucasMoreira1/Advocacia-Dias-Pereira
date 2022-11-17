@@ -21,6 +21,7 @@ namespace Advocacia_Dias_Pereira
         {
             InitializeComponent();
             ResetMe();
+            
         }
         
 
@@ -874,6 +875,14 @@ namespace Advocacia_Dias_Pereira
             formVisualizarLog.txtNomeAutor.Text = txtAutor.Text;
             formVisualizarLog.Show();
 
+        }
+
+        private void FormCadastro_Load_1(object sender, EventArgs e)
+        {
+            if (txtPermissaoLogin.Text == "2")
+            {
+                btnVisualizarLog.Visible = false;
+            }
         }
     }
 }

@@ -186,6 +186,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
+            formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
 
             //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);
             //CRIAÇÃO DE LOG
@@ -294,8 +295,60 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
-
+            formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
             //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);
+            //CRIAÇÃO DE LOG
+            string dir = Path.GetTempPath();
+            filename = dir + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + ".txt";
+            //Validar se já existe aquivo LOG
+            CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+            if (dt.Rows.Count > 0)
+            {
+                //Baixar Documento de LOG
+                bool em = false;
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";";
+                CRUD.con.Open();
+                using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                {
+                    using (reader = CRUD.cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            em = true;
+                            byte[] fileData = (byte[])reader.GetValue(0);
+                            using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                            {
+                                using (BinaryWriter bw = new BinaryWriter(fs))
+                                {
+                                    bw.Write(fileData);
+                                    bw.Close();
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+                CRUD.con.Close();
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Visualizando o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + ";", txtNomeLogin.Text);
+                //Atualiza Log existente
+                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '" + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "'";
+                Executar(CRUD.sql, "Update");
+            }
+            else
+            {
+                //Escrever no Documento de LOG
+                Logger.WriteLog(filename, "Visualizando o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "_" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + ";", txtNomeLogin.Text);
+                //Salvar Documento de LOG
+                CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                            "Values('" + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + "', '" + Convert.ToString(dgv.CurrentRow.Cells[1].Value) + "', @LOG_FILE, @DATA_ATUALIZACAO)";
+                Executar(CRUD.sql, "Insert");
+            }
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)

@@ -53,6 +53,7 @@
             this.btnPesquisaID = new System.Windows.Forms.Button();
             this.btnPesquisaFiltro = new System.Windows.Forms.Button();
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
+            this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -386,11 +387,20 @@
             this.txtNomeLogin.TabIndex = 27;
             this.txtNomeLogin.Visible = false;
             // 
+            // txtPermissaoLogin
+            // 
+            this.txtPermissaoLogin.Location = new System.Drawing.Point(526, 24);
+            this.txtPermissaoLogin.Name = "txtPermissaoLogin";
+            this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtPermissaoLogin.TabIndex = 27;
+            this.txtPermissaoLogin.Visible = false;
+            // 
             // FormPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 612);
+            this.Controls.Add(this.txtPermissaoLogin);
             this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.btnPesquisaFiltro);
             this.Controls.Add(this.btnPesquisaID);
@@ -448,5 +458,6 @@
         private System.Windows.Forms.Button btnPesquisaID;
         private System.Windows.Forms.Button btnPesquisaFiltro;
         public System.Windows.Forms.TextBox txtNomeLogin;
+        public System.Windows.Forms.TextBox txtPermissaoLogin;
     }
 }

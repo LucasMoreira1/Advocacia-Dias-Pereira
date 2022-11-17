@@ -40,6 +40,7 @@
             this.btnCadastroCliente = new System.Windows.Forms.Button();
             this.btnPaginaInicial = new System.Windows.Forms.Button();
             this.panelFormCentral = new System.Windows.Forms.Panel();
+            this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -193,6 +194,7 @@
             this.panelFormCentral.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com__1_;
             this.panelFormCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelFormCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFormCentral.Controls.Add(this.txtPermissaoLogin);
             this.panelFormCentral.Controls.Add(this.txtNomeLogin);
             this.panelFormCentral.Controls.Add(this.dataGridView1);
             this.panelFormCentral.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -200,6 +202,14 @@
             this.panelFormCentral.Name = "panelFormCentral";
             this.panelFormCentral.Size = new System.Drawing.Size(1264, 681);
             this.panelFormCentral.TabIndex = 5;
+            // 
+            // txtPermissaoLogin
+            // 
+            this.txtPermissaoLogin.Location = new System.Drawing.Point(1108, 70);
+            this.txtPermissaoLogin.Name = "txtPermissaoLogin";
+            this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtPermissaoLogin.TabIndex = 5;
+            this.txtPermissaoLogin.Visible = false;
             // 
             // txtNomeLogin
             // 
@@ -247,5 +257,6 @@
         public System.Windows.Forms.Button btnCadastroCliente;
         public System.Windows.Forms.Button btnPaginaInicial;
         public System.Windows.Forms.TextBox txtNomeLogin;
+        public System.Windows.Forms.TextBox txtPermissaoLogin;
     }
 }
