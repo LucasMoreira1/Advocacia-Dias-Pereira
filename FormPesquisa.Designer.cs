@@ -384,6 +384,7 @@
             this.txtNomeLogin.Name = "txtNomeLogin";
             this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
             this.txtNomeLogin.TabIndex = 27;
+            this.txtNomeLogin.Visible = false;
             // 
             // FormPesquisa
             // 

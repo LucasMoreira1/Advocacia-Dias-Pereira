@@ -207,6 +207,7 @@
             this.txtNomeLogin.Name = "txtNomeLogin";
             this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
             this.txtNomeLogin.TabIndex = 5;
+            this.txtNomeLogin.Visible = false;
             // 
             // FormPaginaInicial
             // 

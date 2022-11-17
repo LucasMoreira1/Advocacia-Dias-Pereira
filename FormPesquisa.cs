@@ -106,7 +106,7 @@ namespace Advocacia_Dias_Pereira
         private void loadData(string keyword)
         {
 
-            CRUD.sql = "SELECT * FROM CADASTRO ORDER BY Id;";
+            CRUD.sql = "SELECT ID, Autor FROM CADASTRO ORDER BY Id;";
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
 
 
