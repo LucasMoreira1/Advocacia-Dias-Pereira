@@ -283,7 +283,7 @@ namespace Advocacia_Dias_Pereira
                 }
                 CRUD.con.Close();
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Visualizou o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
                 //Atualiza Log existente
                 CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                 Executar(CRUD.sql, "Update");
@@ -291,7 +291,7 @@ namespace Advocacia_Dias_Pereira
             else
             {
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Visualizou o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
                 //Salvar Documento de LOG
                 CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
                             "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
@@ -448,7 +448,7 @@ namespace Advocacia_Dias_Pereira
                 }
                 CRUD.con.Close();
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Visualizou o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
                 //Atualiza Log existente
                 CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                 Executar(CRUD.sql, "Update");
@@ -456,7 +456,7 @@ namespace Advocacia_Dias_Pereira
             else
             {
                 //Escrever no Documento de LOG
-                Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
+                Logger.WriteLog(filename, "Visualizou o cadastro: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value) + ";", txtNomeLogin.Text);
                 //Salvar Documento de LOG
                 CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
                             "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
