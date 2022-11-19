@@ -31,7 +31,7 @@
     <PublisherName>Lucas Moreira</PublisherName>
     <SuiteName>Agility</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -287,10 +287,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report_Contrato_Hono.rdlc" />
-    <EmbeddedResource Include="Report_Procuracao.rdlc" />
-    <EmbeddedResource Include="Report_Manifestacao.rdlc" />
-    <EmbeddedResource Include="Report_Declaracao_Hipo.rdlc" />
     <None Include="Advocacia Dias Pereira_1_TemporaryKey.pfx" />
     <None Include="Advocacia Dias Pereira_TemporaryKey.pfx" />
     <None Include="Cadastro.xsc">

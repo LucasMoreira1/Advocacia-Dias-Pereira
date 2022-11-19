@@ -98,7 +98,7 @@ namespace Advocacia_Dias_Pereira
             //Informações Gerais
             CRUD.cmd.Parameters.AddWithValue("DATA_ATUALIZACAO", Convert.ToDateTime(DateTime.Now));
             //Informações Gerais
-            CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(DateTime.Now));
+            CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(txtDataCadastro.Text));
 
             //Identificação Autor
             CRUD.cmd.Parameters.AddWithValue("CadNumero", txtCadNumero.Text.Trim());
@@ -144,7 +144,8 @@ namespace Advocacia_Dias_Pereira
             CRUD.cmd.Parameters.AddWithValue("assunto2", txtAssunto2.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("dataaudiencia", txtDataAudiencia.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("assunto3", txtAssunto3.Text.Trim());
-            
+            CRUD.cmd.Parameters.AddWithValue("Resultado", cboxResultado.Text.Trim());
+
             //Outros
             CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
             //CRUD.cmd.Parameters.AddWithValue("Cad_numero", txtCadNumero.Text.Trim());
@@ -171,12 +172,12 @@ namespace Advocacia_Dias_Pereira
                 "telefone1, telefone2, cep, logradouro, numero, complemento, bairro, cidade, estado, reu, cnpjcpf, " +
                 "telefoneReu, cepReu, logradouroReu, numeroReu, complementoReu, bairroReu, cidadeReu, estadoReu, " +
                 "processo, tipoprocesso, idprocesso, statusprocesso, natprocesso, assunto1, assunto2, assunto3, " +
-                "datapericia, tipoaudiencia, dataaudiencia, observacao)" +
+                "datapericia, tipoaudiencia, dataaudiencia, observacao, DataCadastro, Resultado)" +
                 "Values(@autor, @nacionalidade, @estadocivil, @profissao, @rg, @cpf, @datanascimento, @email, " +
                 "@telefone1, @telefone2, @cepautor, @logradouroautor, @numeroautor, @complementoautor, @bairroautor, @cidadeautor, @estadoautor, @reu, @cnpj, " +
                 "@telefoneReu, @cepReu, @logradouroReu, @numeroReu, @complementoReu, @bairroReu, @cidadeReu, @estadoReu, " +
                 "@processo, @tipoprocesso, @idprocesso, @statusprocesso, @natprocesso, @assunto1, @assunto2, @assunto3, " +
-                "@datapericia, @tipoaudiencia, @dataaudiencia, @observacao);";
+                "@datapericia, @tipoaudiencia, @dataaudiencia, @observacao, @DataCadastro, @Resultado);";
 
 
             Executar(CRUD.sql, "Insert");
@@ -327,7 +328,7 @@ namespace Advocacia_Dias_Pereira
                 "estadoReu = @estadoReu, processo = @processo, tipoprocesso = @tipoprocesso, idprocesso = @idprocesso, " +
                 "statusprocesso = @statusprocesso, natprocesso = @natprocesso, assunto1 = @assunto1, " +
                 "assunto2 = @assunto2, assunto3 = @assunto3, datapericia = @datapericia, tipoaudiencia = @tipoaudiencia, " +
-                "dataaudiencia = @dataaudiencia, observacao = @observacao WHERE ID = @CadNumero";
+                "dataaudiencia = @dataaudiencia, observacao = @observacao, DataCadastro = @DataCadastro, Resultado = @Resultado WHERE ID = @CadNumero";
 
             Executar(CRUD.sql, "Update");
 
@@ -504,87 +505,87 @@ namespace Advocacia_Dias_Pereira
             ResetMe();
             this.Close();
         }
-        public void pesquisaRG()
-        {
+        //public void pesquisaRG()
+        //{
 
-            CRUD.sql = "SELECT * FROM CADASTRO WHERE RG LIKE '" + txtRG.Text.Trim() + "'";
+        //    CRUD.sql = "SELECT * FROM CADASTRO WHERE RG LIKE '" + txtRG.Text.Trim() + "'";
 
-            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
-            DataGridView dgv = dataGridView1;
+        //    CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+        //    DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+        //    DataGridView dgv = dataGridView1;
 
-            dgv.Visible = true;
-            dgv.MultiSelect = false;
-            dgv.AutoGenerateColumns = true;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.DataSource = dt;
-            //dgv.Columns["Foto"].Visible = false;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        //    dgv.Visible = true;
+        //    dgv.MultiSelect = false;
+        //    dgv.AutoGenerateColumns = true;
+        //    dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //    dgv.DataSource = dt;
+        //    //dgv.Columns["Foto"].Visible = false;
+        //    dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            btnSalvar.Visible = false;
-            btnAtualizar.Visible = true;
+        //    btnSalvar.Visible = false;
+        //    btnAtualizar.Visible = true;
 
-            if (dgv.CurrentRow == null)
-            {
-                dgv.Visible = false;
-                MessageBox.Show("Não há cliente registrado com esse RG.");
-            }
-            else
-            {
-                txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-                txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-                txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
-                cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-                txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
-                txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-                txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
-                txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
-                txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-                txtTelefone2.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-                txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-                txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-                txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-                txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-                txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-                txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-                txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-                txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-                txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-                txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-                txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-                txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
-                txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-                txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
-                txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[25].Value);
-                txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
-                txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[27].Value);
-                txtProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[28].Value);
-                cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
-                txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
-                cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
-                txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
-                txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
-                txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
-                txtAssunto3.Text = Convert.ToString(dgv.CurrentRow.Cells[35].Value);
-                txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
-                txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
-                txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
-                txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
+        //    if (dgv.CurrentRow == null)
+        //    {
+        //        dgv.Visible = false;
+        //        MessageBox.Show("Não há cliente registrado com esse RG.");
+        //    }
+        //    else
+        //    {
+        //        txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+        //        txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+        //        txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+        //        cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+        //        txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+        //        txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+        //        txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+        //        txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+        //        txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+        //        txtTelefone2.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+        //        txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+        //        txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+        //        txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+        //        txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+        //        txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+        //        txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+        //        txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+        //        txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+        //        txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+        //        txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+        //        txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+        //        txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
+        //        txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
+        //        txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+        //        txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[25].Value);
+        //        txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+        //        txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[27].Value);
+        //        txtProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[28].Value);
+        //        cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
+        //        txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
+        //        cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
+        //        txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
+        //        txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
+        //        txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
+        //        txtAssunto3.Text = Convert.ToString(dgv.CurrentRow.Cells[35].Value);
+        //        txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
+        //        txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
+        //        txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
+        //        txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[39].Value);
 
-                dgv.Visible = false;
-                MessageBox.Show("Cliente localizado.");
-            }
+        //        dgv.Visible = false;
+        //        MessageBox.Show("Cliente localizado.");
+        //    }
 
 
-        }
+        //}
 
-        private void PesquisarRG(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                pesquisaRG();
-            }
-        }
+        //private void PesquisarRG(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        pesquisaRG();
+        //    }
+        //}
         public void pesquisaCPF()
         {
 
@@ -856,7 +857,7 @@ namespace Advocacia_Dias_Pereira
             formSelecionarDocumento.txtTipoAudiencia.Text = txtTipoAudiencia.Text;
             formSelecionarDocumento.txtDataAudiencia.Text = txtDataAudiencia.Text;
             formSelecionarDocumento.txtObservacao.Text = txtObservacao.Text;
-
+            formSelecionarDocumento.cboxResultado.Text = cboxResultado.Text;
 
 
 

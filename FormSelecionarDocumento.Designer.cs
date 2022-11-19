@@ -75,6 +75,7 @@
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
+            this.cboxResultado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cboxDocumento
@@ -560,17 +561,26 @@
             // 
             // txtNomeLogin
             // 
-            this.txtNomeLogin.Location = new System.Drawing.Point(439, 250);
+            this.txtNomeLogin.Location = new System.Drawing.Point(39, 248);
             this.txtNomeLogin.Name = "txtNomeLogin";
             this.txtNomeLogin.Size = new System.Drawing.Size(100, 20);
             this.txtNomeLogin.TabIndex = 49;
             this.txtNomeLogin.Visible = false;
+            // 
+            // cboxResultado
+            // 
+            this.cboxResultado.FormattingEnabled = true;
+            this.cboxResultado.Location = new System.Drawing.Point(458, 252);
+            this.cboxResultado.Name = "cboxResultado";
+            this.cboxResultado.Size = new System.Drawing.Size(121, 21);
+            this.cboxResultado.TabIndex = 50;
             // 
             // FormSelecionarDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 292);
+            this.Controls.Add(this.cboxResultado);
             this.Controls.Add(this.txtNomeLogin);
             this.Controls.Add(this.txtCEPReu);
             this.Controls.Add(this.txtDataPericia);
@@ -673,5 +683,6 @@
         public System.Windows.Forms.MaskedTextBox txtCEP;
         public System.Windows.Forms.TextBox txtCNPJ;
         public System.Windows.Forms.TextBox txtNomeLogin;
+        public System.Windows.Forms.ComboBox cboxResultado;
     }
 }

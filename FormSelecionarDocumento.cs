@@ -109,7 +109,7 @@ namespace Advocacia_Dias_Pereira
                 //this.FindAndReplace(wordApp, "[CEP]", txtCEP.Text);
                 //this.FindAndReplace(wordApp, "[DATA]", DateTime.Now.ToShortDateString()) ;
 
-                //this.FindAndReplace(wordApp, "[CAD_NUMERO]", txtCadNumero.Text;
+                this.FindAndReplace(wordApp, "[CAD_NUMERO]", txtIDAutor.Text);
                 this.FindAndReplace(wordApp, "[AUTOR]", txtAutor.Text);
                 this.FindAndReplace(wordApp, "[NACIONALIDADE]", txtNacionalidade.Text);
                 this.FindAndReplace(wordApp, "[ESTADO_CIVIL]", cboxEstadoCivil.Text);

@@ -63,7 +63,8 @@ namespace Advocacia_Dias_Pereira
         public void loadFiltro()
         {
             CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
-              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' ORDER BY Id;";
+              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%' " +
+              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + txtFiltro5.Text.Trim() + "%'ORDER BY Id;";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
@@ -185,6 +186,8 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[46].Value);
+            formcadastro.cboxResultado.Text = Convert.ToString(dgv.CurrentRow.Cells[47].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
             formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
 
@@ -295,6 +298,8 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
             formcadastro.txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[46].Value);
+            formcadastro.cboxResultado.Text = Convert.ToString(dgv.CurrentRow.Cells[47].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
             formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
             //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);
