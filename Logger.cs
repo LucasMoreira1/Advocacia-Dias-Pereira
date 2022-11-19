@@ -16,7 +16,7 @@ namespace Advocacia_Dias_Pereira
             
             using (StreamWriter writer = new StreamWriter(path, true))
             {
-                writer.WriteLine($"{DateTime.Now} | {nomeLogin} | {message}");
+                writer.WriteLine($"{DateTime.Now} | {nomeLogin.ToUpper()} | {message.ToUpper()}");
             }
         }
         

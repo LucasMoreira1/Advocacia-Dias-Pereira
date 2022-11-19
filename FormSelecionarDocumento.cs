@@ -237,9 +237,62 @@ namespace Advocacia_Dias_Pereira
                                     "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
                         Executar(CRUD.sql, "Insert");
                 }
-                
+
+                //Criação do LOG GERAL
+                string dir2 = Path.GetTempPath();
+                filename = dir2 + "9999_LOG_LOGIN.txt";
+                //Validar se já existe aquivo LOG
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                if (dt2.Rows.Count > 0)
+                {
+                    //Baixar Documento de LOG
+                    bool em = false;
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                    CRUD.con.Open();
+                    using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                    {
+                        using (reader = CRUD.cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                em = true;
+                                byte[] fileData = (byte[])reader.GetValue(0);
+                                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                {
+                                    using (BinaryWriter bw = new BinaryWriter(fs))
+                                    {
+                                        bw.Write(fileData);
+                                        bw.Close();
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    CRUD.con.Close();
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                else
+                {
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Salvar Documento de LOG
+                    CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
+                    Executar(CRUD.sql, "Insert");
+                }
+
                 //Gerar Documento WORD
-                    CreateWordDocument(localFileName,
+                CreateWordDocument(localFileName,
                         "Honorarios_" + txtAutor.Text);
             }
             else if (cboxDocumento.Text == "2 - DECLARAÇÃO DE HIPOSSUFICIÊNCIA")
@@ -313,6 +366,59 @@ namespace Advocacia_Dias_Pereira
                     //Salvar Documento de LOG
                     CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
                                 "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                    Executar(CRUD.sql, "Insert");
+                }
+
+                //Criação do LOG GERAL
+                string dir2 = Path.GetTempPath();
+                filename = dir2 + "9999_LOG_LOGIN.txt";
+                //Validar se já existe aquivo LOG
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                if (dt2.Rows.Count > 0)
+                {
+                    //Baixar Documento de LOG
+                    bool em = false;
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                    CRUD.con.Open();
+                    using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                    {
+                        using (reader = CRUD.cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                em = true;
+                                byte[] fileData = (byte[])reader.GetValue(0);
+                                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                {
+                                    using (BinaryWriter bw = new BinaryWriter(fs))
+                                    {
+                                        bw.Write(fileData);
+                                        bw.Close();
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    CRUD.con.Close();
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                else
+                {
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Salvar Documento de LOG
+                    CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
                     Executar(CRUD.sql, "Insert");
                 }
 
@@ -394,6 +500,59 @@ namespace Advocacia_Dias_Pereira
                     Executar(CRUD.sql, "Insert");
                 }
 
+                //Criação do LOG GERAL
+                string dir2 = Path.GetTempPath();
+                filename = dir2 + "9999_LOG_LOGIN.txt";
+                //Validar se já existe aquivo LOG
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                if (dt2.Rows.Count > 0)
+                {
+                    //Baixar Documento de LOG
+                    bool em = false;
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                    CRUD.con.Open();
+                    using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                    {
+                        using (reader = CRUD.cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                em = true;
+                                byte[] fileData = (byte[])reader.GetValue(0);
+                                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                {
+                                    using (BinaryWriter bw = new BinaryWriter(fs))
+                                    {
+                                        bw.Write(fileData);
+                                        bw.Close();
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    CRUD.con.Close();
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                else
+                {
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Salvar Documento de LOG
+                    CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
+                    Executar(CRUD.sql, "Insert");
+                }
+
                 CreateWordDocument(localFileName,
                     "Manifesto_" + txtAutor.Text);
             }
@@ -467,6 +626,59 @@ namespace Advocacia_Dias_Pereira
                     //Salvar Documento de LOG
                     CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
                                 "Values(@ID_CADASTRO, @NOME_CADASTRO, @LOG_FILE, @DATA_ATUALIZACAO)";
+                    Executar(CRUD.sql, "Insert");
+                }
+
+                //Criação do LOG GERAL
+                string dir2 = Path.GetTempPath();
+                filename = dir2 + "9999_LOG_LOGIN.txt";
+                //Validar se já existe aquivo LOG
+                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+
+                CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                if (dt2.Rows.Count > 0)
+                {
+                    //Baixar Documento de LOG
+                    bool em = false;
+                    CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                    CRUD.con.Open();
+                    using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+                    {
+                        using (reader = CRUD.cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                em = true;
+                                byte[] fileData = (byte[])reader.GetValue(0);
+                                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                {
+                                    using (BinaryWriter bw = new BinaryWriter(fs))
+                                    {
+                                        bw.Write(fileData);
+                                        bw.Close();
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    CRUD.con.Close();
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @LOG_FILE, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                else
+                {
+                    //Escrever no Documento de LOG
+                    Logger.WriteLog(filename, "Gerou um documento para o cadastro: " + txtIDAutor.Text + ";", txtNomeLogin.Text);
+                    //Salvar Documento de LOG
+                    CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                "Values('9999', @LOG_LOGIN, @LOG_FILE, @DATA_ATUALIZACAO)";
                     Executar(CRUD.sql, "Insert");
                 }
 

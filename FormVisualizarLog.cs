@@ -1,20 +1,10 @@
-﻿using Microsoft.VisualBasic;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Advocacia_Dias_Pereira
 {
@@ -67,10 +57,10 @@ namespace Advocacia_Dias_Pereira
                     }
                 }
                 CRUD.con.Close();
-                StreamReader stream = new StreamReader(filename);
-                string filedata = stream.ReadToEnd();
-                txtLog.Text = filedata.ToString();
-                stream.Close();
+                //StreamReader stream = new StreamReader(filename);
+                //string filedata = stream.ReadToEnd();
+                //txtLog.Text = filedata.ToString();
+                //stream.Close();
             }
             else
             {
@@ -83,23 +73,23 @@ namespace Advocacia_Dias_Pereira
             //Converter para string a pasta %temp%
             string dir = Path.GetTempPath();
             filename = dir + txtIDCadastro.Text + "_" + txtNomeAutor.Text + ".txt";
-            
-            string pesquisa = txtPesquisar.Text;
 
-            int counter = 0;
+            string pesquisa = txtPesquisar.Text;
+            string pesquisa2 = txtPesquisar2.Text;
+            string pesquisa3 = txtPesquisar3.Text;
+
+
             string line;
             txtLog.Text = null;
             // Read the file and display it line by line.
             StreamReader file = new StreamReader(filename);
             while ((line = file.ReadLine()) != null)
             {
-                if (line.Contains(pesquisa))
+                if ((line.Contains(pesquisa) && (line.Contains(pesquisa2)) && (line.Contains(pesquisa3)))) 
                 {
                     //txtLog.Text = "";
                     txtLog.Text = txtLog.Text + line + '\r';
                 }
-
-                counter++;
             }
             
 

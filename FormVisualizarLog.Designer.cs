@@ -37,6 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPesquisar2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPesquisar3 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtLog
@@ -48,8 +52,8 @@
             this.txtLog.Location = new System.Drawing.Point(34, 71);
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(725, 360);
-            this.txtLog.TabIndex = 0;
+            this.txtLog.Size = new System.Drawing.Size(721, 430);
+            this.txtLog.TabIndex = 6;
             this.txtLog.Text = "";
             // 
             // label1
@@ -67,7 +71,7 @@
             this.txtIDCadastro.Location = new System.Drawing.Point(100, 19);
             this.txtIDCadastro.Name = "txtIDCadastro";
             this.txtIDCadastro.Size = new System.Drawing.Size(100, 20);
-            this.txtIDCadastro.TabIndex = 2;
+            this.txtIDCadastro.TabIndex = 0;
             this.txtIDCadastro.Visible = false;
             // 
             // label2
@@ -84,46 +88,86 @@
             // 
             this.txtNomeAutor.Location = new System.Drawing.Point(275, 19);
             this.txtNomeAutor.Name = "txtNomeAutor";
-            this.txtNomeAutor.Size = new System.Drawing.Size(484, 20);
-            this.txtNomeAutor.TabIndex = 2;
+            this.txtNomeAutor.Size = new System.Drawing.Size(479, 20);
+            this.txtNomeAutor.TabIndex = 1;
             this.txtNomeAutor.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 48);
+            this.label3.Location = new System.Drawing.Point(206, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Pesquisar";
+            this.label3.Text = "Nome";
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(100, 45);
+            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisar.Location = new System.Drawing.Point(275, 45);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(100, 20);
-            this.txtPesquisar.TabIndex = 2;
+            this.txtPesquisar.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(206, 42);
+            this.button1.Location = new System.Drawing.Point(679, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(454, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Atividade";
+            // 
+            // txtPesquisar2
+            // 
+            this.txtPesquisar2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisar2.Location = new System.Drawing.Point(530, 46);
+            this.txtPesquisar2.Name = "txtPesquisar2";
+            this.txtPesquisar2.Size = new System.Drawing.Size(100, 20);
+            this.txtPesquisar2.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Data";
+            // 
+            // txtPesquisar3
+            // 
+            this.txtPesquisar3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtPesquisar3.Location = new System.Drawing.Point(100, 45);
+            this.txtPesquisar3.Name = "txtPesquisar3";
+            this.txtPesquisar3.Size = new System.Drawing.Size(100, 20);
+            this.txtPesquisar3.TabIndex = 2;
+            this.txtPesquisar3.Value = new System.DateTime(2022, 11, 19, 0, 0, 0, 0);
             // 
             // FormVisualizarLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(796, 520);
+            this.Controls.Add(this.txtPesquisar3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNomeAutor);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPesquisar2);
             this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtIDCadastro);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLog);
@@ -146,5 +190,9 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtPesquisar2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker txtPesquisar3;
     }
 }
