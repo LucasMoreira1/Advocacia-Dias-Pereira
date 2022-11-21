@@ -98,7 +98,16 @@ namespace Advocacia_Dias_Pereira
             //Informações Gerais
             CRUD.cmd.Parameters.AddWithValue("DATA_ATUALIZACAO", Convert.ToDateTime(DateTime.Now));
             //Informações Gerais
-            CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(txtDataCadastro.Text));
+            if(txtDataCadastro.Text != "  /  /")
+            {
+                CRUD.cmd.Parameters.AddWithValue("DataCadastro", Convert.ToDateTime(txtDataCadastro.Text));
+            }
+            else
+            { 
+                CRUD.cmd.Parameters.AddWithValue("DataCadastro", txtDataCadastro.Text);
+            }
+
+            
 
             //Identificação Autor
             CRUD.cmd.Parameters.AddWithValue("CadNumero", txtCadNumero.Text.Trim());
