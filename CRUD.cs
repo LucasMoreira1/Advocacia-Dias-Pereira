@@ -8,7 +8,7 @@ namespace Advocacia_Dias_Pereira
     {
         private static string getConnectionString()
         {
-            string conString = "Server=108.167.132.199;Database=soluc963_ADV_DIASPEREIRA;Uid=soluc963_DIASPER; Pwd=fXsI2J01!-5-; ";
+            string conString = "Server=108.167.132.199;Database=soluc963_ADV_DIASPEREIRA;Uid=soluc963_DIASPER; Pwd=fXsI2J01!-5-;Convert Zero Datetime=True";
             return conString;
         }
 

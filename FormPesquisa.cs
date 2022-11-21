@@ -69,6 +69,14 @@ namespace Advocacia_Dias_Pereira
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
 
+            DataGridView dgv = dataGridView1;
+
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
             if (dt.Rows.Count > 0)
             {
                 row = Convert.ToInt32(dt.Rows.Count.ToString());
@@ -80,15 +88,6 @@ namespace Advocacia_Dias_Pereira
 
             toolStripStatusLabel1.Text = "Número de linha(s): " + row.ToString();
 
-            DataGridView dgv = dataGridView1;
-
-            dgv.MultiSelect = false;
-            dgv.AutoGenerateColumns = true;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
-            dgv.DataSource = dt;
-            //dgv.Columns["Foto"].Visible = false;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         void dgv_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
