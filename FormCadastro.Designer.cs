@@ -55,8 +55,8 @@
             this.btnVisualizarLog = new System.Windows.Forms.Button();
             this.btnDocumentos = new System.Windows.Forms.Button();
             this.btnDuplicar = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -68,6 +68,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtDataCadastro = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone2 = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -109,6 +110,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtDataAudiencia = new System.Windows.Forms.MaskedTextBox();
             this.txtDataPericia = new System.Windows.Forms.MaskedTextBox();
+            this.cboxResultado = new System.Windows.Forms.ComboBox();
             this.cboxStatusProcesso = new System.Windows.Forms.ComboBox();
             this.cboxTipoProcesso = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -116,6 +118,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtTipoAudiencia = new System.Windows.Forms.TextBox();
             this.txtAssunto1 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.txtProcesso = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -132,9 +135,6 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
-            this.txtDataCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.cboxResultado = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -427,6 +427,17 @@
             this.btnDuplicar.UseVisualStyleBackColor = true;
             this.btnDuplicar.Click += new System.EventHandler(this.btnDuplicar_Click);
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(732, 68);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(81, 35);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -438,17 +449,6 @@
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Visible = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(732, 68);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(81, 35);
-            this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtEmail
             // 
@@ -592,6 +592,17 @@
             this.button1.Text = "Limpar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
+            // 
+            // txtDataCadastro
+            // 
+            this.txtDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataCadastro.Location = new System.Drawing.Point(442, 24);
+            this.txtDataCadastro.Mask = "00/00/0000";
+            this.txtDataCadastro.Name = "txtDataCadastro";
+            this.txtDataCadastro.Size = new System.Drawing.Size(124, 22);
+            this.txtDataCadastro.TabIndex = 6;
+            this.txtDataCadastro.ValidatingType = typeof(System.DateTime);
+            this.txtDataCadastro.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // txtTelefone2
             // 
@@ -1041,6 +1052,23 @@
             this.txtDataPericia.TabIndex = 5;
             this.txtDataPericia.ValidatingType = typeof(System.DateTime);
             // 
+            // cboxResultado
+            // 
+            this.cboxResultado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboxResultado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxResultado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxResultado.FormattingEnabled = true;
+            this.cboxResultado.Items.AddRange(new object[] {
+            "1-PROCEDENTE",
+            "2-IMPROCEDENTE",
+            "3-ACORDO",
+            "4-OUTROS"});
+            this.cboxResultado.Location = new System.Drawing.Point(513, 85);
+            this.cboxResultado.Name = "cboxResultado";
+            this.cboxResultado.Size = new System.Drawing.Size(150, 24);
+            this.cboxResultado.TabIndex = 3;
+            // 
             // cboxStatusProcesso
             // 
             this.cboxStatusProcesso.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -1121,6 +1149,16 @@
             this.txtAssunto1.Name = "txtAssunto1";
             this.txtAssunto1.Size = new System.Drawing.Size(149, 22);
             this.txtAssunto1.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(374, 88);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(69, 16);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Resultado";
             // 
             // txtProcesso
             // 
@@ -1270,42 +1308,6 @@
             this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
-            // 
-            // txtDataCadastro
-            // 
-            this.txtDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataCadastro.Location = new System.Drawing.Point(442, 24);
-            this.txtDataCadastro.Mask = "00/00/0000";
-            this.txtDataCadastro.Name = "txtDataCadastro";
-            this.txtDataCadastro.Size = new System.Drawing.Size(124, 22);
-            this.txtDataCadastro.TabIndex = 6;
-            this.txtDataCadastro.ValidatingType = typeof(System.DateTime);
-            this.txtDataCadastro.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(374, 88);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(69, 16);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Resultado";
-            // 
-            // cboxResultado
-            // 
-            this.cboxResultado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboxResultado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxResultado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxResultado.FormattingEnabled = true;
-            this.cboxResultado.Items.AddRange(new object[] {
-            "1-PROCEDENTE",
-            "2-IMPROCEDENTE"});
-            this.cboxResultado.Location = new System.Drawing.Point(513, 85);
-            this.cboxResultado.Name = "cboxResultado";
-            this.cboxResultado.Size = new System.Drawing.Size(150, 24);
-            this.cboxResultado.TabIndex = 3;
             // 
             // FormCadastro
             // 
