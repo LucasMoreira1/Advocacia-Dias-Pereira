@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.IO;
@@ -20,6 +21,7 @@ namespace Advocacia_Dias_Pereira
 
         private void FormVisualizarLog_Load(object sender, EventArgs e)
         {
+            txtData2.Text = DateTime.Now.ToShortDateString();
             //Converter para string a pasta %temp%
             string dir = Path.GetTempPath();
             filename = dir + txtIDCadastro.Text + "_" + txtNomeAutor.Text + ".txt";
@@ -76,8 +78,9 @@ namespace Advocacia_Dias_Pereira
 
             string pesquisa = txtPesquisar.Text;
             string pesquisa2 = txtPesquisar2.Text;
-            string pesquisa3 = txtPesquisar3.Text;
-
+            var data1 = Convert.ToDateTime(txtData1.Text);
+            var data2 = Convert.ToDateTime(txtData2.Text);
+            var data3 = "";
 
             string line;
             txtLog.Text = null;
@@ -85,10 +88,20 @@ namespace Advocacia_Dias_Pereira
             StreamReader file = new StreamReader(filename);
             while ((line = file.ReadLine()) != null)
             {
-                if ((line.Contains(pesquisa) && (line.Contains(pesquisa2)) && (line.Contains(pesquisa3)))) 
+                var dates = new List<DateTime>();
+
+                for (var dt = data1; dt <= data2; dt = dt.AddDays(1))
                 {
-                    //txtLog.Text = "";
-                    txtLog.Text = txtLog.Text + line + '\r';
+                    dates.Add(dt);
+
+                    var data = dt.ToShortDateString();
+
+                    if ((line.Contains(pesquisa) && (line.Contains(pesquisa2)) && (line.Contains(data))))
+                    {
+
+                        //txtLog.Text = "";
+                        txtLog.Text = txtLog.Text + line + '\r';
+                    }
                 }
             }
             

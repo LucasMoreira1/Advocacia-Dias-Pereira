@@ -40,7 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPesquisar2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPesquisar3 = new System.Windows.Forms.DateTimePicker();
+            this.txtData1 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtData2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtLog
@@ -95,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 49);
+            this.label3.Location = new System.Drawing.Point(381, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 1;
@@ -104,14 +106,14 @@
             // txtPesquisar
             // 
             this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisar.Location = new System.Drawing.Point(275, 45);
+            this.txtPesquisar.Location = new System.Drawing.Point(422, 45);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(88, 20);
             this.txtPesquisar.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(679, 44);
+            this.button1.Location = new System.Drawing.Point(680, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -122,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(454, 49);
+            this.label4.Location = new System.Drawing.Point(516, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 1;
@@ -131,7 +133,7 @@
             // txtPesquisar2
             // 
             this.txtPesquisar2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisar2.Location = new System.Drawing.Point(530, 46);
+            this.txtPesquisar2.Location = new System.Drawing.Point(573, 45);
             this.txtPesquisar2.Name = "txtPesquisar2";
             this.txtPesquisar2.Size = new System.Drawing.Size(100, 20);
             this.txtPesquisar2.TabIndex = 4;
@@ -141,31 +143,51 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(31, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Data";
+            this.label5.Text = "Data Inicial";
             // 
-            // txtPesquisar3
+            // txtData1
             // 
-            this.txtPesquisar3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtPesquisar3.Location = new System.Drawing.Point(100, 45);
-            this.txtPesquisar3.Name = "txtPesquisar3";
-            this.txtPesquisar3.Size = new System.Drawing.Size(100, 20);
-            this.txtPesquisar3.TabIndex = 2;
-            this.txtPesquisar3.Value = new System.DateTime(2022, 11, 19, 0, 0, 0, 0);
+            this.txtData1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtData1.Location = new System.Drawing.Point(100, 45);
+            this.txtData1.Name = "txtData1";
+            this.txtData1.Size = new System.Drawing.Size(100, 20);
+            this.txtData1.TabIndex = 2;
+            this.txtData1.Value = new System.DateTime(2022, 11, 19, 0, 0, 0, 0);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(206, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Data Final";
+            // 
+            // txtData2
+            // 
+            this.txtData2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtData2.Location = new System.Drawing.Point(275, 45);
+            this.txtData2.Name = "txtData2";
+            this.txtData2.Size = new System.Drawing.Size(100, 20);
+            this.txtData2.TabIndex = 2;
+            this.txtData2.Value = new System.DateTime(2022, 11, 19, 0, 0, 0, 0);
             // 
             // FormVisualizarLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 520);
-            this.Controls.Add(this.txtPesquisar3);
+            this.Controls.Add(this.txtData2);
+            this.Controls.Add(this.txtData1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNomeAutor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisar2);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtIDCadastro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -193,6 +215,8 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtPesquisar2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker txtPesquisar3;
+        private System.Windows.Forms.DateTimePicker txtData1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker txtData2;
     }
 }

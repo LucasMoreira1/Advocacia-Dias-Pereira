@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing;
+using Microsoft.SqlServer.Server;
+using System.Globalization;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -63,8 +65,7 @@ namespace Advocacia_Dias_Pereira
         public void loadFiltro()
         {
             CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
-              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%' " +
-              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + txtFiltro5.Text.Trim() + "%'ORDER BY Id;";
+              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%'ORDER BY Id;";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
@@ -572,9 +573,43 @@ namespace Advocacia_Dias_Pereira
             btnPesquisar_Click(sender, e);
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, EventArgs e)
         {
+            
+        }
 
+
+        private void btnPesquisaComData_Click(object sender, EventArgs e)
+        {
+            
+            DateTime filtrodata = DateTime.ParseExact(txtFiltro5.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string str = filtrodata.ToString("yyyy-MM-dd");
+
+            CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
+              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%' " +
+              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + str + "%'ORDER BY Id;";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+            DataGridView dgv = dataGridView1;
+
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            if (dt.Rows.Count > 0)
+            {
+                row = Convert.ToInt32(dt.Rows.Count.ToString());
+            }
+            else
+            {
+                row = 0;
+            }
+
+            toolStripStatusLabel1.Text = "Número de linha(s): " + row.ToString();
         }
     }
 }

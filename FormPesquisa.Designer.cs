@@ -58,8 +58,9 @@
             this.txtFiltro4 = new System.Windows.Forms.TextBox();
             this.cboxFiltro5 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFiltro5 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtFiltro5 = new System.Windows.Forms.DateTimePicker();
+            this.btnPesquisaComData = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -201,6 +202,7 @@
             this.cboxFiltro3.FormattingEnabled = true;
             this.cboxFiltro3.Items.AddRange(new object[] {
             "Autor",
+            "DataCadastro",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -231,6 +233,7 @@
             "TipoProcesso",
             "IDProcesso",
             "StatusProcesso",
+            "Resultado",
             "NatProcesso",
             "Assunto1",
             "Assunto2",
@@ -269,6 +272,7 @@
             this.cboxFiltro2.FormattingEnabled = true;
             this.cboxFiltro2.Items.AddRange(new object[] {
             "Autor",
+            "DataCadastro",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -299,6 +303,7 @@
             "TipoProcesso",
             "IDProcesso",
             "StatusProcesso",
+            "Resultado",
             "NatProcesso",
             "Assunto1",
             "Assunto2",
@@ -379,7 +384,7 @@
             this.btnPesquisaFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisaFiltro.Location = new System.Drawing.Point(137, 109);
             this.btnPesquisaFiltro.Name = "btnPesquisaFiltro";
-            this.btnPesquisaFiltro.Size = new System.Drawing.Size(502, 36);
+            this.btnPesquisaFiltro.Size = new System.Drawing.Size(375, 36);
             this.btnPesquisaFiltro.TabIndex = 26;
             this.btnPesquisaFiltro.Text = "Pesquisar Filtro";
             this.btnPesquisaFiltro.UseVisualStyleBackColor = true;
@@ -407,6 +412,7 @@
             this.cboxFiltro4.FormattingEnabled = true;
             this.cboxFiltro4.Items.AddRange(new object[] {
             "Autor",
+            "DataCadastro",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -437,6 +443,7 @@
             "TipoProcesso",
             "IDProcesso",
             "StatusProcesso",
+            "Resultado",
             "NatProcesso",
             "Assunto1",
             "Assunto2",
@@ -466,6 +473,7 @@
             this.cboxFiltro5.FormattingEnabled = true;
             this.cboxFiltro5.Items.AddRange(new object[] {
             "Autor",
+            "DataCadastro",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -496,6 +504,7 @@
             "TipoProcesso",
             "IDProcesso",
             "StatusProcesso",
+            "Resultado",
             "NatProcesso",
             "Assunto1",
             "Assunto2",
@@ -508,7 +517,7 @@
             this.cboxFiltro5.Name = "cboxFiltro5";
             this.cboxFiltro5.Size = new System.Drawing.Size(121, 24);
             this.cboxFiltro5.TabIndex = 12;
-            this.cboxFiltro5.Text = "StatusProcesso";
+            this.cboxFiltro5.Text = "DataCadastro";
             // 
             // label1
             // 
@@ -521,15 +530,6 @@
             this.label1.Text = "Filtro 4";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtFiltro5
-            // 
-            this.txtFiltro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro5.Location = new System.Drawing.Point(518, 79);
-            this.txtFiltro5.Name = "txtFiltro5";
-            this.txtFiltro5.Size = new System.Drawing.Size(121, 22);
-            this.txtFiltro5.TabIndex = 14;
-            this.txtFiltro5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -541,13 +541,36 @@
             this.label2.Text = "Filtro 5";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txtFiltro5
+            // 
+            this.txtFiltro5.CustomFormat = "";
+            this.txtFiltro5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFiltro5.Location = new System.Drawing.Point(518, 79);
+            this.txtFiltro5.Name = "txtFiltro5";
+            this.txtFiltro5.Size = new System.Drawing.Size(121, 20);
+            this.txtFiltro5.TabIndex = 28;
+            this.txtFiltro5.Value = new System.DateTime(2022, 11, 21, 0, 0, 0, 0);
+            // 
+            // btnPesquisaComData
+            // 
+            this.btnPesquisaComData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisaComData.Location = new System.Drawing.Point(518, 109);
+            this.btnPesquisaComData.Name = "btnPesquisaComData";
+            this.btnPesquisaComData.Size = new System.Drawing.Size(121, 36);
+            this.btnPesquisaComData.TabIndex = 26;
+            this.btnPesquisaComData.Text = "Com Data";
+            this.btnPesquisaComData.UseVisualStyleBackColor = true;
+            this.btnPesquisaComData.Click += new System.EventHandler(this.btnPesquisaComData_Click);
+            // 
             // FormPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 612);
+            this.Controls.Add(this.txtFiltro5);
             this.Controls.Add(this.txtPermissaoLogin);
             this.Controls.Add(this.txtNomeLogin);
+            this.Controls.Add(this.btnPesquisaComData);
             this.Controls.Add(this.btnPesquisaFiltro);
             this.Controls.Add(this.btnPesquisaID);
             this.Controls.Add(this.btnDeletar);
@@ -561,7 +584,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFiltro3);
-            this.Controls.Add(this.txtFiltro5);
             this.Controls.Add(this.txtFiltro3);
             this.Controls.Add(this.lblFiltro1);
             this.Controls.Add(this.label1);
@@ -615,7 +637,8 @@
         public System.Windows.Forms.TextBox txtFiltro4;
         private System.Windows.Forms.ComboBox cboxFiltro5;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtFiltro5;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DateTimePicker txtFiltro5;
+        private System.Windows.Forms.Button btnPesquisaComData;
     }
 }
