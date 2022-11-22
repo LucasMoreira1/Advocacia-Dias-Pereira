@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 using Microsoft.VisualBasic;
+using System.Runtime.CompilerServices;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -14,6 +15,48 @@ namespace Advocacia_Dias_Pereira
         string filename = "";
         string filename2 = "";
         string NumeroRegistro = "";
+        bool txtautor_changed = false;
+        bool txtDataCadastro_changed = false;
+        bool txtNacionalidade_changed = false;
+        bool cboxEstadoCivil_changed = false;
+        bool txtProfissao_changed = false;
+        bool txtRG_changed = false;
+        bool txtCPF_changed = false;
+        bool txtDataNascimento_changed = false;
+        bool txtTelefone1_changed = false;
+        bool txtTelefone2_changed = false;
+        bool txtEmail_changed = false;
+        bool txtCEP_changed = false;
+        bool txtLogradouro_changed = false;
+        bool txtNumero_changed = false;
+        bool txtComplemento_changed = false;
+        bool txtBairro_changed = false;
+        bool txtCidade_changed = false;
+        bool txtEstado_changed = false;
+        bool txtReu_changed = false;
+        bool txtCNPJ_changed = false;
+        bool txtTelefoneReu_changed = false;
+        bool txtCEPReu_changed = false;
+        bool txtLogradouroReu_changed = false;
+        bool txtNumeroReu_changed = false;
+        bool txtComplementoReu_changed = false;
+        bool txtBairroReu_changed = false;
+        bool txtCidadeReu_changed = false;
+        bool txtEstadoReu_changed = false;
+        bool txtProcesso_changed = false;
+        bool txtIdProcesso_changed = false;
+        bool txtNatProcesso_changed = false;
+        bool txtAssunto1_changed = false;
+        bool txtAssunto2_changed = false;
+        bool txtAssunto3_changed = false;
+        bool cboxTipoProcesso_changed = false;
+        bool cboxStatusProcesso_changed = false;
+        bool cboxResultado_changed = false;
+        bool txtDataPericia_changed = false;
+        bool txtTipoAudiencia_changed = false;
+        bool txtDataAudiencia_changed = false;
+        bool txtObservacao_changed = false;
+
         MySqlDataReader reader;
         public static MySqlCommand cmd = default(MySqlCommand);
 
@@ -487,9 +530,302 @@ namespace Advocacia_Dias_Pereira
                 CRUD.con.Close();
                 //Escrever no Documento de LOG
                 Logger.WriteLog(filename, "Atualizou o Cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
-                //Atualiza Log existente
-                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
-                Executar(CRUD.sql, "Update");
+                
+                if (txtautor_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Nome Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtDataCadastro_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Data Cadastro.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtNacionalidade_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Nacionalidade Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (cboxEstadoCivil_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Estado Civil Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtProfissao_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Profissão Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtRG_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: RG Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCPF_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: CPF Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtDataNascimento_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Data Nascimento Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtTelefone1_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Telefone 1 Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtTelefone2_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Telefone 2 Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtEmail_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Email Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCEP_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: CEP Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtLogradouro_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Logradouro Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtNumero_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Número Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtComplemento_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Complemento Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtBairro_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Bairro Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCidade_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Cidade Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtEstado_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Estado Autor.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Nome Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCNPJ_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: CPF/CNPJ Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtTelefoneReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Telefone Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCEPReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: CEP Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtLogradouroReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Logradouro Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtNumeroReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Número Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtComplementoReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Complemento Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtBairroReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Bairro Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtCidadeReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Cidade Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtEstadoReu_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Estado Réu.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtProcesso_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtIdProcesso_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: ID Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtNatProcesso_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Natureza do Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtAssunto1_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Assunto 1.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtAssunto2_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Assunto 2.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtAssunto3_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Assunto 3.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (cboxTipoProcesso_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Tipo Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (cboxStatusProcesso_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Status Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (cboxResultado_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Resultado Processo.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtDataPericia_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Data Perícia.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtTipoAudiencia_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Tipo Audiência.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtDataAudiencia_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Data Audiência.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                if (txtObservacao_changed == true)
+                {
+                    Logger.WriteLog(filename, "Campo atualizado: Observação.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                
+                else
+                {
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                
             }
             else
             {
@@ -512,10 +848,11 @@ namespace Advocacia_Dias_Pereira
         private void FormCadastro_Load(object sender, EventArgs e)
         {
             txtDataCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            
             //cboxDocumento.SelectedIndex = 0;
 
             //Camera
-            
+
         }        
 
         private void btnImagemEmBranco_Click(object sender, EventArgs e)
@@ -1046,13 +1383,261 @@ namespace Advocacia_Dias_Pereira
             formVisualizarLog.Show();
 
         }
-
+        #region Textbox Changed
         private void FormCadastro_Load_1(object sender, EventArgs e)
         {
+            txtautor_changed = false;
+            txtDataCadastro_changed = false;
+            txtNacionalidade_changed = false;
+            cboxEstadoCivil_changed = false;
+            txtProfissao_changed = false;
+            txtRG_changed = false;
+            txtCPF_changed = false;
+            txtDataNascimento_changed = false;
+            txtTelefone1_changed = false;
+            txtTelefone2_changed = false;
+            txtEmail_changed = false;
+            txtCEP_changed = false;
+            txtLogradouro_changed = false;
+            txtNumero_changed = false;
+            txtComplemento_changed = false;
+            txtBairro_changed = false;
+            txtCidade_changed = false;
+            txtEstado_changed = false;
+            txtReu_changed = false;
+            txtCNPJ_changed = false;
+            txtTelefoneReu_changed = false;
+            txtCEPReu_changed = false;
+            txtLogradouroReu_changed = false;
+            txtNumeroReu_changed = false;
+            txtComplementoReu_changed = false;
+            txtBairroReu_changed = false;
+            txtCidadeReu_changed = false;
+            txtEstadoReu_changed = false;
+            txtProcesso_changed = false;
+            txtIdProcesso_changed = false;
+            txtNatProcesso_changed = false;
+            txtAssunto1_changed = false;
+            txtAssunto2_changed = false;
+            txtAssunto3_changed = false;
+            cboxTipoProcesso_changed = false;
+            cboxStatusProcesso_changed = false;
+            cboxResultado_changed = false;
+            txtDataPericia_changed = false;
+            txtTipoAudiencia_changed = false;
+            txtDataAudiencia_changed = false;
+            txtObservacao_changed = false;
+
             if (txtPermissaoLogin.Text == "2")
             {
                 btnVisualizarLog.Visible = false;
             }
         }
+
+        private void txtAutor_TextChanged(object sender, EventArgs e)
+        {
+            txtautor_changed = true;
+        }
+
+        private void txtDataCadastro_TextChanged(object sender, EventArgs e)
+        {
+            txtDataCadastro_changed = true;
+        }
+
+        private void txtNacionalidade_TextChanged(object sender, EventArgs e)
+        {
+            txtNacionalidade_changed = true;
+        }
+
+        private void cboxEstadoCivil_TextChanged(object sender, EventArgs e)
+        {
+            cboxEstadoCivil_changed = true;
+        }
+
+        private void txtProfissao_TextChanged(object sender, EventArgs e)
+        {
+            txtProfissao_changed = true;
+        }
+
+        private void txtRG_TextChanged(object sender, EventArgs e)
+        {
+            txtRG_changed = true;
+        }
+
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+            txtCPF_changed = true;
+        }
+
+        private void txtDataNascimento_TextChanged(object sender, EventArgs e)
+        {
+            txtDataNascimento_changed = true;
+        }
+
+        private void txtTelefone1_TextChanged(object sender, EventArgs e)
+        {
+            txtTelefone1_changed = true;
+        }
+
+        private void txtTelefone2_TextChanged(object sender, EventArgs e)
+        {
+            txtTelefone2_changed = true;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            txtEmail_changed = true;
+        }
+
+        private void txtCEP_TextChanged(object sender, EventArgs e)
+        {
+            txtCEP_changed = true;
+        }
+
+        private void txtLogradouro_TextChanged(object sender, EventArgs e)
+        {
+            txtLogradouro_changed = true;
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+            txtNumero_changed = true;
+        }
+
+        private void txtComplemento_TextChanged(object sender, EventArgs e)
+        {
+            txtComplemento_changed = true;
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            txtBairro_changed = true;
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+            txtCidade_changed = true;
+        }
+
+        private void txtEstado_TextChanged(object sender, EventArgs e)
+        {
+            txtEstado_changed = true;
+        }
+
+        private void txtReu_TextChanged(object sender, EventArgs e)
+        {
+            txtReu_changed = true;
+        }
+
+        private void txtCNPJ_TextChanged(object sender, EventArgs e)
+        {
+            txtCNPJ_changed = true;
+        }
+
+        private void txtTelefoneReu_TextChanged(object sender, EventArgs e)
+        {
+            txtTelefoneReu_changed = true;
+        }
+
+        private void txtCEPReu_TextChanged(object sender, EventArgs e)
+        {
+            txtCEPReu_changed = true;
+        }
+
+        private void txtLogradouroReu_TextChanged(object sender, EventArgs e)
+        {
+            txtLogradouroReu_changed = true;
+        }
+
+        private void txtNumeroReu_TextChanged(object sender, EventArgs e)
+        {
+            txtNumeroReu_changed = true;
+        }
+
+        private void txtComplementoReu_TextChanged(object sender, EventArgs e)
+        {
+            txtComplementoReu_changed = true;
+        }
+
+        private void txtBairroReu_TextChanged(object sender, EventArgs e)
+        {
+            txtBairroReu_changed = true;
+        }
+
+        private void txtCidadeReu_TextChanged(object sender, EventArgs e)
+        {
+            txtCidadeReu_changed = true;
+        }
+
+        private void txtEstadoReu_TextChanged(object sender, EventArgs e)
+        {
+            txtEstadoReu_changed = true;
+        }
+
+        private void txtProcesso_TextChanged(object sender, EventArgs e)
+        {
+            txtProcesso_changed = true;
+        }
+
+        private void txtIdProcesso_TextChanged(object sender, EventArgs e)
+        {
+            txtIdProcesso_changed = true;
+        }
+
+        private void txtNatProcesso_TextChanged(object sender, EventArgs e)
+        {
+            txtNatProcesso_changed = true;
+        }
+
+        private void txtAssunto1_TextChanged(object sender, EventArgs e)
+        {
+            txtAssunto1_changed = true;
+        }
+
+        private void txtAssunto2_TextChanged(object sender, EventArgs e)
+        {
+            txtAssunto2_changed = true;
+        }
+
+        private void txtAssunto3_TextChanged(object sender, EventArgs e)
+        {
+            txtAssunto3_changed = true;
+        }
+
+        private void cboxTipoProcesso_TextChanged(object sender, EventArgs e)
+        {
+            cboxTipoProcesso_changed = true;
+        }
+
+        private void cboxStatusProcesso_TextChanged(object sender, EventArgs e)
+        {
+            cboxStatusProcesso_changed = true;
+        }
+
+        private void cboxResultado_TextChanged(object sender, EventArgs e)
+        {
+            cboxResultado_changed = true;
+        }
+
+        private void txtDataPericia_TextChanged(object sender, EventArgs e)
+        {
+            txtDataPericia_changed = true;
+        }
+
+        private void txtTipoAudiencia_TextChanged(object sender, EventArgs e)
+        {
+            txtTipoAudiencia_changed = true;
+        }
+
+        private void txtDataAudiencia_TextChanged(object sender, EventArgs e)
+        {
+            txtDataAudiencia_changed = true;
+        }
+
+        private void txtObservacao_TextChanged(object sender, EventArgs e)
+        {
+            txtObservacao_changed = true;
+        }
+        #endregion
     }
 }

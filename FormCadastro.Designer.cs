@@ -153,6 +153,7 @@
             this.txtNacionalidade.Size = new System.Drawing.Size(150, 22);
             this.txtNacionalidade.TabIndex = 1;
             this.txtNacionalidade.Text = "BRASILEIRO(A)";
+            this.txtNacionalidade.TextChanged += new System.EventHandler(this.txtNacionalidade_TextChanged);
             // 
             // txtRG
             // 
@@ -162,6 +163,7 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(123, 22);
             this.txtRG.TabIndex = 4;
+            this.txtRG.TextChanged += new System.EventHandler(this.txtRG_TextChanged);
             // 
             // groupBox2
             // 
@@ -207,6 +209,7 @@
             this.txtCEP.Size = new System.Drawing.Size(89, 22);
             this.txtCEP.TabIndex = 0;
             this.txtCEP.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtCEP.TextChanged += new System.EventHandler(this.txtCEP_TextChanged);
             // 
             // label17
             // 
@@ -286,6 +289,7 @@
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(114, 22);
             this.txtComplemento.TabIndex = 4;
+            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             // 
             // txtEstado
             // 
@@ -295,6 +299,7 @@
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(88, 22);
             this.txtEstado.TabIndex = 7;
+            this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // txtCidade
             // 
@@ -304,6 +309,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(347, 22);
             this.txtCidade.TabIndex = 6;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // txtBairro
             // 
@@ -313,6 +319,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(331, 22);
             this.txtBairro.TabIndex = 5;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // txtNumero
             // 
@@ -322,6 +329,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(89, 22);
             this.txtNumero.TabIndex = 3;
+            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
             // txtLogradouro
             // 
@@ -331,6 +339,7 @@
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(331, 22);
             this.txtLogradouro.TabIndex = 2;
+            this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             // 
             // txtObservacao
             // 
@@ -342,6 +351,7 @@
             this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtObservacao.Size = new System.Drawing.Size(427, 122);
             this.txtObservacao.TabIndex = 0;
+            this.txtObservacao.TextChanged += new System.EventHandler(this.txtObservacao_TextChanged);
             // 
             // groupBox4
             // 
@@ -458,6 +468,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtCPF
             // 
@@ -468,6 +479,7 @@
             this.txtCPF.Size = new System.Drawing.Size(123, 22);
             this.txtCPF.TabIndex = 5;
             this.txtCPF.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             // 
             // txtDataNascimento
             // 
@@ -479,6 +491,7 @@
             this.txtDataNascimento.TabIndex = 6;
             this.txtDataNascimento.ValidatingType = typeof(System.DateTime);
             this.txtDataNascimento.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtDataNascimento.TextChanged += new System.EventHandler(this.txtDataNascimento_TextChanged);
             // 
             // txtTelefone1
             // 
@@ -489,6 +502,7 @@
             this.txtTelefone1.Size = new System.Drawing.Size(123, 22);
             this.txtTelefone1.TabIndex = 7;
             this.txtTelefone1.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtTelefone1.TextChanged += new System.EventHandler(this.txtTelefone1_TextChanged);
             // 
             // cboxEstadoCivil
             // 
@@ -507,6 +521,7 @@
             this.cboxEstadoCivil.Name = "cboxEstadoCivil";
             this.cboxEstadoCivil.Size = new System.Drawing.Size(124, 24);
             this.cboxEstadoCivil.TabIndex = 2;
+            this.cboxEstadoCivil.TextChanged += new System.EventHandler(this.cboxEstadoCivil_TextChanged);
             // 
             // label2
             // 
@@ -526,6 +541,7 @@
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(420, 22);
             this.txtAutor.TabIndex = 0;
+            this.txtAutor.TextChanged += new System.EventHandler(this.txtAutor_TextChanged);
             // 
             // label6
             // 
@@ -603,6 +619,7 @@
             this.txtDataCadastro.TabIndex = 6;
             this.txtDataCadastro.ValidatingType = typeof(System.DateTime);
             this.txtDataCadastro.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtDataCadastro.TextChanged += new System.EventHandler(this.txtDataCadastro_TextChanged);
             // 
             // txtTelefone2
             // 
@@ -613,6 +630,7 @@
             this.txtTelefone2.Size = new System.Drawing.Size(124, 22);
             this.txtTelefone2.TabIndex = 8;
             this.txtTelefone2.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtTelefone2.TextChanged += new System.EventHandler(this.txtTelefone2_TextChanged);
             // 
             // label12
             // 
@@ -732,6 +750,7 @@
             this.txtProfissao.Name = "txtProfissao";
             this.txtProfissao.Size = new System.Drawing.Size(420, 22);
             this.txtProfissao.TabIndex = 3;
+            this.txtProfissao.TextChanged += new System.EventHandler(this.txtProfissao_TextChanged);
             // 
             // groupBox3
             // 
@@ -769,6 +788,7 @@
             this.txtTelefoneReu.Name = "txtTelefoneReu";
             this.txtTelefoneReu.Size = new System.Drawing.Size(123, 22);
             this.txtTelefoneReu.TabIndex = 2;
+            this.txtTelefoneReu.TextChanged += new System.EventHandler(this.txtTelefoneReu_TextChanged);
             // 
             // label1
             // 
@@ -788,6 +808,7 @@
             this.txtReu.Name = "txtReu";
             this.txtReu.Size = new System.Drawing.Size(420, 22);
             this.txtReu.TabIndex = 0;
+            this.txtReu.TextChanged += new System.EventHandler(this.txtReu_TextChanged);
             // 
             // label27
             // 
@@ -816,6 +837,7 @@
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(152, 22);
             this.txtCNPJ.TabIndex = 1;
+            this.txtCNPJ.TextChanged += new System.EventHandler(this.txtCNPJ_TextChanged);
             // 
             // groupBox5
             // 
@@ -861,6 +883,7 @@
             this.txtCEPReu.Size = new System.Drawing.Size(89, 22);
             this.txtCEPReu.TabIndex = 0;
             this.txtCEPReu.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtCEPReu.TextChanged += new System.EventHandler(this.txtCEPReu_TextChanged);
             // 
             // label32
             // 
@@ -940,6 +963,7 @@
             this.txtComplementoReu.Name = "txtComplementoReu";
             this.txtComplementoReu.Size = new System.Drawing.Size(114, 22);
             this.txtComplementoReu.TabIndex = 5;
+            this.txtComplementoReu.TextChanged += new System.EventHandler(this.txtComplementoReu_TextChanged);
             // 
             // txtEstadoReu
             // 
@@ -949,6 +973,7 @@
             this.txtEstadoReu.Name = "txtEstadoReu";
             this.txtEstadoReu.Size = new System.Drawing.Size(88, 22);
             this.txtEstadoReu.TabIndex = 8;
+            this.txtEstadoReu.TextChanged += new System.EventHandler(this.txtEstadoReu_TextChanged);
             // 
             // txtCidadeReu
             // 
@@ -958,6 +983,7 @@
             this.txtCidadeReu.Name = "txtCidadeReu";
             this.txtCidadeReu.Size = new System.Drawing.Size(347, 22);
             this.txtCidadeReu.TabIndex = 7;
+            this.txtCidadeReu.TextChanged += new System.EventHandler(this.txtCidadeReu_TextChanged);
             // 
             // txtBairroReu
             // 
@@ -967,6 +993,7 @@
             this.txtBairroReu.Name = "txtBairroReu";
             this.txtBairroReu.Size = new System.Drawing.Size(331, 22);
             this.txtBairroReu.TabIndex = 6;
+            this.txtBairroReu.TextChanged += new System.EventHandler(this.txtBairroReu_TextChanged);
             // 
             // txtNumeroReu
             // 
@@ -976,6 +1003,7 @@
             this.txtNumeroReu.Name = "txtNumeroReu";
             this.txtNumeroReu.Size = new System.Drawing.Size(89, 22);
             this.txtNumeroReu.TabIndex = 4;
+            this.txtNumeroReu.TextChanged += new System.EventHandler(this.txtNumeroReu_TextChanged);
             // 
             // txtLogradouroReu
             // 
@@ -985,6 +1013,7 @@
             this.txtLogradouroReu.Name = "txtLogradouroReu";
             this.txtLogradouroReu.Size = new System.Drawing.Size(331, 22);
             this.txtLogradouroReu.TabIndex = 3;
+            this.txtLogradouroReu.TextChanged += new System.EventHandler(this.txtLogradouroReu_TextChanged);
             // 
             // groupBox6
             // 
@@ -1041,6 +1070,7 @@
             this.txtDataAudiencia.Size = new System.Drawing.Size(150, 22);
             this.txtDataAudiencia.TabIndex = 9;
             this.txtDataAudiencia.ValidatingType = typeof(System.DateTime);
+            this.txtDataAudiencia.TextChanged += new System.EventHandler(this.txtDataAudiencia_TextChanged);
             // 
             // txtDataPericia
             // 
@@ -1051,6 +1081,7 @@
             this.txtDataPericia.Size = new System.Drawing.Size(150, 22);
             this.txtDataPericia.TabIndex = 5;
             this.txtDataPericia.ValidatingType = typeof(System.DateTime);
+            this.txtDataPericia.TextChanged += new System.EventHandler(this.txtDataPericia_TextChanged);
             // 
             // cboxResultado
             // 
@@ -1068,6 +1099,7 @@
             this.cboxResultado.Name = "cboxResultado";
             this.cboxResultado.Size = new System.Drawing.Size(150, 24);
             this.cboxResultado.TabIndex = 3;
+            this.cboxResultado.TextChanged += new System.EventHandler(this.cboxResultado_TextChanged);
             // 
             // cboxStatusProcesso
             // 
@@ -1085,6 +1117,7 @@
             this.cboxStatusProcesso.Name = "cboxStatusProcesso";
             this.cboxStatusProcesso.Size = new System.Drawing.Size(150, 24);
             this.cboxStatusProcesso.TabIndex = 3;
+            this.cboxStatusProcesso.TextChanged += new System.EventHandler(this.cboxStatusProcesso_TextChanged);
             // 
             // cboxTipoProcesso
             // 
@@ -1101,6 +1134,7 @@
             this.cboxTipoProcesso.Name = "cboxTipoProcesso";
             this.cboxTipoProcesso.Size = new System.Drawing.Size(150, 24);
             this.cboxTipoProcesso.TabIndex = 1;
+            this.cboxTipoProcesso.TextChanged += new System.EventHandler(this.cboxTipoProcesso_TextChanged);
             // 
             // label26
             // 
@@ -1140,6 +1174,7 @@
             this.txtTipoAudiencia.Name = "txtTipoAudiencia";
             this.txtTipoAudiencia.Size = new System.Drawing.Size(150, 22);
             this.txtTipoAudiencia.TabIndex = 7;
+            this.txtTipoAudiencia.TextChanged += new System.EventHandler(this.txtTipoAudiencia_TextChanged);
             // 
             // txtAssunto1
             // 
@@ -1149,6 +1184,7 @@
             this.txtAssunto1.Name = "txtAssunto1";
             this.txtAssunto1.Size = new System.Drawing.Size(149, 22);
             this.txtAssunto1.TabIndex = 6;
+            this.txtAssunto1.TextChanged += new System.EventHandler(this.txtAssunto1_TextChanged);
             // 
             // label29
             // 
@@ -1168,6 +1204,7 @@
             this.txtProcesso.Name = "txtProcesso";
             this.txtProcesso.Size = new System.Drawing.Size(149, 22);
             this.txtProcesso.TabIndex = 0;
+            this.txtProcesso.TextChanged += new System.EventHandler(this.txtProcesso_TextChanged);
             // 
             // label10
             // 
@@ -1257,6 +1294,7 @@
             this.txtAssunto3.Name = "txtAssunto3";
             this.txtAssunto3.Size = new System.Drawing.Size(148, 22);
             this.txtAssunto3.TabIndex = 10;
+            this.txtAssunto3.TextChanged += new System.EventHandler(this.txtAssunto3_TextChanged);
             // 
             // txtAssunto2
             // 
@@ -1266,6 +1304,7 @@
             this.txtAssunto2.Name = "txtAssunto2";
             this.txtAssunto2.Size = new System.Drawing.Size(148, 22);
             this.txtAssunto2.TabIndex = 8;
+            this.txtAssunto2.TextChanged += new System.EventHandler(this.txtAssunto2_TextChanged);
             // 
             // txtNatProcesso
             // 
@@ -1275,6 +1314,7 @@
             this.txtNatProcesso.Name = "txtNatProcesso";
             this.txtNatProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtNatProcesso.TabIndex = 4;
+            this.txtNatProcesso.TextChanged += new System.EventHandler(this.txtNatProcesso_TextChanged);
             // 
             // txtIdProcesso
             // 
@@ -1284,6 +1324,7 @@
             this.txtIdProcesso.Name = "txtIdProcesso";
             this.txtIdProcesso.Size = new System.Drawing.Size(148, 22);
             this.txtIdProcesso.TabIndex = 2;
+            this.txtIdProcesso.TextChanged += new System.EventHandler(this.txtIdProcesso_TextChanged);
             // 
             // txtNomeLogin
             // 
