@@ -39,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTrocarSenha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -154,12 +155,26 @@
             this.panel2.Size = new System.Drawing.Size(156, 2);
             this.panel2.TabIndex = 13;
             // 
+            // btnTrocarSenha
+            // 
+            this.btnTrocarSenha.AutoSize = true;
+            this.btnTrocarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrocarSenha.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Underline);
+            this.btnTrocarSenha.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnTrocarSenha.Location = new System.Drawing.Point(126, 416);
+            this.btnTrocarSenha.Name = "btnTrocarSenha";
+            this.btnTrocarSenha.Size = new System.Drawing.Size(72, 13);
+            this.btnTrocarSenha.TabIndex = 14;
+            this.btnTrocarSenha.Text = "Trocar senha";
+            this.btnTrocarSenha.Click += new System.EventHandler(this.btnTrocarSenha_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(324, 450);
+            this.Controls.Add(this.btnTrocarSenha);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
@@ -195,6 +210,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.Label btnTrocarSenha;
     }
 }
 

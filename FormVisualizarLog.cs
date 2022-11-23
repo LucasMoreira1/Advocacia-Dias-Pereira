@@ -21,6 +21,7 @@ namespace Advocacia_Dias_Pereira
 
         private void FormVisualizarLog_Load(object sender, EventArgs e)
         {
+            txtData1.Text = DateTime.Now.ToShortDateString();
             txtData2.Text = DateTime.Now.ToShortDateString();
             //Converter para string a pasta %temp%
             string dir = Path.GetTempPath();

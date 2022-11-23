@@ -3,6 +3,9 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.IO;
+using System.Configuration;
+using Microsoft.VisualBasic;
+using System.Collections.Generic;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -10,6 +13,7 @@ namespace Advocacia_Dias_Pereira
     {
         int i;
         string filename = "";
+        bool trocarsenha = false;
         MySqlDataReader reader;
         public static MySqlCommand cmd = default(MySqlCommand);
 
@@ -21,7 +25,10 @@ namespace Advocacia_Dias_Pereira
         private void Executar(string mySQL, string param)
         {
             CRUD.cmd = new MySqlCommand(mySQL, CRUD.con);
-            AddParametros(param);
+            if (trocarsenha == false)
+            {
+                AddParametros(param);
+            }
             CRUD.PerformCRUD(CRUD.cmd);
         }
 
@@ -207,6 +214,24 @@ namespace Advocacia_Dias_Pereira
                 btnLogin_Click(sender, e);
         }
 
-        
+        private void btnTrocarSenha_Click(object sender, EventArgs e)
+        {
+            trocarsenha = true;
+            string nomeUsuario = Interaction.InputBox("Insira seu nome de usuario: ", "Reset de senha");
+            string senhaAntiga = Interaction.InputBox("Insira sua senha antiga: ", "Reset de senha");
+            string novasenha = Interaction.InputBox("Insira sua nova senha: ", "Reset de senha");
+            string confirmasenha = Interaction.InputBox("Confirme sua nova senha: ", "Reset de senha");
+            if (novasenha == confirmasenha)
+            {
+                CRUD.sql = "UPDATE LOGIN SET SENHA = '" + novasenha + "' WHERE USUARIO = '"+nomeUsuario+"' AND SENHA = '"+senhaAntiga+"'";
+                Executar(CRUD.sql, "Update");
+                MessageBox.Show("Senha alterada com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao alterar sua senha, tente novamente.");
+            }
+            trocarsenha = false;
+        }
     }
 }

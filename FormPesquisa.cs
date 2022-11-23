@@ -188,6 +188,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
             formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[46].Value);
             formcadastro.cboxResultado.Text = Convert.ToString(dgv.CurrentRow.Cells[47].Value);
+            formcadastro.cboxEscritorio.Text = Convert.ToString(dgv.CurrentRow.Cells[48].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
             formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
             formcadastro.Show();
@@ -353,6 +354,7 @@ namespace Advocacia_Dias_Pereira
             formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
             formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[46].Value);
             formcadastro.cboxResultado.Text = Convert.ToString(dgv.CurrentRow.Cells[47].Value);
+            formcadastro.cboxEscritorio.Text = Convert.ToString(dgv.CurrentRow.Cells[48].Value);
             formcadastro.txtNomeLogin.Text = txtNomeLogin.Text;
             formcadastro.txtPermissaoLogin.Text = txtPermissaoLogin.Text;
             //Logger.WriteLog("Visualizando o cadastro", txtNomeLogin.Text);

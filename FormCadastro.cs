@@ -56,6 +56,7 @@ namespace Advocacia_Dias_Pereira
         bool txtTipoAudiencia_changed = false;
         bool txtDataAudiencia_changed = false;
         bool txtObservacao_changed = false;
+        bool cboxEscritorio_changed = false;
 
         MySqlDataReader reader;
         public static MySqlCommand cmd = default(MySqlCommand);
@@ -200,6 +201,7 @@ namespace Advocacia_Dias_Pereira
 
             //Outros
             CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("Escritorio", cboxEscritorio.Text.Trim());
             //CRUD.cmd.Parameters.AddWithValue("Cad_numero", txtCadNumero.Text.Trim());
 
 
@@ -224,12 +226,12 @@ namespace Advocacia_Dias_Pereira
                 "telefone1, telefone2, cep, logradouro, numero, complemento, bairro, cidade, estado, reu, cnpjcpf, " +
                 "telefoneReu, cepReu, logradouroReu, numeroReu, complementoReu, bairroReu, cidadeReu, estadoReu, " +
                 "processo, tipoprocesso, idprocesso, statusprocesso, natprocesso, assunto1, assunto2, assunto3, " +
-                "datapericia, tipoaudiencia, dataaudiencia, observacao, DataCadastro, Resultado)" +
+                "datapericia, tipoaudiencia, dataaudiencia, observacao, DataCadastro, Resultado, Escritorio)" +
                 "Values(@autor, @nacionalidade, @estadocivil, @profissao, @rg, @cpf, @datanascimento, @email, " +
                 "@telefone1, @telefone2, @cepautor, @logradouroautor, @numeroautor, @complementoautor, @bairroautor, @cidadeautor, @estadoautor, @reu, @cnpj, " +
                 "@telefoneReu, @cepReu, @logradouroReu, @numeroReu, @complementoReu, @bairroReu, @cidadeReu, @estadoReu, " +
                 "@processo, @tipoprocesso, @idprocesso, @statusprocesso, @natprocesso, @assunto1, @assunto2, @assunto3, " +
-                "@datapericia, @tipoaudiencia, @dataaudiencia, @observacao, @DataCadastro, @Resultado);";
+                "@datapericia, @tipoaudiencia, @dataaudiencia, @observacao, @DataCadastro, @Resultado, @Escritorio);";
 
 
             Executar(CRUD.sql, "Insert");
@@ -434,7 +436,7 @@ namespace Advocacia_Dias_Pereira
                 "estadoReu = @estadoReu, processo = @processo, tipoprocesso = @tipoprocesso, idprocesso = @idprocesso, " +
                 "statusprocesso = @statusprocesso, natprocesso = @natprocesso, assunto1 = @assunto1, " +
                 "assunto2 = @assunto2, assunto3 = @assunto3, datapericia = @datapericia, tipoaudiencia = @tipoaudiencia, " +
-                "dataaudiencia = @dataaudiencia, observacao = @observacao, DataCadastro = @DataCadastro, Resultado = @Resultado WHERE ID = @CadNumero";
+                "dataaudiencia = @dataaudiencia, observacao = @observacao, DataCadastro = @DataCadastro, Resultado = @Resultado, Escritorio = @Escritorio WHERE ID = @CadNumero";
 
             Executar(CRUD.sql, "Update");
 
@@ -818,6 +820,14 @@ namespace Advocacia_Dias_Pereira
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
+                if (cboxEscritorio_changed == true)
+                {
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Escritório.", txtNomeLogin.Text);
+                    //Atualiza Log existente
+                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                    Executar(CRUD.sql, "Update");
+                }
+                
 
             }
             else
@@ -1632,5 +1642,10 @@ namespace Advocacia_Dias_Pereira
             txtObservacao_changed = true;
         }
         #endregion
+
+        private void cboxEscritorio_TextChanged(object sender, EventArgs e)
+        {
+            cboxEscritorio_changed = true;
+        }
     }
 }
