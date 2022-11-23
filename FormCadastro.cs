@@ -530,302 +530,295 @@ namespace Advocacia_Dias_Pereira
                 CRUD.con.Close();
                 //Escrever no Documento de LOG
                 Logger.WriteLog(filename, "Atualizou o Cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
-                
+
                 if (txtautor_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Nome Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Nome Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtDataCadastro_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Data Cadastro.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Data Cadastro.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtNacionalidade_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Nacionalidade Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Nacionalidade Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (cboxEstadoCivil_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Estado Civil Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Estado Civil Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtProfissao_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Profissão Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Profissão Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtRG_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: RG Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: RG Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCPF_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: CPF Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: CPF Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtDataNascimento_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Data Nascimento Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Data Nascimento Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtTelefone1_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Telefone 1 Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Telefone 1 Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtTelefone2_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Telefone 2 Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Telefone 2 Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtEmail_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Email Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Email Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCEP_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: CEP Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: CEP Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtLogradouro_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Logradouro Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Logradouro Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtNumero_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Número Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Número Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtComplemento_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Complemento Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Complemento Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtBairro_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Bairro Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Bairro Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCidade_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Cidade Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Cidade Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtEstado_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Estado Autor.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Estado Autor.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Nome Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Nome Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCNPJ_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: CPF/CNPJ Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: CPF/CNPJ Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtTelefoneReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Telefone Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Telefone Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCEPReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: CEP Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: CEP Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtLogradouroReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Logradouro Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Logradouro Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtNumeroReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Número Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Número Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtComplementoReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Complemento Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Complemento Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtBairroReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Bairro Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Bairro Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtCidadeReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Cidade Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Cidade Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtEstadoReu_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Estado Réu.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Estado Réu.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtProcesso_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtIdProcesso_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: ID Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: ID Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtNatProcesso_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Natureza do Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Natureza do Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtAssunto1_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Assunto 1.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Assunto 1.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtAssunto2_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Assunto 2.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Assunto 2.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtAssunto3_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Assunto 3.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Assunto 3.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (cboxTipoProcesso_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Tipo Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Tipo Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (cboxStatusProcesso_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Status Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Status Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (cboxResultado_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Resultado Processo.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Resultado Processo.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtDataPericia_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Data Perícia.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Data Perícia.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtTipoAudiencia_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Tipo Audiência.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Tipo Audiência.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtDataAudiencia_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Data Audiência.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Data Audiência.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
                 if (txtObservacao_changed == true)
                 {
-                    Logger.WriteLog(filename, "Campo atualizado: Observação.", txtNomeLogin.Text);
+                    Logger.WriteLog(filename, "Cadastro: " + txtCadNumero.Text + ", Campo: Observação.", txtNomeLogin.Text);
                     //Atualiza Log existente
                     CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
                     Executar(CRUD.sql, "Update");
                 }
-                
-                else
-                {
-                    //Atualiza Log existente
-                    CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
-                    Executar(CRUD.sql, "Update");
-                }
-                
+
             }
             else
             {

@@ -58,10 +58,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A6088D0CC02632D42BD42253C7DC8BF340EA444C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B90E9BF5285AF695AFE8AE67DD84A1DDAE1AD7AB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Advocacia Dias Pereira_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Advocacia Dias Pereira_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -82,7 +82,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Advocacia Dias Pereira_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Advocacia Dias Pereira_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
@@ -287,8 +287,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Advocacia Dias Pereira_1_TemporaryKey.pfx" />
-    <None Include="Advocacia Dias Pereira_TemporaryKey.pfx" />
+    <None Include="Advocacia Dias Pereira_2_TemporaryKey.pfx" />
     <None Include="Cadastro.xsc">
       <DependentUpon>Cadastro.xsd</DependentUpon>
     </None>

@@ -574,6 +574,7 @@
             this.cboxResultado.Name = "cboxResultado";
             this.cboxResultado.Size = new System.Drawing.Size(121, 21);
             this.cboxResultado.TabIndex = 50;
+            this.cboxResultado.Visible = false;
             // 
             // FormSelecionarDocumento
             // 

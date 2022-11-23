@@ -167,6 +167,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnBuscarCEP);
             this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label17);
@@ -182,7 +183,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(-1, 350);
+            this.groupBox2.Location = new System.Drawing.Point(52, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 177);
             this.groupBox2.TabIndex = 1;
@@ -355,6 +356,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
             this.groupBox4.Controls.Add(this.btnGerarDocumentos);
@@ -362,9 +364,9 @@
             this.groupBox4.Controls.Add(this.btnDocumentos);
             this.groupBox4.Controls.Add(this.btnDuplicar);
             this.groupBox4.Controls.Add(this.txtObservacao);
-            this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
-            this.groupBox4.Location = new System.Drawing.Point(-1, 1041);
+            this.groupBox4.Controls.Add(this.btnSalvar);
+            this.groupBox4.Location = new System.Drawing.Point(52, 1041);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(906, 152);
             this.groupBox4.TabIndex = 5;
@@ -555,6 +557,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCPF);
@@ -581,7 +584,7 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(-1, 11);
+            this.groupBox1.Location = new System.Drawing.Point(52, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(906, 333);
             this.groupBox1.TabIndex = 0;
@@ -754,6 +757,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.txtTelefoneReu);
             this.groupBox3.Controls.Add(this.label1);
@@ -761,7 +765,7 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(-1, 533);
+            this.groupBox3.Location = new System.Drawing.Point(52, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(906, 82);
             this.groupBox3.TabIndex = 2;
@@ -841,6 +845,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox5.Controls.Add(this.btnBuscarCEPReu);
             this.groupBox5.Controls.Add(this.txtCEPReu);
             this.groupBox5.Controls.Add(this.label32);
@@ -856,7 +861,7 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(-1, 621);
+            this.groupBox5.Location = new System.Drawing.Point(52, 621);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(906, 177);
             this.groupBox5.TabIndex = 3;
@@ -1017,6 +1022,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.txtDataAudiencia);
             this.groupBox6.Controls.Add(this.txtDataPericia);
@@ -1042,7 +1048,7 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(-1, 804);
+            this.groupBox6.Location = new System.Drawing.Point(52, 804);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(906, 231);
             this.groupBox6.TabIndex = 4;
