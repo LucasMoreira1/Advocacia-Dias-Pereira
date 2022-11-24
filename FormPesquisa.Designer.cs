@@ -203,6 +203,7 @@
             this.cboxFiltro3.Items.AddRange(new object[] {
             "Autor",
             "DataCadastro",
+            "DataEncerramento",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -273,6 +274,7 @@
             this.cboxFiltro2.Items.AddRange(new object[] {
             "Autor",
             "DataCadastro",
+            "DataEncerramento",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -413,6 +415,7 @@
             this.cboxFiltro4.Items.AddRange(new object[] {
             "Autor",
             "DataCadastro",
+            "DataEncerramento",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",
@@ -474,6 +477,7 @@
             this.cboxFiltro5.Items.AddRange(new object[] {
             "Autor",
             "DataCadastro",
+            "DataEncerramento",
             "Nacionalidade",
             "EstadoCivil",
             "Profissao",

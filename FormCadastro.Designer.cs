@@ -110,6 +110,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtDataAudiencia = new System.Windows.Forms.MaskedTextBox();
             this.txtDataPericia = new System.Windows.Forms.MaskedTextBox();
+            this.cboxEscritorio = new System.Windows.Forms.ComboBox();
             this.cboxResultado = new System.Windows.Forms.ComboBox();
             this.cboxStatusProcesso = new System.Windows.Forms.ComboBox();
             this.cboxTipoProcesso = new System.Windows.Forms.ComboBox();
@@ -117,6 +118,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.txtTipoAudiencia = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.txtAssunto1 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtProcesso = new System.Windows.Forms.TextBox();
@@ -135,8 +137,8 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.cboxEscritorio = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtDataEncerramento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -185,7 +187,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(58, 350);
+            this.groupBox2.Location = new System.Drawing.Point(64, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 177);
             this.groupBox2.TabIndex = 1;
@@ -368,7 +370,7 @@
             this.groupBox4.Controls.Add(this.txtObservacao);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.btnSalvar);
-            this.groupBox4.Location = new System.Drawing.Point(58, 1095);
+            this.groupBox4.Location = new System.Drawing.Point(64, 1095);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(906, 152);
             this.groupBox4.TabIndex = 5;
@@ -563,6 +565,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCPF);
+            this.groupBox1.Controls.Add(this.txtDataEncerramento);
             this.groupBox1.Controls.Add(this.txtDataCadastro);
             this.groupBox1.Controls.Add(this.txtDataNascimento);
             this.groupBox1.Controls.Add(this.txtTelefone2);
@@ -570,6 +573,7 @@
             this.groupBox1.Controls.Add(this.cboxEstadoCivil);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAutor);
+            this.groupBox1.Controls.Add(this.label41);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label5);
@@ -586,7 +590,7 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(58, 11);
+            this.groupBox1.Location = new System.Drawing.Point(64, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(906, 333);
             this.groupBox1.TabIndex = 0;
@@ -767,7 +771,7 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(58, 533);
+            this.groupBox3.Location = new System.Drawing.Point(64, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(906, 82);
             this.groupBox3.TabIndex = 2;
@@ -863,7 +867,7 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(58, 621);
+            this.groupBox5.Location = new System.Drawing.Point(64, 621);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(906, 177);
             this.groupBox5.TabIndex = 3;
@@ -1052,7 +1056,7 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(58, 804);
+            this.groupBox6.Location = new System.Drawing.Point(64, 804);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(906, 285);
             this.groupBox6.TabIndex = 4;
@@ -1092,6 +1096,25 @@
             this.txtDataPericia.TabIndex = 5;
             this.txtDataPericia.ValidatingType = typeof(System.DateTime);
             this.txtDataPericia.TextChanged += new System.EventHandler(this.txtDataPericia_TextChanged);
+            // 
+            // cboxEscritorio
+            // 
+            this.cboxEscritorio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboxEscritorio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxEscritorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxEscritorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxEscritorio.FormattingEnabled = true;
+            this.cboxEscritorio.Items.AddRange(new object[] {
+            "1 - JACAREI",
+            "2 - SANTA BRANCA",
+            "3 - DEFENSORIA",
+            "4 - CAÇAPAVA",
+            "5 - OUTROS"});
+            this.cboxEscritorio.Location = new System.Drawing.Point(144, 255);
+            this.cboxEscritorio.Name = "cboxEscritorio";
+            this.cboxEscritorio.Size = new System.Drawing.Size(150, 24);
+            this.cboxEscritorio.TabIndex = 3;
+            this.cboxEscritorio.TextChanged += new System.EventHandler(this.cboxEscritorio_TextChanged);
             // 
             // cboxResultado
             // 
@@ -1185,6 +1208,16 @@
             this.txtTipoAudiencia.Size = new System.Drawing.Size(150, 22);
             this.txtTipoAudiencia.TabIndex = 7;
             this.txtTipoAudiencia.TextChanged += new System.EventHandler(this.txtTipoAudiencia_TextChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(5, 258);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(63, 16);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Escritorio";
             // 
             // txtAssunto1
             // 
@@ -1360,33 +1393,27 @@
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
             // 
-            // label30
+            // label41
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(5, 258);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(63, 16);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Escritorio";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(572, 27);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(123, 16);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Data Encarramento";
             // 
-            // cboxEscritorio
+            // txtDataEncerramento
             // 
-            this.cboxEscritorio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboxEscritorio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxEscritorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxEscritorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxEscritorio.FormattingEnabled = true;
-            this.cboxEscritorio.Items.AddRange(new object[] {
-            "1 - JACAREI",
-            "2 - SANTA BRANCA",
-            "3 - DEFENSORIA",
-            "4 - OUTROS"});
-            this.cboxEscritorio.Location = new System.Drawing.Point(144, 255);
-            this.cboxEscritorio.Name = "cboxEscritorio";
-            this.cboxEscritorio.Size = new System.Drawing.Size(150, 24);
-            this.cboxEscritorio.TabIndex = 3;
-            this.cboxEscritorio.TextChanged += new System.EventHandler(this.cboxEscritorio_TextChanged);
+            this.txtDataEncerramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataEncerramento.Location = new System.Drawing.Point(701, 24);
+            this.txtDataEncerramento.Mask = "00/00/0000";
+            this.txtDataEncerramento.Name = "txtDataEncerramento";
+            this.txtDataEncerramento.Size = new System.Drawing.Size(124, 22);
+            this.txtDataEncerramento.TabIndex = 6;
+            this.txtDataEncerramento.ValidatingType = typeof(System.DateTime);
+            this.txtDataEncerramento.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtDataEncerramento.TextChanged += new System.EventHandler(this.txtDataEncerramento_TextChanged);
             // 
             // FormCadastro
             // 
@@ -1542,5 +1569,7 @@
         private System.Windows.Forms.Label label29;
         public System.Windows.Forms.ComboBox cboxEscritorio;
         private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.MaskedTextBox txtDataEncerramento;
+        private System.Windows.Forms.Label label41;
     }
 }
