@@ -186,29 +186,11 @@
     <Compile Include="FormProcuracao.Designer.cs">
       <DependentUpon>FormProcuracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManifestacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormManifestacao.Designer.cs">
-      <DependentUpon>FormManifestacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormContratoHonorario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormContratoHonorario.Designer.cs">
-      <DependentUpon>FormContratoHonorario.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDocumentos.Designer.cs">
       <DependentUpon>FormDocumentos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeclaracaoHipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeclaracaoHipo.Designer.cs">
-      <DependentUpon>FormDeclaracaoHipo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -250,17 +232,8 @@
     <EmbeddedResource Include="FormProcuracao.resx">
       <DependentUpon>FormProcuracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManifestacao.resx">
-      <DependentUpon>FormManifestacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormContratoHonorario.resx">
-      <DependentUpon>FormContratoHonorario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDocumentos.resx">
       <DependentUpon>FormDocumentos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDeclaracaoHipo.resx">
-      <DependentUpon>FormDeclaracaoHipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

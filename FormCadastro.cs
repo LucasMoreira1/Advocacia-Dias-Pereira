@@ -1167,149 +1167,151 @@ namespace Advocacia_Dias_Pereira
         {
             //btnSalvar.PerformClick();
 
-            using (OpenFileDialog dlg = new OpenFileDialog() { Filter = "Todos arquivos (*) | *.*", ValidateNames = true })
+            using (OpenFileDialog dlg = new OpenFileDialog() { Filter = "Todos arquivos (*) | *.*", ValidateNames = true, Multiselect=true })
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     DialogResult dialog = MessageBox.Show("Tem certeza que deseja subir esse(s) documento(s)?", "Envio para núvem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialog == DialogResult.Yes)
                     {
-                        filename = dlg.FileName.ToString();
-                        filename2 = Path.GetFileName(filename);
-
-                        //nomedocumento = Interaction.InputBox("Qual o nome do documento?", "Nome documento");
-                        //Interaction.MsgBox("Oi " + nomedocumento.ToString());
-                        //FileStream fileStream = File.OpenRead(filename);
-                        //byte[] contents = new byte[fileStream.Length];
-                        //fileStream.Read(contents, 0, (int)contents.Length);
-                        //fileStream.Close();
-
-                        //CRUD.cmd.Parameters.AddWithValue("Documento", contents);
-
-                        if (string.IsNullOrEmpty(txtAutor.Text.Trim()) ||
-                            (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
+                        foreach (String file in dlg.FileNames)
                         {
-                            MessageBox.Show("Por favor finalize o cadastro do cliente e volte após para enviar documentos.", "Dados Obrigatórios",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
-                        }
+                            filename = file.ToString();
+                            filename2 = Path.GetFileName(filename);
 
-                        CRUD.sql = "INSERT INTO DOCUMENTOS(Nome_Cliente,Cad_Cliente,Data_Documento,Documento,Nome_Documento)" +
-                            "Values(@autor, @CadNumero, @DataCadastro, @Documento, @Nome_Documento);";
+                            //nomedocumento = Interaction.InputBox("Qual o nome do documento?", "Nome documento");
+                            //Interaction.MsgBox("Oi " + nomedocumento.ToString());
+                            //FileStream fileStream = File.OpenRead(filename);
+                            //byte[] contents = new byte[fileStream.Length];
+                            //fileStream.Read(contents, 0, (int)contents.Length);
+                            //fileStream.Close();
+
+                            //CRUD.cmd.Parameters.AddWithValue("Documento", contents);
+
+                            if (string.IsNullOrEmpty(txtAutor.Text.Trim()) ||
+                                (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
+                            {
+                                MessageBox.Show("Por favor finalize o cadastro do cliente e volte após para enviar documentos.", "Dados Obrigatórios",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
+
+                            CRUD.sql = "INSERT INTO DOCUMENTOS(Nome_Cliente,Cad_Cliente,Data_Documento,Documento,Nome_Documento)" +
+                                "Values(@autor, @CadNumero, @DataCadastro, @Documento, @Nome_Documento);";
 
 
-                        Executar(CRUD.sql, "Insert");
+                            Executar(CRUD.sql, "Insert");
 
-                        //CRIAÇÃO DE LOG
-                        string dir = Path.GetTempPath();
-                        filename = dir + txtCadNumero.Text + "_" + txtAutor.Text + ".txt";
-                        //Validar se já existe aquivo LOG
-                        CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + txtCadNumero.Text + ";";
-
-                        CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-                        DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
-
-                        if (dt.Rows.Count > 0)
-                        {
-                            //Baixar Documento de LOG
-                            bool em = false;
+                            //CRIAÇÃO DE LOG
+                            string dir = Path.GetTempPath();
+                            filename = dir + txtCadNumero.Text + "_" + txtAutor.Text + ".txt";
+                            //Validar se já existe aquivo LOG
                             CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + txtCadNumero.Text + ";";
-                            CRUD.con.Open();
-                            using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+
+                            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+                            if (dt.Rows.Count > 0)
                             {
-                                using (reader = CRUD.cmd.ExecuteReader())
+                                //Baixar Documento de LOG
+                                bool em = false;
+                                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = " + txtCadNumero.Text + ";";
+                                CRUD.con.Open();
+                                using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
                                 {
-                                    if (reader.Read())
+                                    using (reader = CRUD.cmd.ExecuteReader())
                                     {
-                                        em = true;
-                                        byte[] fileData = (byte[])reader.GetValue(0);
-                                        using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                        if (reader.Read())
                                         {
-                                            using (BinaryWriter bw = new BinaryWriter(fs))
+                                            em = true;
+                                            byte[] fileData = (byte[])reader.GetValue(0);
+                                            using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
                                             {
-                                                bw.Write(fileData);
-                                                bw.Close();
+                                                using (BinaryWriter bw = new BinaryWriter(fs))
+                                                {
+                                                    bw.Write(fileData);
+                                                    bw.Close();
 
+                                                }
                                             }
-                                        }
 
+                                        }
                                     }
                                 }
+                                CRUD.con.Close();
+                                //Escrever no Documento de LOG
+                                Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
+                                //Atualiza Log existente
+                                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = " + txtCadNumero.Text + "";
+                                Executar(CRUD.sql, "Update");
                             }
-                            CRUD.con.Close();
-                            //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
-                            //Atualiza Log existente
-                            CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = "+txtCadNumero.Text+"";
-                            Executar(CRUD.sql, "Update");
-                        }
-                        else
-                        {
-                            //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
-                            //Salvar Documento de LOG
-                            CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
-                                        "Values("+txtCadNumero+", @NOME_CADASTRO, @Documento, @DATA_ATUALIZACAO)";
-                            Executar(CRUD.sql, "Insert");
-                        }
+                            else
+                            {
+                                //Escrever no Documento de LOG
+                                Logger.WriteLog(filename, "Anexou o documento: " + txtNomeDocumento.Text + ";", txtNomeLogin.Text);
+                                //Salvar Documento de LOG
+                                CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                            "Values(" + txtCadNumero + ", @NOME_CADASTRO, @Documento, @DATA_ATUALIZACAO)";
+                                Executar(CRUD.sql, "Insert");
+                            }
 
-                        //Criação do LOG GERAL
-                        string dir2 = Path.GetTempPath();
-                        filename = dir2 + "9999_LOG_LOGIN.txt";
-                        //Validar se já existe aquivo LOG
-                        CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
-
-                        CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-                        DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
-
-                        if (dt2.Rows.Count > 0)
-                        {
-                            //Baixar Documento de LOG
-                            bool em = false;
+                            //Criação do LOG GERAL
+                            string dir2 = Path.GetTempPath();
+                            filename = dir2 + "9999_LOG_LOGIN.txt";
+                            //Validar se já existe aquivo LOG
                             CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
-                            CRUD.con.Open();
-                            using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
+
+                            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+                            DataTable dt2 = CRUD.PerformCRUD(CRUD.cmd);
+
+                            if (dt2.Rows.Count > 0)
                             {
-                                using (reader = CRUD.cmd.ExecuteReader())
+                                //Baixar Documento de LOG
+                                bool em = false;
+                                CRUD.sql = "SELECT LOG_FILE FROM LOGS WHERE ID_CADASTRO = '9999';";
+                                CRUD.con.Open();
+                                using (CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con))
                                 {
-                                    if (reader.Read())
+                                    using (reader = CRUD.cmd.ExecuteReader())
                                     {
-                                        em = true;
-                                        byte[] fileData = (byte[])reader.GetValue(0);
-                                        using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                                        if (reader.Read())
                                         {
-                                            using (BinaryWriter bw = new BinaryWriter(fs))
+                                            em = true;
+                                            byte[] fileData = (byte[])reader.GetValue(0);
+                                            using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
                                             {
-                                                bw.Write(fileData);
-                                                bw.Close();
+                                                using (BinaryWriter bw = new BinaryWriter(fs))
+                                                {
+                                                    bw.Write(fileData);
+                                                    bw.Close();
 
+                                                }
                                             }
-                                        }
 
+                                        }
                                     }
                                 }
+                                CRUD.con.Close();
+                                //Escrever no Documento de LOG
+                                Logger.WriteLog(filename, "Anexou um documento no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
+                                //Atualiza Log existente
+                                CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
+                                Executar(CRUD.sql, "Update");
                             }
-                            CRUD.con.Close();
-                            //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou um documento no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
-                            //Atualiza Log existente
-                            CRUD.sql = "UPDATE LOGS SET LOG_FILE = @Documento, DATA_ATUALIZACAO = @DATA_ATUALIZACAO WHERE ID_CADASTRO = '9999'";
-                            Executar(CRUD.sql, "Update");
+                            else
+                            {
+                                //Escrever no Documento de LOG
+                                Logger.WriteLog(filename, "Anexou um documento no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
+                                //Salvar Documento de LOG
+                                CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
+                                            "Values('9999', @LOG_LOGIN, @Documento, @DATA_ATUALIZACAO)";
+                                Executar(CRUD.sql, "Insert");
+                            }
+                            //Logger.WriteLog("Anexou o documento: " + txtNomeDocumento.Text, txtNomeLogin.Text);
+                            
                         }
-                        else
-                        {
-                            //Escrever no Documento de LOG
-                            Logger.WriteLog(filename, "Anexou um documento no cadastro: " + txtCadNumero.Text + ";", txtNomeLogin.Text);
-                            //Salvar Documento de LOG
-                            CRUD.sql = "INSERT INTO LOGS(ID_CADASTRO,NOME_CADASTRO,LOG_FILE,DATA_ATUALIZACAO)" +
-                                        "Values('9999', @LOG_LOGIN, @Documento, @DATA_ATUALIZACAO)";
-                            Executar(CRUD.sql, "Insert");
-                        }
-                        //Logger.WriteLog("Anexou o documento: " + txtNomeDocumento.Text, txtNomeLogin.Text);
-                        MessageBox.Show("Documento salvo.", "Envio Documento",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                        MessageBox.Show("Documento(s) salvo(s).", "Envio Documento",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

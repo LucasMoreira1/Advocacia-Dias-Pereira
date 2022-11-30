@@ -598,7 +598,6 @@
             this.Controls.Add(this.txtFiltro2);
             this.Controls.Add(this.cboxFiltro4);
             this.Controls.Add(this.cboxFiltro2);
-            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
