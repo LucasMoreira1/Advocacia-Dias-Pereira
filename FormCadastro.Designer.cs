@@ -66,10 +66,13 @@
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarAutorAdicional = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtDataEncerramento = new System.Windows.Forms.MaskedTextBox();
             this.txtDataCadastro = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone2 = new System.Windows.Forms.MaskedTextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -137,8 +140,9 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtDataEncerramento = new System.Windows.Forms.MaskedTextBox();
+            this.btnVisualizarAutorAdicional = new System.Windows.Forms.Button();
+            this.btnVisualizarReuAdicional = new System.Windows.Forms.Button();
+            this.btnAdicionarReuAdicional = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -171,7 +175,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnBuscarCEP);
             this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label17);
@@ -187,9 +190,10 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(64, 350);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 333);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(906, 177);
+            this.groupBox2.Size = new System.Drawing.Size(1040, 177);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço Autor";
@@ -360,7 +364,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.btnVisualizarDocumentos);
             this.groupBox4.Controls.Add(this.btnGerarDocumentos);
@@ -370,9 +373,10 @@
             this.groupBox4.Controls.Add(this.txtObservacao);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.btnSalvar);
-            this.groupBox4.Location = new System.Drawing.Point(64, 1095);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox4.Location = new System.Drawing.Point(0, 1054);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(906, 152);
+            this.groupBox4.Size = new System.Drawing.Size(1040, 152);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Observação";
@@ -561,7 +565,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.btnVisualizarAutorAdicional);
+            this.groupBox1.Controls.Add(this.btnAdicionarAutorAdicional);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCPF);
@@ -590,12 +595,23 @@
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtRG);
-            this.groupBox1.Location = new System.Drawing.Point(64, 11);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(906, 333);
+            this.groupBox1.Size = new System.Drawing.Size(1040, 333);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação Autor";
+            // 
+            // btnAdicionarAutorAdicional
+            // 
+            this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 135);
+            this.btnAdicionarAutorAdicional.Name = "btnAdicionarAutorAdicional";
+            this.btnAdicionarAutorAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnAdicionarAutorAdicional.TabIndex = 12;
+            this.btnAdicionarAutorAdicional.Text = "Adicionar Autor Complementar";
+            this.btnAdicionarAutorAdicional.UseVisualStyleBackColor = true;
+            this.btnAdicionarAutorAdicional.Click += new System.EventHandler(this.btnAdicionarAutorAdicional_Click);
             // 
             // dataGridView1
             // 
@@ -617,6 +633,18 @@
             this.button1.Text = "Limpar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
+            // 
+            // txtDataEncerramento
+            // 
+            this.txtDataEncerramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataEncerramento.Location = new System.Drawing.Point(701, 24);
+            this.txtDataEncerramento.Mask = "00/00/0000";
+            this.txtDataEncerramento.Name = "txtDataEncerramento";
+            this.txtDataEncerramento.Size = new System.Drawing.Size(124, 22);
+            this.txtDataEncerramento.TabIndex = 6;
+            this.txtDataEncerramento.ValidatingType = typeof(System.DateTime);
+            this.txtDataEncerramento.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtDataEncerramento.TextChanged += new System.EventHandler(this.txtDataEncerramento_TextChanged);
             // 
             // txtDataCadastro
             // 
@@ -640,6 +668,16 @@
             this.txtTelefone2.TabIndex = 8;
             this.txtTelefone2.Click += new System.EventHandler(this.txtDataNascimento_Click);
             this.txtTelefone2.TextChanged += new System.EventHandler(this.txtTelefone2_TextChanged);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(572, 27);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(123, 16);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Data Encarramento";
             // 
             // label12
             // 
@@ -763,7 +801,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox3.Controls.Add(this.btnVisualizarReuAdicional);
+            this.groupBox3.Controls.Add(this.btnAdicionarReuAdicional);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.txtTelefoneReu);
             this.groupBox3.Controls.Add(this.label1);
@@ -771,9 +810,10 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
-            this.groupBox3.Location = new System.Drawing.Point(64, 533);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 510);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(906, 82);
+            this.groupBox3.Size = new System.Drawing.Size(1040, 82);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Identificação Réu";
@@ -851,7 +891,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox5.Controls.Add(this.btnBuscarCEPReu);
             this.groupBox5.Controls.Add(this.txtCEPReu);
             this.groupBox5.Controls.Add(this.label32);
@@ -867,9 +906,10 @@
             this.groupBox5.Controls.Add(this.txtBairroReu);
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
-            this.groupBox5.Location = new System.Drawing.Point(64, 621);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox5.Location = new System.Drawing.Point(0, 592);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(906, 177);
+            this.groupBox5.Size = new System.Drawing.Size(1040, 177);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereço Réu";
@@ -1028,7 +1068,6 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.txtDataAudiencia);
             this.groupBox6.Controls.Add(this.txtDataPericia);
@@ -1056,9 +1095,10 @@
             this.groupBox6.Controls.Add(this.txtAssunto2);
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
-            this.groupBox6.Location = new System.Drawing.Point(64, 804);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox6.Location = new System.Drawing.Point(0, 769);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(906, 285);
+            this.groupBox6.Size = new System.Drawing.Size(1040, 285);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dados Processo";
@@ -1393,27 +1433,33 @@
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
             // 
-            // label41
+            // btnVisualizarAutorAdicional
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(572, 27);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(123, 16);
-            this.label41.TabIndex = 0;
-            this.label41.Text = "Data Encarramento";
+            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 138);
+            this.btnVisualizarAutorAdicional.Name = "btnVisualizarAutorAdicional";
+            this.btnVisualizarAutorAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnVisualizarAutorAdicional.TabIndex = 12;
+            this.btnVisualizarAutorAdicional.Text = "Visualizar Autor Complementar";
+            this.btnVisualizarAutorAdicional.UseVisualStyleBackColor = true;
             // 
-            // txtDataEncerramento
+            // btnVisualizarReuAdicional
             // 
-            this.txtDataEncerramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataEncerramento.Location = new System.Drawing.Point(701, 24);
-            this.txtDataEncerramento.Mask = "00/00/0000";
-            this.txtDataEncerramento.Name = "txtDataEncerramento";
-            this.txtDataEncerramento.Size = new System.Drawing.Size(124, 22);
-            this.txtDataEncerramento.TabIndex = 6;
-            this.txtDataEncerramento.ValidatingType = typeof(System.DateTime);
-            this.txtDataEncerramento.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            this.txtDataEncerramento.TextChanged += new System.EventHandler(this.txtDataEncerramento_TextChanged);
+            this.btnVisualizarReuAdicional.Location = new System.Drawing.Point(819, 20);
+            this.btnVisualizarReuAdicional.Name = "btnVisualizarReuAdicional";
+            this.btnVisualizarReuAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnVisualizarReuAdicional.TabIndex = 13;
+            this.btnVisualizarReuAdicional.Text = "Visualizar Reu Complementar";
+            this.btnVisualizarReuAdicional.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionarReuAdicional
+            // 
+            this.btnAdicionarReuAdicional.Location = new System.Drawing.Point(620, 17);
+            this.btnAdicionarReuAdicional.Name = "btnAdicionarReuAdicional";
+            this.btnAdicionarReuAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnAdicionarReuAdicional.TabIndex = 14;
+            this.btnAdicionarReuAdicional.Text = "Adicionar Reu Complementar";
+            this.btnAdicionarReuAdicional.UseVisualStyleBackColor = true;
+            this.btnAdicionarReuAdicional.Click += new System.EventHandler(this.btnAdicionarReuAdicional_Click);
             // 
             // FormCadastro
             // 
@@ -1423,15 +1469,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Advocacia_Dias_Pereira.Properties.Resources.pngwing_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1028, 909);
+            this.ClientSize = new System.Drawing.Size(1045, 926);
             this.Controls.Add(this.txtNomeDocumento);
             this.Controls.Add(this.txtPermissaoLogin);
             this.Controls.Add(this.txtNomeLogin);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1571,5 +1617,9 @@
         private System.Windows.Forms.Label label30;
         public System.Windows.Forms.MaskedTextBox txtDataEncerramento;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button btnAdicionarAutorAdicional;
+        private System.Windows.Forms.Button btnVisualizarAutorAdicional;
+        private System.Windows.Forms.Button btnVisualizarReuAdicional;
+        private System.Windows.Forms.Button btnAdicionarReuAdicional;
     }
 }

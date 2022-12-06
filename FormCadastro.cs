@@ -1664,5 +1664,19 @@ namespace Advocacia_Dias_Pereira
         {
             txtDataEncerramento_changed = true;
         }
+
+        private void btnAdicionarAutorAdicional_Click(object sender, EventArgs e)
+        {
+            FormAutorAdicional formAutorAdicional = new FormAutorAdicional();
+            formAutorAdicional.txtCadNumero.Text = txtCadNumero.Text;
+            formAutorAdicional.Show();
+        }
+
+        private void btnAdicionarReuAdicional_Click(object sender, EventArgs e)
+        {
+            FormReuAdicional formReuAdicional = new FormReuAdicional();
+            formReuAdicional.txtCadNumero.Text = txtCadNumero.Text;
+            formReuAdicional.Show();
+        }
     }
 }

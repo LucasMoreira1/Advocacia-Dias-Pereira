@@ -174,6 +174,12 @@
       <DependentUpon>Cadastro.xsd</DependentUpon>
     </Compile>
     <Compile Include="CRUD.cs" />
+    <Compile Include="FormAutorAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAutorAdicional.Designer.cs">
+      <DependentUpon>FormAutorAdicional.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,12 @@
     <Compile Include="FormPesquisa.Designer.cs">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReuAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReuAdicional.Designer.cs">
+      <DependentUpon>FormReuAdicional.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSelecionarDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +238,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormAutorAdicional.resx">
+      <DependentUpon>FormAutorAdicional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPesquisa.resx">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReuAdicional.resx">
+      <DependentUpon>FormReuAdicional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelecionarDocumento.resx">
       <DependentUpon>FormSelecionarDocumento.cs</DependentUpon>
