@@ -66,6 +66,7 @@
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarAutorAdicional = new System.Windows.Forms.Button();
             this.btnAdicionarAutorAdicional = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -86,6 +87,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtProfissao = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarReuAdicional = new System.Windows.Forms.Button();
+            this.btnAdicionarReuAdicional = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtTelefoneReu = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -140,9 +143,6 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
-            this.btnVisualizarAutorAdicional = new System.Windows.Forms.Button();
-            this.btnVisualizarReuAdicional = new System.Windows.Forms.Button();
-            this.btnAdicionarReuAdicional = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -371,8 +371,8 @@
             this.groupBox4.Controls.Add(this.btnDocumentos);
             this.groupBox4.Controls.Add(this.btnDuplicar);
             this.groupBox4.Controls.Add(this.txtObservacao);
-            this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.btnSalvar);
+            this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(0, 1054);
             this.groupBox4.Name = "groupBox4";
@@ -603,6 +603,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação Autor";
             // 
+            // btnVisualizarAutorAdicional
+            // 
+            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 138);
+            this.btnVisualizarAutorAdicional.Name = "btnVisualizarAutorAdicional";
+            this.btnVisualizarAutorAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnVisualizarAutorAdicional.TabIndex = 12;
+            this.btnVisualizarAutorAdicional.Text = "Visualizar Autor Complementar";
+            this.btnVisualizarAutorAdicional.UseVisualStyleBackColor = true;
+            // 
             // btnAdicionarAutorAdicional
             // 
             this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 135);
@@ -817,6 +826,25 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Identificação Réu";
+            // 
+            // btnVisualizarReuAdicional
+            // 
+            this.btnVisualizarReuAdicional.Location = new System.Drawing.Point(819, 20);
+            this.btnVisualizarReuAdicional.Name = "btnVisualizarReuAdicional";
+            this.btnVisualizarReuAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnVisualizarReuAdicional.TabIndex = 13;
+            this.btnVisualizarReuAdicional.Text = "Visualizar Reu Complementar";
+            this.btnVisualizarReuAdicional.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionarReuAdicional
+            // 
+            this.btnAdicionarReuAdicional.Location = new System.Drawing.Point(620, 17);
+            this.btnAdicionarReuAdicional.Name = "btnAdicionarReuAdicional";
+            this.btnAdicionarReuAdicional.Size = new System.Drawing.Size(167, 59);
+            this.btnAdicionarReuAdicional.TabIndex = 14;
+            this.btnAdicionarReuAdicional.Text = "Adicionar Reu Complementar";
+            this.btnAdicionarReuAdicional.UseVisualStyleBackColor = true;
+            this.btnAdicionarReuAdicional.Click += new System.EventHandler(this.btnAdicionarReuAdicional_Click);
             // 
             // button2
             // 
@@ -1432,34 +1460,6 @@
             this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
-            // 
-            // btnVisualizarAutorAdicional
-            // 
-            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 138);
-            this.btnVisualizarAutorAdicional.Name = "btnVisualizarAutorAdicional";
-            this.btnVisualizarAutorAdicional.Size = new System.Drawing.Size(167, 59);
-            this.btnVisualizarAutorAdicional.TabIndex = 12;
-            this.btnVisualizarAutorAdicional.Text = "Visualizar Autor Complementar";
-            this.btnVisualizarAutorAdicional.UseVisualStyleBackColor = true;
-            // 
-            // btnVisualizarReuAdicional
-            // 
-            this.btnVisualizarReuAdicional.Location = new System.Drawing.Point(819, 20);
-            this.btnVisualizarReuAdicional.Name = "btnVisualizarReuAdicional";
-            this.btnVisualizarReuAdicional.Size = new System.Drawing.Size(167, 59);
-            this.btnVisualizarReuAdicional.TabIndex = 13;
-            this.btnVisualizarReuAdicional.Text = "Visualizar Reu Complementar";
-            this.btnVisualizarReuAdicional.UseVisualStyleBackColor = true;
-            // 
-            // btnAdicionarReuAdicional
-            // 
-            this.btnAdicionarReuAdicional.Location = new System.Drawing.Point(620, 17);
-            this.btnAdicionarReuAdicional.Name = "btnAdicionarReuAdicional";
-            this.btnAdicionarReuAdicional.Size = new System.Drawing.Size(167, 59);
-            this.btnAdicionarReuAdicional.TabIndex = 14;
-            this.btnAdicionarReuAdicional.Text = "Adicionar Reu Complementar";
-            this.btnAdicionarReuAdicional.UseVisualStyleBackColor = true;
-            this.btnAdicionarReuAdicional.Click += new System.EventHandler(this.btnAdicionarReuAdicional_Click);
             // 
             // FormCadastro
             // 
