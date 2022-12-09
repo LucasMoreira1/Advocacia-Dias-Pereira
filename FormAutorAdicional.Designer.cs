@@ -323,6 +323,7 @@
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(123, 22);
             this.txtCNPJ.TabIndex = 5;
+            this.txtCNPJ.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCNPJ);
             // 
             // txtCPF
             // 
@@ -332,6 +333,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(123, 22);
             this.txtCPF.TabIndex = 5;
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCPF);
             // 
             // txtDataCadastro
             // 
