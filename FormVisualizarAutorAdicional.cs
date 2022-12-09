@@ -58,28 +58,29 @@ namespace Advocacia_Dias_Pereira
 
             formAutorAdicional.txtCadNumero.Text = txtCadReferencia.Text.Trim();
 
-            formAutorAdicional.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formAutorAdicional.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
-            formAutorAdicional.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formAutorAdicional.txtProfissao.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
-            formAutorAdicional.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
-            formAutorAdicional.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-            formAutorAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
-            formAutorAdicional.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
-            formAutorAdicional.txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formAutorAdicional.txtTelefone2.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formAutorAdicional.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formAutorAdicional.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            formAutorAdicional.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            formAutorAdicional.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            formAutorAdicional.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            formAutorAdicional.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            formAutorAdicional.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            formAutorAdicional.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formAutorAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formAutorAdicional.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formAutorAdicional.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formAutorAdicional.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formAutorAdicional.txtProfissao.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formAutorAdicional.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formAutorAdicional.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formAutorAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formAutorAdicional.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formAutorAdicional.txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formAutorAdicional.txtTelefone2.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formAutorAdicional.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formAutorAdicional.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            formAutorAdicional.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            formAutorAdicional.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formAutorAdicional.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            formAutorAdicional.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formAutorAdicional.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            formAutorAdicional.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
 
             //Outros
-            formAutorAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            formAutorAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+            formAutorAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            
 
         }
 
@@ -99,6 +100,53 @@ namespace Advocacia_Dias_Pereira
 
                 CarregarDados();
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridView dgv = dataGridView1;
+                //this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = dataGridView1;
+            FormAutorAdicional formAutorAdicional = new FormAutorAdicional();
+
+
+            formAutorAdicional.btnSalvar.Visible = false;
+            formAutorAdicional.btnAtualizar.Visible = true;
+            formAutorAdicional.Show();
+
+            formAutorAdicional.txtCadNumero.Text = txtCadReferencia.Text.Trim();
+
+            formAutorAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formAutorAdicional.txtAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formAutorAdicional.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formAutorAdicional.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formAutorAdicional.txtProfissao.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formAutorAdicional.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formAutorAdicional.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formAutorAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formAutorAdicional.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formAutorAdicional.txtTelefone1.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formAutorAdicional.txtTelefone2.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formAutorAdicional.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formAutorAdicional.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            formAutorAdicional.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            formAutorAdicional.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formAutorAdicional.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            formAutorAdicional.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formAutorAdicional.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            formAutorAdicional.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+
+            //Outros
+            formAutorAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
         }
     }
 }

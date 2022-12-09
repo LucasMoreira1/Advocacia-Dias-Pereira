@@ -58,20 +58,21 @@ namespace Advocacia_Dias_Pereira
 
             formReuAdicional.txtCadNumero.Text = txtCadReferencia.Text.Trim();
 
-            formReuAdicional.txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formReuAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
-            formReuAdicional.txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formReuAdicional.txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
-            formReuAdicional.txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
-            formReuAdicional.txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-            formReuAdicional.txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
-            formReuAdicional.txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
-            formReuAdicional.txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formReuAdicional.txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formReuAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formReuAdicional.txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formReuAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formReuAdicional.txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formReuAdicional.txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formReuAdicional.txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formReuAdicional.txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formReuAdicional.txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formReuAdicional.txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formReuAdicional.txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formReuAdicional.txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
 
             //Outros
-            formReuAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formReuAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formReuAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            
         }
 
         private void btnExluir_Click(object sender, EventArgs e)
@@ -91,6 +92,45 @@ namespace Advocacia_Dias_Pereira
 
                 CarregarDados();
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridView dgv = dataGridView1;
+                //this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = dataGridView1;
+            FormReuAdicional formReuAdicional = new FormReuAdicional();
+
+
+            formReuAdicional.btnSalvar.Visible = false;
+            formReuAdicional.btnAtualizar.Visible = true;
+            formReuAdicional.Show();
+
+            formReuAdicional.txtCadNumero.Text = txtCadReferencia.Text.Trim();
+
+            formReuAdicional.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formReuAdicional.txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formReuAdicional.txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formReuAdicional.txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formReuAdicional.txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formReuAdicional.txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formReuAdicional.txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formReuAdicional.txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formReuAdicional.txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formReuAdicional.txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formReuAdicional.txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+
+            //Outros
+            formReuAdicional.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
         }
     }
 }

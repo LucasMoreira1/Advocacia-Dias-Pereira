@@ -605,7 +605,7 @@
             // 
             // btnVisualizarAutorAdicional
             // 
-            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 138);
+            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 247);
             this.btnVisualizarAutorAdicional.Name = "btnVisualizarAutorAdicional";
             this.btnVisualizarAutorAdicional.Size = new System.Drawing.Size(167, 59);
             this.btnVisualizarAutorAdicional.TabIndex = 12;
@@ -615,7 +615,7 @@
             // 
             // btnAdicionarAutorAdicional
             // 
-            this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 135);
+            this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 247);
             this.btnAdicionarAutorAdicional.Name = "btnAdicionarAutorAdicional";
             this.btnAdicionarAutorAdicional.Size = new System.Drawing.Size(167, 59);
             this.btnAdicionarAutorAdicional.TabIndex = 12;
@@ -830,7 +830,7 @@
             // 
             // btnVisualizarReuAdicional
             // 
-            this.btnVisualizarReuAdicional.Location = new System.Drawing.Point(819, 20);
+            this.btnVisualizarReuAdicional.Location = new System.Drawing.Point(819, 17);
             this.btnVisualizarReuAdicional.Name = "btnVisualizarReuAdicional";
             this.btnVisualizarReuAdicional.Size = new System.Drawing.Size(167, 59);
             this.btnVisualizarReuAdicional.TabIndex = 13;
