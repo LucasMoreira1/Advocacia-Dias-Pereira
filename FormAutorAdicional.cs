@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -69,6 +70,29 @@ namespace Advocacia_Dias_Pereira
 
 
             Executar(CRUD.sql, "Insert");
+
+            MessageBox.Show("Autor Adicional registrado.", "Cadastro Autor Adicional",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBuscarCEP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                string xml = "http://cep.republicavirtual.com.br/web_cep.php?cep=@cep&formato=xml".Replace("@cep", txtCEP.Text);
+
+                ds.ReadXml(xml);
+
+                txtLogradouro.Text = ds.Tables[0].Rows[0]["logradouro"].ToString();
+                txtBairro.Text = ds.Tables[0].Rows[0]["bairro"].ToString();
+                txtCidade.Text = ds.Tables[0].Rows[0]["cidade"].ToString();
+                txtEstado.Text = ds.Tables[0].Rows[0]["uf"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao buscar CEP");
+            }
         }
     }
 }

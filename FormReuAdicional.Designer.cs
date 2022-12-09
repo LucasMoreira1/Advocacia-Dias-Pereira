@@ -160,6 +160,7 @@
             this.btnBuscarCEPReu.TabIndex = 2;
             this.btnBuscarCEPReu.Text = "Buscar";
             this.btnBuscarCEPReu.UseVisualStyleBackColor = true;
+            this.btnBuscarCEPReu.Click += new System.EventHandler(this.btnBuscarCEPReu_Click);
             // 
             // txtCEPReu
             // 

@@ -1678,5 +1678,33 @@ namespace Advocacia_Dias_Pereira
             formReuAdicional.txtCadNumero.Text = txtCadNumero.Text;
             formReuAdicional.Show();
         }
+
+        private void btnVisualizarAutorAdicional_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCadNumero.Text.Trim()))
+            {
+                MessageBox.Show("Por favor insira o Número de Cadastro", "Dados Obrigatórios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            FormVisualizarAutorAdicional formVisualizarAutorAdicional = new FormVisualizarAutorAdicional();
+            formVisualizarAutorAdicional.txtCadReferencia.Text = txtCadNumero.Text;
+            formVisualizarAutorAdicional.txtAutor.Text = txtAutor.Text;
+            formVisualizarAutorAdicional.Show();
+        }
+
+        private void btnVisualizarReuAdicional_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCadNumero.Text.Trim()))
+            {
+                MessageBox.Show("Por favor insira o Número de Cadastro", "Dados Obrigatórios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            FormVisualizarReuAdicional formVisualizarReuAdicional = new FormVisualizarReuAdicional();
+            formVisualizarReuAdicional.txtCadReferencia.Text = txtCadNumero.Text;
+            formVisualizarReuAdicional.txtReu.Text = txtAutor.Text;
+            formVisualizarReuAdicional.Show();
+        }
     }
 }

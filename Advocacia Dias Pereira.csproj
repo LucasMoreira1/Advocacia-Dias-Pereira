@@ -228,11 +228,23 @@
     <Compile Include="FormSelecionarDocumento.Designer.cs">
       <DependentUpon>FormSelecionarDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVisualizarAutorAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualizarAutorAdicional.Designer.cs">
+      <DependentUpon>FormVisualizarAutorAdicional.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVisualizarLog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVisualizarLog.Designer.cs">
       <DependentUpon>FormVisualizarLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisualizarReuAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualizarReuAdicional.Designer.cs">
+      <DependentUpon>FormVisualizarReuAdicional.cs</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
@@ -265,8 +277,14 @@
     <EmbeddedResource Include="FormSelecionarDocumento.resx">
       <DependentUpon>FormSelecionarDocumento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualizarAutorAdicional.resx">
+      <DependentUpon>FormVisualizarAutorAdicional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVisualizarLog.resx">
       <DependentUpon>FormVisualizarLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualizarReuAdicional.resx">
+      <DependentUpon>FormVisualizarReuAdicional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
