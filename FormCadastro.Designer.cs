@@ -143,6 +143,8 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
+            this.txtCNPJAutor = new System.Windows.Forms.MaskedTextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -490,6 +492,7 @@
             this.txtCPF.TabIndex = 5;
             this.txtCPF.Click += new System.EventHandler(this.txtDataNascimento_Click);
             this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCPF);
             // 
             // txtDataNascimento
             // 
@@ -565,6 +568,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCNPJAutor);
+            this.groupBox1.Controls.Add(this.label44);
             this.groupBox1.Controls.Add(this.btnVisualizarAutorAdicional);
             this.groupBox1.Controls.Add(this.btnAdicionarAutorAdicional);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -918,6 +923,7 @@
             this.txtCNPJ.Size = new System.Drawing.Size(152, 22);
             this.txtCNPJ.TabIndex = 1;
             this.txtCNPJ.TextChanged += new System.EventHandler(this.txtCNPJ_TextChanged);
+            this.txtCNPJ.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCNPJReu);
             // 
             // groupBox5
             // 
@@ -1463,6 +1469,28 @@
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
             // 
+            // txtCNPJAutor
+            // 
+            this.txtCNPJAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJAutor.Location = new System.Drawing.Point(701, 172);
+            this.txtCNPJAutor.Mask = "00,000,000/0000-00";
+            this.txtCNPJAutor.Name = "txtCNPJAutor";
+            this.txtCNPJAutor.Size = new System.Drawing.Size(124, 22);
+            this.txtCNPJAutor.TabIndex = 14;
+            this.txtCNPJAutor.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtCNPJAutor.TextChanged += new System.EventHandler(this.txtCNPJAutor_TextChanged);
+            this.txtCNPJAutor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCNPJ);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(619, 175);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(42, 16);
+            this.label44.TabIndex = 13;
+            this.label44.Text = "CNPJ";
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1623,5 +1651,7 @@
         private System.Windows.Forms.Button btnVisualizarAutorAdicional;
         private System.Windows.Forms.Button btnVisualizarReuAdicional;
         private System.Windows.Forms.Button btnAdicionarReuAdicional;
+        public System.Windows.Forms.MaskedTextBox txtCNPJAutor;
+        private System.Windows.Forms.Label label44;
     }
 }
