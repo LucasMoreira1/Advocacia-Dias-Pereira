@@ -57,7 +57,6 @@
             this.btnDuplicar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone1 = new System.Windows.Forms.MaskedTextBox();
@@ -83,7 +82,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -145,6 +143,8 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -193,9 +193,9 @@
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 333);
+            this.groupBox2.Location = new System.Drawing.Point(0, 283);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1040, 177);
+            this.groupBox2.Size = new System.Drawing.Size(1040, 151);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço Autor";
@@ -376,7 +376,7 @@
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(0, 1054);
+            this.groupBox4.Location = new System.Drawing.Point(0, 978);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1040, 152);
             this.groupBox4.TabIndex = 5;
@@ -471,16 +471,6 @@
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Visible = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(146, 284);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(420, 22);
-            this.txtEmail.TabIndex = 9;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtCPF
             // 
@@ -603,7 +593,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 333);
+            this.groupBox1.Size = new System.Drawing.Size(1040, 283);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação Autor";
@@ -611,7 +601,7 @@
             // txtCNPJAutor
             // 
             this.txtCNPJAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNPJAutor.Location = new System.Drawing.Point(701, 172);
+            this.txtCNPJAutor.Location = new System.Drawing.Point(442, 209);
             this.txtCNPJAutor.Mask = "00,000,000/0000-00";
             this.txtCNPJAutor.Name = "txtCNPJAutor";
             this.txtCNPJAutor.Size = new System.Drawing.Size(124, 22);
@@ -624,7 +614,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(619, 175);
+            this.label44.Location = new System.Drawing.Point(338, 212);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(42, 16);
             this.label44.TabIndex = 13;
@@ -632,7 +622,7 @@
             // 
             // btnVisualizarAutorAdicional
             // 
-            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 247);
+            this.btnVisualizarAutorAdicional.Location = new System.Drawing.Point(819, 172);
             this.btnVisualizarAutorAdicional.Name = "btnVisualizarAutorAdicional";
             this.btnVisualizarAutorAdicional.Size = new System.Drawing.Size(167, 59);
             this.btnVisualizarAutorAdicional.TabIndex = 12;
@@ -642,7 +632,7 @@
             // 
             // btnAdicionarAutorAdicional
             // 
-            this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 247);
+            this.btnAdicionarAutorAdicional.Location = new System.Drawing.Point(620, 172);
             this.btnAdicionarAutorAdicional.Name = "btnAdicionarAutorAdicional";
             this.btnAdicionarAutorAdicional.Size = new System.Drawing.Size(167, 59);
             this.btnAdicionarAutorAdicional.TabIndex = 12;
@@ -780,21 +770,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 172);
+            this.label4.Location = new System.Drawing.Point(339, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "CPF";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(7, 290);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 16);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "E-mail";
             // 
             // label3
             // 
@@ -848,7 +828,7 @@
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.txtCNPJ);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 510);
+            this.groupBox3.Location = new System.Drawing.Point(0, 434);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1040, 82);
             this.groupBox3.TabIndex = 2;
@@ -965,7 +945,7 @@
             this.groupBox5.Controls.Add(this.txtNumeroReu);
             this.groupBox5.Controls.Add(this.txtLogradouroReu);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox5.Location = new System.Drawing.Point(0, 592);
+            this.groupBox5.Location = new System.Drawing.Point(0, 516);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1040, 177);
             this.groupBox5.TabIndex = 3;
@@ -1154,7 +1134,7 @@
             this.groupBox6.Controls.Add(this.txtNatProcesso);
             this.groupBox6.Controls.Add(this.txtIdProcesso);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox6.Location = new System.Drawing.Point(0, 769);
+            this.groupBox6.Location = new System.Drawing.Point(0, 693);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(1040, 285);
             this.groupBox6.TabIndex = 4;
@@ -1491,6 +1471,28 @@
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(146, 284);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(420, 22);
+            this.txtEmail.TabIndex = 9;
+            this.txtEmail.Visible = false;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 290);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 16);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "E-mail";
+            this.label23.Visible = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1556,7 +1558,6 @@
         public System.Windows.Forms.TextBox txtLogradouro;
         public System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.MaskedTextBox txtCPF;
         public System.Windows.Forms.MaskedTextBox txtDataNascimento;
         public System.Windows.Forms.MaskedTextBox txtTelefone1;
@@ -1570,7 +1571,6 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox txtCadNumero;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnBuscarCEP;
         public System.Windows.Forms.Button btnLimpar;
@@ -1653,5 +1653,7 @@
         private System.Windows.Forms.Button btnAdicionarReuAdicional;
         public System.Windows.Forms.MaskedTextBox txtCNPJAutor;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.TextBox txtEmail;
     }
 }

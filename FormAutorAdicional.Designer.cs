@@ -104,7 +104,7 @@
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 333);
+            this.groupBox2.Location = new System.Drawing.Point(0, 280);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1028, 177);
             this.groupBox2.TabIndex = 3;
@@ -289,7 +289,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1028, 333);
+            this.groupBox1.Size = new System.Drawing.Size(1028, 280);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação Autor";
@@ -509,6 +509,7 @@
             this.label23.Size = new System.Drawing.Size(45, 16);
             this.label23.TabIndex = 0;
             this.label23.Text = "E-mail";
+            this.label23.Visible = false;
             // 
             // label3
             // 
@@ -567,6 +568,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Visible = false;
             // 
             // txtRG
             // 
@@ -585,7 +587,7 @@
             this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(0, 510);
+            this.groupBox4.Location = new System.Drawing.Point(0, 457);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1028, 152);
             this.groupBox4.TabIndex = 6;

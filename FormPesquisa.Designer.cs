@@ -61,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPesquisaComData = new System.Windows.Forms.Button();
             this.txtFiltro5 = new System.Windows.Forms.TextBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +102,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 590);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1033, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1219, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -149,7 +150,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(1197, 437);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -324,7 +325,7 @@
             // 
             this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(723, 12);
+            this.btnPesquisar.Location = new System.Drawing.Point(909, 12);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(146, 47);
             this.btnPesquisar.TabIndex = 25;
@@ -337,7 +338,7 @@
             // 
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(723, 65);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(909, 65);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(146, 47);
             this.btnMostrarTodos.TabIndex = 25;
@@ -350,7 +351,7 @@
             // 
             this.btnAtualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(875, 12);
+            this.btnAtualizar.Location = new System.Drawing.Point(1061, 12);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(146, 47);
             this.btnAtualizar.TabIndex = 25;
@@ -362,7 +363,7 @@
             // 
             this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.Location = new System.Drawing.Point(875, 65);
+            this.btnDeletar.Location = new System.Drawing.Point(1061, 65);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(146, 47);
             this.btnDeletar.TabIndex = 25;
@@ -565,13 +566,25 @@
             this.txtFiltro5.TabIndex = 16;
             this.txtFiltro5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Location = new System.Drawing.Point(645, 109);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(121, 36);
+            this.btnExcel.TabIndex = 26;
+            this.btnExcel.Text = "Gerar Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // FormPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 612);
+            this.ClientSize = new System.Drawing.Size(1219, 612);
             this.Controls.Add(this.txtPermissaoLogin);
             this.Controls.Add(this.txtNomeLogin);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnPesquisaComData);
             this.Controls.Add(this.btnPesquisaFiltro);
             this.Controls.Add(this.btnPesquisaID);
@@ -642,5 +655,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPesquisaComData;
         public System.Windows.Forms.TextBox txtFiltro5;
+        private System.Windows.Forms.Button btnExcel;
     }
 }
