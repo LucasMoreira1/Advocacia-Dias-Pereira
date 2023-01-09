@@ -64,8 +64,12 @@ namespace Advocacia_Dias_Pereira
 
         public void loadFiltro()
         {
+            //CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
+            //  "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%'ORDER BY Id;";
             CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
-              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%'ORDER BY Id;";
+              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%' " +
+              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + txtFiltro5.Text.Trim() + "%'ORDER BY Id;";
+
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
@@ -588,12 +592,12 @@ namespace Advocacia_Dias_Pereira
         private void btnPesquisaComData_Click(object sender, EventArgs e)
         {
             
-            DateTime filtrodata = DateTime.ParseExact(txtFiltro5.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            string str = filtrodata.ToString("yyyy-MM-dd");
+            //DateTime filtrodata = DateTime.ParseExact(txtFiltro5.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //string str = filtrodata.ToString("yyyy-MM-dd");
 
             CRUD.sql = "SELECT * FROM CADASTRO WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
               "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' AND " + "" + cboxFiltro4.Text.Trim() + " LIKE '%" + txtFiltro4.Text.Trim() + "%' " +
-              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + str + "%'ORDER BY Id;";
+              "AND " + cboxFiltro5.Text.Trim() + " LIKE '%" + txtFiltro5.Text.Trim() + "%'ORDER BY Id;";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);

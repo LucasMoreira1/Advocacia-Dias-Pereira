@@ -387,7 +387,7 @@
             this.btnPesquisaFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisaFiltro.Location = new System.Drawing.Point(137, 109);
             this.btnPesquisaFiltro.Name = "btnPesquisaFiltro";
-            this.btnPesquisaFiltro.Size = new System.Drawing.Size(375, 36);
+            this.btnPesquisaFiltro.Size = new System.Drawing.Size(502, 36);
             this.btnPesquisaFiltro.TabIndex = 26;
             this.btnPesquisaFiltro.Text = "Pesquisar Filtro";
             this.btnPesquisaFiltro.UseVisualStyleBackColor = true;
@@ -549,18 +549,19 @@
             // btnPesquisaComData
             // 
             this.btnPesquisaComData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisaComData.Location = new System.Drawing.Point(518, 109);
+            this.btnPesquisaComData.Location = new System.Drawing.Point(681, 39);
             this.btnPesquisaComData.Name = "btnPesquisaComData";
             this.btnPesquisaComData.Size = new System.Drawing.Size(121, 36);
             this.btnPesquisaComData.TabIndex = 26;
             this.btnPesquisaComData.Text = "Com Data";
             this.btnPesquisaComData.UseVisualStyleBackColor = true;
+            this.btnPesquisaComData.Visible = false;
             this.btnPesquisaComData.Click += new System.EventHandler(this.btnPesquisaComData_Click);
             // 
             // txtFiltro5
             // 
             this.txtFiltro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro5.Location = new System.Drawing.Point(518, 76);
+            this.txtFiltro5.Location = new System.Drawing.Point(518, 79);
             this.txtFiltro5.Name = "txtFiltro5";
             this.txtFiltro5.Size = new System.Drawing.Size(121, 22);
             this.txtFiltro5.TabIndex = 16;

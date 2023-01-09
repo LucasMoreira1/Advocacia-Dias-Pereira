@@ -82,10 +82,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtProfissao = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnVisualizarReuAdicional = new System.Windows.Forms.Button();
             this.btnAdicionarReuAdicional = new System.Windows.Forms.Button();
@@ -143,8 +145,6 @@
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.txtNomeDocumento = new System.Windows.Forms.TextBox();
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -776,6 +776,17 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "CPF";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 290);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 16);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "E-mail";
+            this.label23.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -815,6 +826,17 @@
             this.txtProfissao.Size = new System.Drawing.Size(420, 22);
             this.txtProfissao.TabIndex = 3;
             this.txtProfissao.TextChanged += new System.EventHandler(this.txtProfissao_TextChanged);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(146, 284);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(420, 22);
+            this.txtEmail.TabIndex = 9;
+            this.txtEmail.Visible = false;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // groupBox3
             // 
@@ -1470,28 +1492,6 @@
             this.txtPermissaoLogin.Size = new System.Drawing.Size(100, 20);
             this.txtPermissaoLogin.TabIndex = 6;
             this.txtPermissaoLogin.Visible = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(146, 284);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(420, 22);
-            this.txtEmail.TabIndex = 9;
-            this.txtEmail.Visible = false;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(7, 290);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 16);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "E-mail";
-            this.label23.Visible = false;
             // 
             // FormCadastro
             // 
