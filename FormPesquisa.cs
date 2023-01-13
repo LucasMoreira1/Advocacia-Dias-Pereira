@@ -624,6 +624,8 @@ namespace Advocacia_Dias_Pereira
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Realizando exportação para o Excel, por favor aguarde.", "Exportação",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
