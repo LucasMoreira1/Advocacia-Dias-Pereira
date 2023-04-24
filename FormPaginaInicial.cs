@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -252,6 +253,56 @@ namespace Advocacia_Dias_Pereira
                 Executar(CRUD.sql, "Insert");
             }
             //Application.Exit();
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormChat());
+        }
+        public void Maximizar()
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Maximizar();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
+        private void panelFormTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnPaginaInicial_Click(object sender, EventArgs e)
+        {
+            panelFormCentral.Controls.Clear();
         }
     }
 }
