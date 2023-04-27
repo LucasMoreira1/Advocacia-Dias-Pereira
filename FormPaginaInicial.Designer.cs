@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPaginaInicial));
             this.panelFormTitulo = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
@@ -43,9 +46,6 @@
             this.txtPermissaoLogin = new System.Windows.Forms.TextBox();
             this.txtNomeLogin = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelFormTitulo.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +66,54 @@
             this.panelFormTitulo.Size = new System.Drawing.Size(1064, 62);
             this.panelFormTitulo.TabIndex = 4;
             this.panelFormTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelFormTitulo_MouseDown);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(993, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 23);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "O";
+            this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(962, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 23);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "_";
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(1024, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 23);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "X";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelLogo
             // 
@@ -248,51 +296,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(993, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 23);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "O";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(962, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 23);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "_";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Castellar", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1024, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 23);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // FormPaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,7 +304,6 @@
             this.Controls.Add(this.panelFormCentral);
             this.Controls.Add(this.panelFormTitulo);
             this.Controls.Add(this.panelEsquerdo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPaginaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
