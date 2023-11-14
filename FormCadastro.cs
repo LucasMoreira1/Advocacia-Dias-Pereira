@@ -1054,38 +1054,11 @@ namespace Advocacia_Dias_Pereira
                 txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
                 txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
                 
-                //txtReu.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-                //txtCNPJ.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-                //txtTelefoneReu.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-                //txtCEPReu.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-                //txtLogradouroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
-                //txtNumeroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-                //txtComplementoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
-                //txtBairroReu.Text = Convert.ToString(dgv.CurrentRow.Cells[25].Value);
-                //txtCidadeReu.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
-                //txtEstadoReu.Text = Convert.ToString(dgv.CurrentRow.Cells[27].Value);
-                //txtProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[28].Value);
-                //cboxTipoProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[29].Value);
-                //txtIdProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[30].Value);
-                //cboxStatusProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[31].Value);
-                //txtNatProcesso.Text = Convert.ToString(dgv.CurrentRow.Cells[32].Value);
-                //txtAssunto1.Text = Convert.ToString(dgv.CurrentRow.Cells[33].Value);
-                //txtAssunto2.Text = Convert.ToString(dgv.CurrentRow.Cells[34].Value);
-                //txtAssunto3.Text = Convert.ToString(dgv.CurrentRow.Cells[35].Value);
-                //txtDataPericia.Text = Convert.ToString(dgv.CurrentRow.Cells[36].Value);
-                //txtTipoAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[37].Value);
-                //txtDataAudiencia.Text = Convert.ToString(dgv.CurrentRow.Cells[38].Value);
-                //txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[45].Value);
-                //txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[46].Value);
-                //cboxResultado.Text = Convert.ToString(dgv.CurrentRow.Cells[47].Value);
-                //cboxEscritorio.Text = Convert.ToString(dgv.CurrentRow.Cells[48].Value);
-                //txtDataEncerramento.Text = Convert.ToString(dgv.CurrentRow.Cells[49].Value);
                 txtCNPJAutor.Text = Convert.ToString(dgv.CurrentRow.Cells[50].Value);
 
 
 
                 dgv.Visible = false;
-                //MessageBox.Show("Cliente localizado.");
             }
 
 
