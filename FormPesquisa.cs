@@ -6,6 +6,8 @@ using System.IO;
 using System.Drawing;
 using Microsoft.SqlServer.Server;
 using System.Globalization;
+using System.Collections.Generic;
+using Microsoft.Reporting.WinForms;
 
 namespace Advocacia_Dias_Pereira
 {
@@ -583,11 +585,6 @@ namespace Advocacia_Dias_Pereira
             btnPesquisar_Click(sender, e);
         }
 
-        private void dataGridView1_CellClick(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void btnPesquisaComData_Click(object sender, EventArgs e)
         {
@@ -659,6 +656,19 @@ namespace Advocacia_Dias_Pereira
             //workbook.SaveAs("c:\\output.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application  
             //app.Quit();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridView dgv = dataGridView1;
+                this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtRegistroSelecionado.Text = this.id;
+                btnAtualizar.Text = "Atualizar (" + this.id + ")";
+                btnDeletar.Text = "Deletar (" + this.id + ")";
+
+            }
         }
     }
 }
