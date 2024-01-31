@@ -633,7 +633,7 @@ namespace Advocacia_Dias_Pereira
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Planilha1"];
+            worksheet = workbook.Sheets["Dados"];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Exportado da tabela";

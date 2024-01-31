@@ -33,8 +33,8 @@
     <PublisherName>Lucas Moreira</PublisherName>
     <SuiteName>Agility</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>61</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,10 +60,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B90E9BF5285AF695AFE8AE67DD84A1DDAE1AD7AB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>22F2F0B2B28D2A391D08E872F0F0B250E45461CD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Advocacia Dias Pereira_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Advocacia-Dias-Pereira.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -82,13 +82,16 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Advocacia Dias Pereira_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Advocacia-Dias-Pereira.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
@@ -322,6 +325,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Advocacia Dias Pereira_2_TemporaryKey.pfx" />
+    <None Include="Advocacia-Dias-Pereira.pfx" />
     <None Include="Cadastro.xsc">
       <DependentUpon>Cadastro.xsd</DependentUpon>
     </None>
