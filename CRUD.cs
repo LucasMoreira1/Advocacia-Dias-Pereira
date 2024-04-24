@@ -9,7 +9,7 @@ namespace Advocacia_Dias_Pereira
         private static string getConnectionString()
         {
             //string conString = "Server=108.167.132.199;Database=soluc963_ADV_DIASPEREIRA;Uid=soluc963_DIASPER; Pwd=fXsI2J01!-5-;Convert Zero Datetime=True";
-            string conString = "Server=100.64.42.33;Port=3306;Database=soluc963_ADV_DIASPEREIRA;Uid=Agility;Pwd=!Parrudo292701;Convert Zero Datetime=True";
+            string conString = "Server=187.95.26.193;Port=3306;Database=soluc963_ADV_DIASPEREIRA;Uid=Agility;Pwd=!Parrudo292701;Convert Zero Datetime=True";
             return conString;
         }
 
