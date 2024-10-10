@@ -10,7 +10,8 @@ namespace Advocacia_Dias_Pereira
         {
             //string conString = "Server=108.167.132.199;Database=soluc963_ADV_DIASPEREIRA;Uid=soluc963_DIASPER; Pwd=fXsI2J01!-5-;Convert Zero Datetime=True";
             //string conString = "Server=187.95.26.193;Port=3306;Database=soluc963_ADV_DIASPEREIRA;Uid=Agility;Pwd=!Parrudo292701;Convert Zero Datetime=True";
-            string conString = "Server=mysql-agility.advogadodigital.click;Port=3306;Database=soluc963_adv_diaspereira;Uid=Agility;Pwd=!Parrudo292701;";
+            //string conString = "Server=mysql-agility.advogadodigital.click;Port=3306;Database=soluc963_adv_diaspereira;Uid=Agility;Pwd=!Parrudo292701;";
+            string conString = "Server=192.168.1.75;Port=3306;Database=soluc963_adv_diaspereira;Uid=agility;Pwd=!Parrudo292701;";
             return conString;
         }
 
